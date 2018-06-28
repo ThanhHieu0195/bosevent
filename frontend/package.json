@@ -1,0 +1,19 @@
+{
+  "name": "bosevent",
+  "version": "1.0.0",
+  "description": "create bosevent page",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ThanhHieu0195/bosevent.git"
+  },
+  "author": "nhannguyen-hieuthanh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ThanhHieu0195/bosevent/issues"
+  },
+  "homepage": "https://github.com/ThanhHieu0195/bosevent#readme"
+}
