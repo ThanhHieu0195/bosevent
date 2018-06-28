@@ -1,8 +1,12 @@
 {
-  "name": "bosevent",
+  "name": "bosevent-page",
   "version": "1.0.0",
-  "description": "create bosevent page",
-  "main": "index.js",
+  "description": "Join and create page for customer",
+  "main": "gulpfile.js",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,6 +14,12 @@
     "type": "git",
     "url": "git+https://github.com/ThanhHieu0195/bosevent.git"
   },
+  "keywords": [
+    "gulp",
+    "sass",
+    "pug",
+    "scss"
+  ],
   "author": "nhannguyen-hieuthanh",
   "license": "ISC",
   "bugs": {
