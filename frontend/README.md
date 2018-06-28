@@ -1,21 +1,13 @@
-# README #
+### Install and run the project
+#### 1. Install [Node.js](http://nodejs.org/) on your machine
+#### 2. Install gulp globally
+`npm install -g gulp`
+#### 3. Install gulp in your project devDependencies
+`npm install --save-dev gulp`
+#### 4. Install the required gulp plugins
+`npm install --save-dev gulp-util gulp-sass gulp-minify-css gulp-rename gulp-autoprefixer browser-sync`
+#### 5. Run gulp tasks in your project's root to generate css or watch the files for modication (it automatically generates css by modification)
+* `gulp sass` or just `gulp`
+* `gulp watch`
 
-This is html builder source using gulp pug sass to build HTML
 
-
-
-### How do I get set up? ###
-
-* First type: **npm install** to setup source
-* Then type: **gulp** to run source
-* And type **gulp watch** to watch source
-* Create new page:  please create a new file json first. **ex: about.pug.json**. then, create file **about.pug**  
-* Enjoy now
-
-### Note ###
-* If setup source has **error** because of nodejs version:
-	- First run with Windows PowerShell(Admin)
-	- Type **npm install --global --production windows-build-tools** and wait for successfull installation.
-	- Type **npm install --global node-gyp**
-	- setup source normal with **npm install**
-* copy **images, fonts, js to libs/** please open a pug file and press: **ctrl + s** to rebuild source

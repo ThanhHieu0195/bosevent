@@ -1,42 +1,52 @@
-const gulp = require('gulp');
-const sass = require('gulp-sass');
-const pug = require('pug');
-const autoprefixer = require('gulp-autoprefixer');
-const browserSync = require('browser-sync').create();
-const gutil = require('gulp-util');
+//Gulp plugin
+var gulp = require("gulp"),
+    util = require("gulp-util"),
+    sass = require("gulp-sass"),
+    autoprefixer = require('gulp-autoprefixer'),
+    minifycss = require('gulp-minify-css'),
+    rename = require('gulp-rename'),
+    browserSync = require('browser-sync'),
+    log = util.log;
+var reload = browserSync.reload;
 
-gulp.task('sass', function () {
-    return
-    gulp.src('(./src/scss/**/*.scss')
+var sassFiles = "app/assets/scss/**/*.scss";
+let autoprefixBrowsers = ['> 1%', 'last 2 versions', 'firefox >= 4', 'safari 7', 'safari 8',
+    'IE 8', 'IE 9', 'IE 10', 'IE 11'
+];
+
+gulp.task("sass", function () {
+    log("Compile CSS files " + (new Date()).toString());
+    gulp.src(sassFiles)
         .pipe(sass({
-            style: 'expanded',
-            sourceComments: 'map',
-            errLogToConsole: true
+            style: 'expanded'
         }))
-        .pipe(autoprefixer('last 2 version', "> 1%", 'ie 8', 'ie 9'))
-        .pipe(gulp.dest('./dist/css'))
-        .on('error', gutil.log)
-        .pipe(browserSync.stream());
+        .pipe(autoprefixer({
+            browsers: autoprefixBrowsers,
+        }))
+        .pipe(gulp.dest("app/assets/css"))
+        .pipe(rename({
+            suffix: '.min'
+        }))
+        .pipe(minifycss())
+        .pipe(gulp.dest('app/assets/css'))
+        .pipe(reload({
+            stream: true
+        }));
+
 });
 
-gulp.task('pug', function () {
-    return
-    gulp.src('.src/pug/**/*.pug')
-        .pipe(pug())
-        .pipe(gulp.dest('./dist/html'))
-        .on('error', gutil.log)
-        .pipe(browserSync.stream())
-});
-
-gulp.task('serve', ['sass', 'pug'], function () {
+// Live reload
+gulp.task('browser-sync', function () {
     browserSync.init({
-        server: './dist'
+        server: {
+            baseDir: "./app"
+        }
     });
-    gulp.watch('./src/scss/**/*.css', ['sass']);
-    gulp.watch('./src/pug/**/*.pug', ['pug']);
-    gulp.watch('./dist/html/**/*.html').on('change', browserSync.reload);
+    gulp.watch("app/assets/scss/*.scss", ['sass']);
+    gulp.watch("*.html").on('change', browserSync.reload);
 });
 
-gulp.task('build', ['sass', 'pug'], function () {
-    console.log('building');
-})
+
+gulp.task("default", ["sass", 'browser-sync'], function () {
+    gulp.watch(sassFiles, ["sass"]);
+});
