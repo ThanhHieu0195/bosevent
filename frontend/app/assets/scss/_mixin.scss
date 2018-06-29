@@ -1,0 +1,33 @@
+// BEM - Element's name
+@mixin e($element) {
+  &__#{$element} {
+    @content;
+  }
+}
+
+// BEM - Modifier's name
+@mixin m($modifier) {
+  &--#{$modifier} {
+    @content;
+  }
+}
+
+// Calc 
+@mixin calc($property, $express, $num) {
+  #{$property}: #{$num};
+  #{$property}: -moz-calc(#{$express});
+  #{$property}: calc(#{$express});
+  #{$property}: -webkit-calc(#{$express});
+}
+
+// Vertical align & display	
+@mixin vertical-ds($display, $vertical) {
+  display: $display;
+  vertical-align: $vertical;
+}
+
+// Vertical align & display	
+@mixin table-cell($display, $vertical) {
+  display: $display;
+  vertical-align: $vertical;
+}
