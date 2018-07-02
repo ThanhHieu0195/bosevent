@@ -1,22 +1,14 @@
 <?php
 namespace includes;
-use includes\classes\ConfigMenu;
-use includes\classes\Helper;
-use includes\classes\Hook;
+foreach (glob("interfaces/*.php") as $filename)
+{
+    include $filename;
+}
 
-include 'interfaces/ManagementInterface.php';
-include 'interfaces/HookInterface.php';
-include 'interfaces/HelperInterface.php';
-include 'interfaces/PostTypeInterface.php';
-include 'interfaces/MenuInterface.php';
-include 'classes/Hook.php';
-include 'classes/Helper.php';
-include 'classes/Constants.php';
-include 'classes/PostType.php';
-include 'classes/TaxonomyType.php';
-include 'classes/ProjectPostType.php';
-include 'classes/ProjectCategory.php';
-include 'classes/ConfigMenu.php';
+foreach (glob("classes/*.php") as $filename)
+{
+    include $filename;
+}
 
 /**
  * @property Helper $helper
