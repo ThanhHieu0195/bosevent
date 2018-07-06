@@ -1,0 +1,187 @@
+@import "_mixin";
+@import "_variables";
+.heading-h1 {
+    font-size: 4.118rem;
+}
+
+img {
+    border: none;
+}
+
+.m-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.nimg {
+    max-width: 100%;
+    height: auto;
+}
+
+.ncontainer-large {
+    margin: 0 2.5rem;
+}
+
+.ncontainer {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    @media (max-width: 768px) {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    @media (min-width: 992px) {
+        width: 992px;
+    }
+    @media (min-width: 1200px) {
+        width: 1130px;
+    }
+    @media (min-width: 1400px) {
+        width: 1365px;
+    }
+}
+
+.h--100 {
+    height: 100%;
+}
+
+.txt--c {
+    text-align: center;
+}
+
+.txt--l {
+    text-align: left;
+}
+
+.txt--r {
+    text-align: right;
+}
+
+.txt--j {
+    text-align: justify;
+}
+
+.txt--up {
+    text-transform: uppercase;
+}
+
+.txt--cap {
+    text-transform: capitalize;
+}
+
+.cl--white {
+    color: #fff;
+}
+
+.cl--main {
+    color: $color-main;
+}
+
+.cl--grayblack {
+    color: $color-grayblack;
+}
+
+.cl--black {
+    color: $color-black;
+}
+
+.f--400 {
+    font-weight: 400;
+}
+
+.f--600 {
+    font-weight: 600;
+}
+
+.f--900 {
+    font-weight: 900;
+}
+
+.wp-table {
+    position: relative;
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+
+.hid-1024 {
+    @media (max-width: 1024px) {
+        display: none;
+    }
+}
+
+.visi-768 {
+    display: none;
+    @media (max-width: 768px) {
+        display: block;
+    }
+}
+
+.hid-768 {
+    display: block;
+    @media (max-width: 768px) {
+        display: none;
+    }
+}
+
+.tab-cell-m {
+    @include table-cell(table-cell, middle);
+}
+
+.tab-cell-t {
+    @include table-cell(table-cell, top);
+}
+
+.wp-inlineb {
+    font-size: 0;
+}
+
+.inlineb-t {
+    @include vertical-ds(inline-block, top);
+}
+
+.inlineb-m {
+    @include vertical-ds(inline-block, middle);
+}
+
+.inlineb-b {
+    @include vertical-ds(inline-block, bottom);
+}
+
+.clear-f,
+.row,
+.container {
+    &:before {
+        content: '';
+        display: table;
+    }
+    &:after {
+        content: '';
+        display: table;
+        clear: both;
+    }
+}
+
+.list-clm {
+    &.clm-02 {
+        .nitem {
+            width: 50%;
+        }
+    }
+    &.clm-03 {
+        .nitem {
+            width: 33.3333%;
+        }
+    }
+    &.clm-04 {
+        .nitem {
+            width: 25%;
+        }
+    }
+    &.clm-05 {
+        .nitem {
+            width: 20%;
+        }
+    }
+}
