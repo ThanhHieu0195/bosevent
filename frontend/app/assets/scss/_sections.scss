@@ -338,7 +338,7 @@
         margin-top: 120px;
     }
     &__item-left {
-        width: 55%;
+        width: 50%;
         position: relative;
         overflow: hidden;
         @include aspect-ratio(4, 3);
@@ -355,7 +355,7 @@
     &__item-right {
         background-color: #fff;
         padding: 30px 70px;
-        width: 45%;
+        width: 50%;
     }
     &__item-heading {
         font-size: $font-40;
@@ -370,20 +370,23 @@
 }
 
 // 04. End of Section Services
-// 05. Section blog 
+// 06. Section blog 
 .nblog {
-    @include pd-tb(150, 150);
+    @include pd-tb(150, 100);
 }
 
 .nlist-blog {
     @include pd-tb(100, 50);
-    @include mg-lr(-5, -5);
+    padding-top: 100px;
     opacity: 0;
     visibility: hidden;
     @include prefix(transition, all .3s ease-in-out);
     &.slick-initialized {
         opacity: 1;
         visibility: visible;
+    }
+    .slick-list {
+        overflow: visible;
     }
     .slick-next,
     .slick-prev {
@@ -411,14 +414,15 @@
     }
     .item {
         position: relative;
-        overflow: hidden;
         opacity: .3;
-        @include pd-lr(5, 5);
         @include prefix(transform, scale(.93));
         @include prefix(transition, all .25s cubic-bezier(0.25, 0.8, 0.25, 1));
         &.slick-active {
             opacity: 1;
+            border-radius: 5px;
+            -webkit-border-radius: 5px;
             @include prefix(transform, scale(1));
+            @include prefix(box-shadow, 0 3px 30px rgba(0, 0, 0, 0.4));
         }
         &:focus {
             outline: 0;
@@ -451,6 +455,7 @@
     }
     &__img {
         position: relative;
+        overflow: hidden;
         border-radius: 5px;
         -webkit-border-radius: 5px;
         @include aspect-ratio(1455, 654);
@@ -488,4 +493,116 @@
     }
 }
 
-// 05. End of Section Blog
+// 06. End of Section Blog
+// 05.  Section Event Schedule
+.nevent {
+    background-color: $color-main;
+    @include pd-tb(150, 150);
+    &__schedule {
+        width: 90%;
+        margin: 80px auto 0 auto;
+        background-color: #fff;
+        border-radius: 5px;
+        -webkit-border-radius: 5px;
+        @include prefix(box-shadow, 0 1px 30px rgba(0, 0, 0, 0.2));
+    }
+    &__schedule-name {
+        padding: 20px 25px;
+        background-color: #fff;
+        border-top-left-radius: 5px;
+        -webkit-border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        -webkit-border-top-right-radius: 5px;
+        border-bottom: 1px solid $color-gray;
+        .nicon {
+            width: 30px;
+            +.heading-h5 {
+                margin-left: 10px;
+            }
+        }
+    }
+    &__schedule-info {
+        border-bottom: 1px solid $color-gray;
+        &:last-child {
+            border-bottom: none;
+        }
+        .inner-item {
+            padding: 25px;
+            &.inner-pane {
+                cursor: pointer;
+                @include prefix(transition, background-color .2s ease-in-out);
+                &:hover {
+                    background-color: $color-gray;
+                }
+                &.is-active {
+                    background-color: $color-gray;
+                }
+            }
+            &.inner-content {
+                display: none;
+            }
+        }
+        &__thumb {
+            position: relative;
+            overflow: hidden;
+            width: 100px;
+            border-radius: 50%;
+            -webkit-border-radius: 50%;
+            @include aspect-ratio(1, 1);
+            &:after {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                background-color: rgba(#333, .4);
+            }
+        }
+        &__content {
+            @include pd-lr(25, 25);
+            width: calc(100% - 100px);
+            .event-title {
+                color: $color-main;
+                margin-top: 2px;
+            }
+        }
+        &__content-inner {
+            padding-left: 25px;
+            .inner {
+                float: right;
+                width: calc(100% - 100px);
+                .description {
+                    margin-top: 10px;
+                }
+                .nlist-tag {
+                    @include pd-tb(20, 30);
+                    border-bottom: 1px solid $color-gray;
+                    .item {
+                        +.item {
+                            margin-left: 20px;
+                        }
+                    }
+                    &:before {
+                        content: '';
+                        background: url(../../assets/images/bookmark.svg) no-repeat 50% 50%;
+                        background-size: cover;
+                        display: inline-block;
+                        vertical-align: middle;
+                        width: 20px;
+                        height: 20px;
+                        margin-right: 10px;
+                    }
+                }
+                .nlocation {
+                    margin-top: 30px;
+                }
+            }
+            .nclear {
+                clear: both;
+            }
+        }
+    }
+}
+
+// 05. End of Section Event Schedule

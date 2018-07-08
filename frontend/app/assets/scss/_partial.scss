@@ -42,11 +42,41 @@ footer {
 }
 
 .nfooter {
+    a {
+        @include prefix(transition, all .2s ease-in);
+        &:hover {
+            color: #fff;
+        }
+    }
     &__title {
         font-size: $font-18;
         margin-bottom: 20px;
     }
     .item+.item {
         margin-left: 60px;
+    }
+    &__social {
+        margin-top: 10px;
+        .nitem {
+            +.nitem {
+                margin-left: 13px;
+            }
+        }
+        .nicon {
+            @include prefix(transition, opacity .2s ease-in);
+            opacity: 0.5;
+            &:hover {
+                opacity: 1;
+            }
+        }
+        .nfacebook {
+            width: 25px;
+        }
+        .nyoutube {
+            width: 33px;
+        }
+        .ninstagram {
+            width: 23px;
+        }
     }
 }

@@ -35,6 +35,14 @@
             background-color: $color-main;
         }
     }
+    &.white-after {
+        &:before {
+            background-color: #fff;
+        }
+        &:after {
+            background-color: $color-main;
+        }
+    }
 }
 
 .nheading {

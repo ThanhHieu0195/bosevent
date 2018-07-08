@@ -61,6 +61,18 @@ img {
     }
 }
 
+.lh--19 {
+    line-height: 1.9;
+}
+
+.lh--18 {
+    line-height: 1.8;
+}
+
+.lh--15 {
+    line-height: 1.5;
+}
+
 .lh--14 {
     line-height: 1.4;
 }
@@ -110,7 +122,7 @@ img {
 }
 
 .cl--white1 {
-    color: rgba($color-gray, .9);
+    color: rgba($color-gray, .7);
 }
 
 .cl--main {
@@ -167,6 +179,18 @@ img {
 
 .f--20 {
     font-size: $font-20;
+}
+
+.f--25 {
+    font-size: $font-25;
+}
+
+.mb--5 {
+    margin-bottom: 5px;
+}
+
+.mb--10 {
+    margin-bottom: 10px;
 }
 
 .wp-table {
