@@ -1,65 +1,439 @@
-.nheader {
-    padding: 1.176rem 0 1.059rem;
-    &__left {
-        width: 15%;
-        .nimg {
-            filter: grayscale(100%);
-            -webkit-filter: grayscale(100%);
-            -ms-filter: grayscale(100%);
-            transition: all .2s ease-in;
-            cursor: pointer;
-            &:hover {
-                filter: grayscale(0);
-                -webkit-filter: grayscale(0);
-                -ms-filter: grayscale(0);
-            }
-        }
-    }
-    &__right {
-        text-align: right;
-        width: 85%;
-    }
-    &__right-menu {
-        >.item {
-            display: inline-block;
-            vertical-align: middle;
-            +.item {
-                margin-left: 3.529rem;
-            }
-            >a {
-                text-transform: uppercase;
-                color: $color-black;
-                font-size: 0.8824rem;
-                letter-spacing: 0.1765rem;
-            }
-        }
-    }
-}
-
+//  01. Section Banner
 .bg-banner {
     position: relative;
     overflow: hidden;
     width: 100%;
     height: 100%;
-    background: url('../../assets/images/banner-01.jpg') center center no-repeat;
-    background-size: cover;
+    z-index: 1;
     &:after {
         content: '';
         position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: rgba(24, 33, 45, 0.92);
-        z-index: 1;
+        bottom: 20px;
+        left: 50%;
+        width: 1px;
+        height: 120px;
+        display: block;
+        background-color: rgba(#fff, .7);
+        @include prefix(transform, translate(-50%, 0));
+        @include prefix(animation, desAnimation 2s ease-in);
     }
     &__inner {
         position: relative;
         z-index: 2;
-        padding-left: 1.875rem;
-        padding-right: 1.875rem;
+        @include pd-lr(30, 30);
     }
     &__title {
-        letter-spacing: 0.25rem;
+        letter-spacing: 8px;
+        @include prefix(animation, titleAnimation 2s ease-out);
+    }
+    &__description {
+        margin-top: 10px;
+        @include prefix(animation, desAnimation 4s ease-in);
+    }
+    &__btn {
+        margin-top: 40px;
+        @include prefix(animation, titleAnimation 4.5s ease-out);
+    }
+    >.wp-table {
+        background-color: #151515;
     }
 }
+
+.list-slide {
+    height: 100%;
+    &__bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        overflow: hidden;
+        color: transparent;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        -webkit-backface-visibility: hidden;
+        @include prefix(animation, imageAnimation 40s linear infinite);
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(23, 24, 25, 0.7);
+            z-index: 2;
+        }
+    }
+    &__item {
+        height: 100%;
+        &:nth-child(1) {
+            .list-slide__bg {
+                opacity: 1;
+            }
+        }
+        &:nth-child(2) {
+            .list-slide__bg {
+                opacity: 0;
+                @include prefix(animation-delay, 10s);
+            }
+        }
+        &:nth-child(3) {
+            .list-slide__bg {
+                opacity: 0;
+                @include prefix(animation-delay, 20s);
+            }
+        }
+        &:nth-child(4) {
+            .list-slide__bg {
+                opacity: 0;
+                @include prefix(animation-delay, 30s);
+            }
+        }
+    }
+}
+
+@include keyframes(imageAnimation) {
+    0% {
+        opacity: 0;
+        @include prefix(animation-timing-function, ease-in);
+    }
+    8% {
+        opacity: 1;
+        @include prefix(transform, scale(1.05));
+        @include prefix(animation-timing-function, ease-out);
+    }
+    17% {
+        opacity: 1;
+        @include prefix(transform, scale(1.1));
+    }
+    25% {
+        opacity: 0;
+        @include prefix(transform, scale(1.05));
+    }
+    100% {
+        opacity: 0
+    }
+}
+
+@keyframes titleAnimation {
+    0% {
+        opacity: 0;
+        @include prefix(transform, translateY(100px) scale(1.15));
+    }
+    20% {
+        opacity: .3;
+    }
+    40% {
+        opacity: 1;
+        @include prefix(transform, translateY(0) scale(1.05));
+    }
+}
+
+@keyframes desAnimation {
+    0% {
+        opacity: 0;
+        @include prefix(transform, translateY(50px) scale(1.15));
+    }
+    20% {
+        opacity: .3;
+    }
+    40% {
+        opacity: 1;
+        @include prefix(transform, translateY(0) scale(1.05));
+    }
+}
+
+//  01. End of Section Banner
+//  02. Section About
+.nsection-about {
+    padding-top: 120px;
+    &__title {
+        position: relative;
+        left: -5px;
+    }
+}
+
+.nbrand {
+    display: inline-block;
+    @include mg-tb(10, 25);
+    &__logo {
+        width: 80%;
+    }
+}
+
+.nourteam {
+    padding: 0 0 40%;
+    background: $color-black1;
+    margin-top: 80px;
+    .nitem {
+        position: relative;
+        &:hover {
+            .nourteam__img {
+                @include prefix (filter, grayscale(0));
+                &:after {
+                    background-color: transparent;
+                }
+            }
+            .nourteam__des-title {
+                @include prefix(transform, translateY(-5px));
+            }
+            .nourteam__des-pos {
+                color: #fff;
+                @include prefix(transform, translateY(-10px));
+            }
+        }
+    }
+    &__img {
+        position: relative;
+        overflow: hidden;
+        @include aspect-ratio(1, 1);
+        @include prefix(filter, grayscale(100%));
+        @include prefix(transition, all .2s cubic-bezier(0.25, 0.8, 0.25, 1));
+        &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background-color: rgba($color-black1, .65);
+            @include prefix(transition, background-color .4s cubic-bezier(0.25, 0.8, 0.25, 1));
+        }
+    }
+    &__des {
+        position: absolute;
+        bottom: 10px;
+        left: 0;
+        width: 100%;
+        padding-right: 25px;
+        padding-bottom: 20px;
+    }
+    &__des-title {
+        font-size: $font-20;
+        @include prefix(transition, all .4s cubic-bezier(0.25, 0.8, 0.25, 1));
+    }
+    &__des-pos {
+        display: block;
+        font-size: $font-15;
+        color: rgba($color-gray, .7);
+        @include prefix(transition, all .6s cubic-bezier(0.25, 0.8, 0.25, 1));
+    }
+}
+
+.nmorale {
+    margin-top: -30%;
+    &__wrap {
+        margin-top: 80px;
+        @include mg-lr(0, -10);
+        >.nitem {
+            position: relative;
+            @include pd-lr(0, 10);
+            @include prefix(transition, all .5s cubic-bezier(0.25, 0.8, 0.25, 1));
+            &:hover {
+                @include prefix(transform, translateY(-10px));
+                .nmorale__info-des {
+                    opacity: 1;
+                    visibility: visible;
+                    @include prefix(transform, translateY(0));
+                }
+                .nmorale__img {
+                    box-shadow: 0 7px 30px -5px rgba(51, 51, 51, 0.7);
+                }
+                .nmorale__img:after {
+                    background-color: rgba($color-main, .85);
+                }
+            }
+        }
+    }
+    &__img {
+        position: relative;
+        overflow: hidden;
+        border-radius: 5px;
+        -webkit-border-radius: 5px;
+        @include aspect-ratio(420, 558);
+        &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background-color: rgba(103, 102, 102, 0.3);
+            @include prefix(transition, background-color .4s cubic-bezier(0.25, 0.8, 0.25, 1));
+        }
+    }
+    &__info {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 70%;
+        @include prefix(transform, translate(-50%, -50%));
+    }
+    &__info-num {
+        font-size: $font-14;
+    }
+    &__info-title {
+        @include mg-tb(10, 5);
+    }
+    &__info-des {
+        font-size: $font-15;
+        opacity: 0;
+        visibility: hidden;
+        @include prefix(transform, translateY(50px));
+        @include prefix(transition, all .3s cubic-bezier(0.25, 0.8, 0.25, 1));
+    }
+}
+
+//  02. End of Section About
+// 03. Banner Intro
+.nbanner-intro {
+    padding-top: 150px;
+    &__wrap {
+        .nitem {
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            @include aspect-ratio(16, 9);
+            &:after {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                background-color: rgba(#333, .8);
+            }
+        }
+    }
+    &__wrap-title {
+        position: absolute;
+        left: 50%;
+        top: 56%;
+        width: 100%;
+        z-index: 2;
+        @include pd-lr(20, 20);
+        @include prefix(transform, translate(-50%, -50%));
+    }
+}
+
+// 03. End of Banner Intro
+// 05. Section blog 
+.nblog {
+    padding-top: 150px;
+    padding-bottom: 40px;
+}
+
+.nlist-blog {
+    @include pd-tb(100, 50);
+    @include mg-lr(-5, -5);
+    opacity: 0;
+    visibility: hidden;
+    @include prefix(transition, all .3s ease-in-out);
+    &.slick-initialized {
+        opacity: 1;
+        visibility: visible;
+    }
+    .slick-next,
+    .slick-prev {
+        top: 53%;
+        z-index: 2;
+        font-size: 30px;
+        width: 40px;
+        height: 40px;
+        border: 1px solid #fff;
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        @include prefix(transition, background-color .3s ease);
+        &:hover {
+            background-color: rgba(#fff, .2);
+        }
+        &:before {
+            display: block;
+        }
+    }
+    .slick-next {
+        right: 250px;
+    }
+    .slick-prev {
+        left: 250px;
+    }
+    .item {
+        position: relative;
+        overflow: hidden;
+        opacity: .3;
+        @include pd-lr(5, 5);
+        @include prefix(transition, opacity .25s cubic-bezier(0.25, 0.8, 0.25, 1));
+        &.slick-active {
+            opacity: 1;
+        }
+        &:focus {
+            outline: 0;
+        }
+    }
+    .slick-dotted.slick-slider {
+        margin-bottom: 0;
+    }
+    .slick-dots {
+        li {
+            margin: 0;
+            &.slick-active {
+                button {
+                    &:before {
+                        color: $color-main;
+                    }
+                }
+            }
+            button {
+                &:hover {
+                    &:before {
+                        color: $color-main;
+                    }
+                }
+                &:before {
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+    &__img {
+        position: relative;
+        border-radius: 5px;
+        -webkit-border-radius: 5px;
+        @include aspect-ratio(1455, 654);
+        &:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(#333, .6);
+        }
+    }
+    &__info-title {
+        >a {
+            border-bottom: 1px solid transparent;
+            @include prefix(transition, all .1s ease-in);
+            &:hover {
+                border-color: #fff;
+            }
+        }
+    }
+    &__info {
+        position: absolute;
+        text-align: center;
+        width: 55%;
+        top: 55%;
+        left: 50%;
+        @include pd-lr(20, 20);
+        @include prefix(transform, translate(-50%, -50%));
+    }
+    &__info-des {
+        margin-top: 15px;
+        font-size: $font-14;
+    }
+}
+
+// 05. End of Section Blog

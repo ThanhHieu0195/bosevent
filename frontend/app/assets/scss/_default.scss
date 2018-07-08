@@ -1,7 +1,28 @@
 @import "_mixin";
 @import "_variables";
+// f 60px
 .heading-h1 {
-    font-size: 4.118rem;
+    font-size: 4rem;
+}
+
+// f 40px
+.heading-h2 {
+    font-size: 2.667rem;
+}
+
+// f 30px
+.heading-h3 {
+    font-size: 2rem;
+}
+
+// f 22px
+.heading-h4 {
+    font-size: 1.467rem;
+}
+
+// f 16px
+.heading-h5 {
+    font-size: 1.067rem;
 }
 
 img {
@@ -23,13 +44,11 @@ img {
 }
 
 .ncontainer {
-    padding-left: 15px;
-    padding-right: 15px;
+    @include pd-lr(15, 15);
     margin-left: auto;
     margin-right: auto;
     @media (max-width: 768px) {
-        padding-left: 20px;
-        padding-right: 20px;
+        @include pd-lr(20, 20);
     }
     @media (min-width: 992px) {
         width: 992px;
@@ -40,6 +59,22 @@ img {
     @media (min-width: 1400px) {
         width: 1365px;
     }
+}
+
+.lh--14 {
+    line-height: 1.4;
+}
+
+.lh--13 {
+    line-height: 1.3;
+}
+
+.lh--12 {
+    line-height: 1.2;
+}
+
+.lh--11 {
+    line-height: 1.1;
 }
 
 .h--100 {
@@ -90,12 +125,36 @@ img {
     font-weight: 400;
 }
 
+.f--500 {
+    font-weight: 500;
+}
+
 .f--600 {
     font-weight: 600;
 }
 
 .f--900 {
     font-weight: 900;
+}
+
+.f--14 {
+    font-size: $font-14;
+}
+
+.f--15 {
+    font-size: $font-15;
+}
+
+.f--16 {
+    font-size: $font-16;
+}
+
+.f--18 {
+    font-size: $font-18;
+}
+
+.f--20 {
+    font-size: $font-20;
 }
 
 .wp-table {

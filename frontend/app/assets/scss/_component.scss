@@ -1,0 +1,121 @@
+.nline-title {
+    position: relative;
+    height: 3px;
+    margin-top: 10px;
+    &:before,
+    &:after {
+        content: '';
+        position: absolute;
+        display: block;
+    }
+    &:after {
+        width: 10px;
+        height: 3px;
+        background-color: #fff;
+        left: 45%;
+        @include prefix(transform, translate(-45%, 0));
+    }
+    &:before {
+        content: '';
+        position: absolute;
+        left: 50%;
+        width: 100px;
+        height: 3px;
+        border-radius: 2px;
+        background-color: $color-main;
+        @include prefix(transform, translate(-50%, 0));
+    }
+    &.bl-after {
+        &:after {
+            background-color: $color-black1;
+        }
+    }
+}
+
+.nheading {
+    &__wrap {
+        .ntext-des {
+            margin-top: 45px;
+            @include pd-lr(180, 180);
+        }
+    }
+    &__wrap-h5 {
+        margin-bottom: 30px;
+    }
+}
+
+.nbutton {
+    display: inline-block;
+    line-height: 1.5;
+    font-size: $font-12;
+    cursor: pointer;
+    outline: 0;
+    border: 1px solid transparent;
+    text-decoration: none;
+    border-color: transparent;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    @include prefix(transition, all .3s cubic-bezier(0.25, 0.8, 0.25, 1));
+    &:hover {
+        &:before {
+            width: 25px;
+        }
+    }
+    &:before {
+        content: '';
+        display: inline-block;
+        vertical-align: middle;
+        width: 15px;
+        height: 2px;
+        margin-right: 10px;
+        @include prefix(transition, width .25s cubic-bezier(0.25, 0.8, 0.25, 1));
+    }
+    &.nsize--b {
+        padding: 16px 40px;
+        min-width: 170px;
+    }
+    &.color--1 {
+        color: #fff;
+        background-color: $color-main;
+        &:before {
+            background-color: #fff;
+        }
+        &:hover {
+            background-color: transparent;
+            border-color: $color-main;
+            color: $color-main;
+            &:before {
+                background-color: $color-main;
+            }
+        }
+    }
+    &.color--2 {
+        color: #fff;
+        border-color: #fff;
+        &:before {
+            background-color: #fff;
+        }
+        &:hover {
+            background-color: #fff;
+            border-color: transparent;
+            color: $color-black;
+            &:before {
+                background-color: $color-black;
+            }
+        }
+    }
+}
+
+// .nbutton.color-2 {
+//     color: #333;
+//     background-color: transparent;
+// }
+// .nbutton.color-2:hover {
+//     color: #fff;
+//     background-color: var(--main-bg-main);
+// }
+// .nbutton.color-1:hover {
+//     color: var(--main-bg-main);
+//     background-color: transparent;
+//     border-color: var(--main-bg-main);
+// }
