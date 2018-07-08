@@ -30,6 +30,11 @@
             background-color: $color-black1;
         }
     }
+    &.red-after {
+        &:after {
+            background-color: $color-main;
+        }
+    }
 }
 
 .nheading {
@@ -40,7 +45,7 @@
         }
     }
     &__wrap-h5 {
-        margin-bottom: 30px;
+        margin-bottom: 15px;
     }
 }
 
@@ -105,17 +110,3 @@
         }
     }
 }
-
-// .nbutton.color-2 {
-//     color: #333;
-//     background-color: transparent;
-// }
-// .nbutton.color-2:hover {
-//     color: #fff;
-//     background-color: var(--main-bg-main);
-// }
-// .nbutton.color-1:hover {
-//     color: var(--main-bg-main);
-//     background-color: transparent;
-//     border-color: var(--main-bg-main);
-// }

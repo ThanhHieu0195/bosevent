@@ -35,3 +35,18 @@
         }
     }
 }
+
+footer {
+    background-color: $color-black;
+    @include pd-tb(100, 100);
+}
+
+.nfooter {
+    &__title {
+        font-size: $font-18;
+        margin-bottom: 20px;
+    }
+    .item+.item {
+        margin-left: 60px;
+    }
+}

@@ -319,10 +319,60 @@
 }
 
 // 03. End of Banner Intro
+// 04. Section Services
+.nservices {
+    margin-top: 150px;
+    background-color: $color-gray;
+    @include pd-tb(150, 160);
+    &__item {
+        &:nth-child(even) {
+            direction: rtl;
+            .nservices__item-btn {
+                .nbutton {
+                    direction: ltr;
+                }
+            }
+        }
+    }
+    &__wrap {
+        margin-top: 120px;
+    }
+    &__item-left {
+        width: 55%;
+        position: relative;
+        overflow: hidden;
+        @include aspect-ratio(4, 3);
+        &:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(#333, .3);
+        }
+    }
+    &__item-right {
+        background-color: #fff;
+        padding: 30px 70px;
+        width: 45%;
+    }
+    &__item-heading {
+        font-size: $font-40;
+        color: $color-main;
+    }
+    &__item-des {
+        margin-top: 10px;
+    }
+    &__item-btn {
+        margin-top: 40px;
+    }
+}
+
+// 04. End of Section Services
 // 05. Section blog 
 .nblog {
-    padding-top: 150px;
-    padding-bottom: 40px;
+    @include pd-tb(150, 150);
 }
 
 .nlist-blog {
@@ -364,9 +414,11 @@
         overflow: hidden;
         opacity: .3;
         @include pd-lr(5, 5);
-        @include prefix(transition, opacity .25s cubic-bezier(0.25, 0.8, 0.25, 1));
+        @include prefix(transform, scale(.93));
+        @include prefix(transition, all .25s cubic-bezier(0.25, 0.8, 0.25, 1));
         &.slick-active {
             opacity: 1;
+            @include prefix(transform, scale(1));
         }
         &:focus {
             outline: 0;
