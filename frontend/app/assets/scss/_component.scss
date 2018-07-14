@@ -68,7 +68,7 @@
     border-color: transparent;
     border-radius: 5px;
     -webkit-border-radius: 5px;
-    @include prefix(transition, all .3s cubic-bezier(0.25, 0.8, 0.25, 1));
+    @include prefix(transition, all .3s cubic-bezier(0.445, 0.05, 0.55, 0.95));
     &:hover {
         &:before {
             width: 25px;
@@ -81,7 +81,7 @@
         width: 15px;
         height: 2px;
         margin-right: 10px;
-        @include prefix(transition, width .25s cubic-bezier(0.25, 0.8, 0.25, 1));
+        @include prefix(transition, all .25s cubic-bezier(0.445, 0.05, 0.55, 0.95));
     }
     &.nsize--b {
         padding: 16px 40px;
@@ -116,5 +116,21 @@
                 background-color: $color-black;
             }
         }
+    }
+}
+
+.nform-control {
+    height: 51px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border: 1px solid transparent;
+    font-size: $font-13;
+    color: $color-black1;
+    padding: 10px 12px;
+    line-height: 1.5;
+    min-width: 180px;
+    @include prefix(transition, all .2s ease);
+    &:focus {
+        background-color: #fff;
     }
 }

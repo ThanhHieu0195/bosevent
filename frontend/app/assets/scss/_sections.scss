@@ -5,25 +5,13 @@
     width: 100%;
     height: 100%;
     z-index: 1;
-    &:after {
-        content: '';
-        position: absolute;
-        bottom: 20px;
-        left: 50%;
-        width: 1px;
-        height: 120px;
-        display: block;
-        background-color: rgba(#fff, .7);
-        @include prefix(transform, translate(-50%, 0));
-        @include prefix(animation, desAnimation 2s ease-in);
-    }
     &__inner {
         position: relative;
         z-index: 2;
         @include pd-lr(30, 30);
     }
     &__title {
-        letter-spacing: 8px;
+        letter-spacing: 2px;
         @include prefix(animation, titleAnimation 2s ease-out);
     }
     &__description {
@@ -36,6 +24,41 @@
     }
     >.wp-table {
         background-color: #151515;
+    }
+    .mouse {
+        position: absolute;
+        left: 50%;
+        bottom: 45px;
+        height: 42px;
+        width: 24px;
+        border-radius: 14px;
+        -webkit-border-radius: 14px;
+        display: inline-block;
+        border: 1px solid $color-gray;
+        margin: auto;
+        z-index: 9;
+        @include prefix(transform, translate(-50%, 0));
+    }
+    .wheel {
+        height: 8px;
+        width: 2px;
+        display: block;
+        margin: 5px auto;
+        background-color: $color-gray;
+        position: relative;
+        border-radius: 8px;
+        -webkit-border-radius: 8px;
+        @include prefix(animation, mouseWheel 1s linear infinite);
+    }
+    @include keyframes(mouseWheel) {
+        0% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        100% {
+            opacity: 0;
+            transform: translateY(8px);
+        }
     }
 }
 
@@ -113,7 +136,7 @@
         @include prefix(transform, scale(1.05));
     }
     100% {
-        opacity: 0
+        opacity: 0;
     }
 }
 
@@ -147,7 +170,7 @@
 
 //  01. End of Section Banner
 //  02. Section About
-.nsection-about {
+.nabout {
     padding-top: 120px;
     &__title {
         position: relative;
@@ -370,7 +393,7 @@
 }
 
 // 04. End of Section Services
-// 06. Section blog 
+// 05. Section blog 
 .nblog {
     @include pd-tb(150, 100);
 }
@@ -493,8 +516,8 @@
     }
 }
 
-// 06. End of Section Blog
-// 05.  Section Event Schedule
+// 05. End of Section Blog
+// 06.  Section Event Schedule
 .nevent {
     background-color: $color-main;
     @include pd-tb(150, 150);
@@ -508,7 +531,7 @@
     }
     &__schedule-name {
         padding: 20px 25px;
-        background-color: #fff;
+        background-color: $color-black;
         border-top-left-radius: 5px;
         -webkit-border-top-left-radius: 5px;
         border-top-right-radius: 5px;
@@ -518,6 +541,17 @@
             width: 30px;
             +.heading-h5 {
                 margin-left: 10px;
+            }
+        }
+        &__date {
+            @include mg-tb(15, 5);
+            >.item {
+                display: inline-block;
+                vertical-align: middle;
+                margin-right: 5px;
+                &:last-child {
+                    margin-right: 0;
+                }
             }
         }
     }
@@ -605,4 +639,4 @@
     }
 }
 
-// 05. End of Section Event Schedule
+// 06. End of Section Event Schedule
