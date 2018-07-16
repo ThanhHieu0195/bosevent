@@ -15,6 +15,15 @@ $.main = {
         })
     },
     /*------------------------------------------------------------
+        0.2. Menu Mobile
+    ------------------------------------------------------------*/
+    menuMobile: function () {
+        $('.nheader__hamburger').on('click', function () {
+            $(this).toggleClass('open');
+            $('.nheader__wrap .nheader__right').toggleClass('active');
+        });
+    },
+    /*------------------------------------------------------------
         0.2. Accordion content
     ------------------------------------------------------------*/
     accordionContent: function (accSelector, accBody) {
@@ -26,8 +35,8 @@ $.main = {
             currentBody.slideToggle();
             // scroll to top of active 
             setTimeout(() => {
-                var headerHeightAffix = $('.nheader.affix').height();
-                var accTop = $this.offset().top - headerHeightAffix - 20;
+                var headerHeight = $('.nheader').height();
+                var accTop = $this.offset().top - headerHeight - 20;
                 $('html, body').animate({
                     scrollTop: accTop
                 }, 1000);
@@ -54,16 +63,38 @@ $.main = {
                 }
             });
         })
-        $('.nheader__wrap .nheader__right .item a').on('click', function (event) {
-            event.preventDefault();
-            var curSection = $(this).attr('href'),
-                headerHeight = $('.nheader').height();
-            setTimeout(() => {
-                $('html, body').animate({
-                    scrollTop: $(curSection).offset().top - headerHeight + 2
-                }, 1000);
-            }, 150);
-        })
+        var widthBrow = $(window).width();
+        if (widthBrow > 1024) {
+            $('.nheader__wrap .nheader__right .item a').on('click', function (event) {
+                event.preventDefault();
+                var curSection = $(this).attr('href'),
+                    headerHeight = $('.nheader').height();
+                setTimeout(() => {
+                    $('html, body').animate({
+                        scrollTop: $(curSection).offset().top - headerHeight + 2
+                    }, 1000);
+                }, 150);
+            })
+        } else {
+            $('.nheader__wrap .nheader__right .item a').on('click', function (event) {
+                event.preventDefault();
+                var curSection = $(this).attr('href');
+                $('.nheader__right').removeClass('active');
+                $('.nheader__hamburger').removeClass('open');
+                if (!$('.nheader__right').hasClass('active')) {
+                    var headerHeight = $('.nheader').height();
+                    console.log(headerHeight);
+                    setTimeout(() => {
+                        $('html, body').animate({
+                            scrollTop: $(curSection).offset().top - headerHeight + 2
+                        }, 1000);
+                    }, 150);
+                }
+
+            })
+
+        }
+
     },
     /*------------------------------------------------------------
         0.4. Show Back To Top
@@ -104,9 +135,10 @@ $.main = {
     }
 };
 $(function () {
-    $.main.accordionContent($('.nevent__schedule-info .inner-pane'), $('.nevent__schedule-info .inner-content'));
     $.main.affixHeader();
+    $.main.menuMobile();
     $.main.scrollSpy();
-    $.main.backToTop();
     $.main.scrollFirstSection();
+    $.main.accordionContent($('.nevent__schedule-info .inner-pane'), $('.nevent__schedule-info .inner-content'));
+    $.main.backToTop();
 });

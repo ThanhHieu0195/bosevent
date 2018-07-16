@@ -47,16 +47,16 @@ img {
     @include pd-lr(15, 15);
     margin-left: auto;
     margin-right: auto;
-    @media (max-width: 768px) {
+    @include bp(maw768) {
         @include pd-lr(20, 20);
     }
-    @media (min-width: 992px) {
+    @include bp(minw992) {
         width: 992px;
     }
-    @media (min-width: 1200px) {
+    @include bp(minw1200) {
         width: 1130px;
     }
-    @media (min-width: 1400px) {
+    @include bp(minw1400) {
         width: 1365px;
     }
 }
@@ -201,21 +201,29 @@ img {
 }
 
 .hid-1024 {
-    @media (max-width: 1024px) {
+    display: block;
+    @include bp(maw1024) {
         display: none;
+    }
+}
+
+.visi-1024 {
+    display: none;
+    @include bp(maw1024) {
+        display: block;
     }
 }
 
 .visi-768 {
     display: none;
-    @media (max-width: 768px) {
+    @include bp(maw768) {
         display: block;
     }
 }
 
 .hid-768 {
     display: block;
-    @media (max-width: 768px) {
+    @include bp(maw768) {
         display: none;
     }
 }

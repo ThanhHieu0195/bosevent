@@ -16,6 +16,14 @@
                     @include prefix(filter, none);
                 }
             }
+            &__right {
+                @include bp(maw1024) {
+                    margin-top: 0;
+                    &.active {
+                        margin-top: 20px;
+                    }
+                }
+            }
             &__right-menu {
                 >.item {
                     >a {
@@ -27,6 +35,16 @@
                             background-color: $color-main;
                         }
                     }
+                    +.item {
+                        @include bp(maw1024) {
+                            border-top: 1px solid $color-gray;
+                        }
+                    }
+                }
+            }
+            &__hamburger {
+                span {
+                    background-color: $color-black;
                 }
             }
         }
@@ -48,22 +66,116 @@
     &__right {
         text-align: right;
         width: 88%;
+        @media (min-width: 1025px) and (max-width: 1289px) {
+            width: 84%;
+        }
+        @include bp(maw1024) {
+            width: 100%;
+            margin-top: 20px;
+            text-align: left;
+            border-radius: 2px;
+            -webkit-border-radius: 2px;
+            box-shadow: 0 5px 45px 0px rgba(0, 0, 0, .2);
+            -webkit-box-shadow: 0 5px 45px 0px rgba(0, 0, 0, .2);
+            opacity: 0;
+            visibility: hidden;
+            height: 0;
+            @include prefix(transition, all .25s cubic-bezier(0.445, 0.05, 0.55, 0.95));
+            @include prefix(transform, translateY(15px));
+            &.active {
+                opacity: 1;
+                visibility: visible;
+                height: 100%;
+                @include prefix(transform, translateY(0));
+            }
+        }
     }
     &__right-menu {
+        @include bp(maw1024) {
+            background-color: rgba($color-gray, .3);
+        }
         >.item {
             display: inline-block;
             vertical-align: middle;
+            @include bp(maw1024) {
+                display: block;
+            }
             +.item {
-                margin-left: 40px;
+                margin-left: 25px;
+                @include bp(maw1024) {
+                    margin-left: 0;
+                    border-top: 1px solid rgba(238, 238, 238, .1)
+                }
             }
             >a {
                 text-transform: uppercase;
-                color: rgba($color-gray, .8);
+                color: rgba($color-gray, .9);
                 font-weight: 500;
                 font-size: $font-13;
                 @include prefix(transition, all .2s cubic-bezier(0.445, 0.05, 0.55, 0.95));
+                @include bp(maw1024) {
+                    display: block;
+                    padding: 14px 15px;
+                }
                 &:hover {
-                    color: rgba($color-gray, .4);
+                    color: rgba($color-gray, .6);
+                }
+            }
+        }
+    }
+    &__hamburger {
+        width: 30px;
+        height: 20px;
+        position: relative;
+        cursor: pointer;
+        @include prefix(transform, rotate(0deg));
+        @include prefix(transition, all .3s ease-in-out);
+        &_wrap {
+            float: right;
+            position: relative;
+            top: 4px;
+        }
+        span {
+            display: block;
+            position: absolute;
+            height: 2px;
+            width: 100%;
+            background: #fff;
+            border-radius: 2px;
+            -webkit-border-radius: 2px;
+            opacity: 1;
+            left: 0;
+            @include prefix(transform, rotate(0deg));
+            @include prefix(transition, all .1s cubic-bezier(0.445, 0.05, 0.55, 0.95));
+            &:nth-child(1) {
+                top: 0;
+            }
+            &:nth-child(2),
+            &:nth-child(3) {
+                top: 8px;
+            }
+            &:nth-child(4) {
+                top: 17px;
+            }
+        }
+        &.open {
+            span {
+                &:nth-child(1) {
+                    top: 8px;
+                    width: 0;
+                    left: 50%;
+                }
+                &:nth-child(2) {
+                    @include prefix(transform, rotate(45deg));
+                }
+                &:nth-child(3) {
+                    top: 8px;
+                    @include prefix(transform, rotate(-45deg));
+                }
+                &:nth-child(4) {
+                    top: 8px;
+                    width: 0;
+                    left: 50%;
                 }
             }
         }

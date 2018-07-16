@@ -96,3 +96,48 @@
         @include prefix(transform, translate(-50%, -50%));
     }
 }
+
+// Media querry
+@mixin bp($breakpoint) {
+    //  Max width
+    @if $breakpoint==maw768 {
+        @media (max-width: 768px) {
+            @content;
+        }
+    }
+    @else if $breakpoint==maw1024 {
+        @media (max-width: 1024px) {
+            @content;
+        }
+    }
+    @else if $breakpoint==maw1280 {
+        @media (max-width: 1280px) {
+            @content;
+        }
+    }
+    @else if $breakpoint==maw1440 {
+        @media (max-width: 1440px) {
+            @content;
+        }
+    }
+    @else if $breakpoint==maw1599 {
+        @media (max-width: 1599px) {
+            @content;
+        }
+    } //  Min width
+    @else if $breakpoint==miw992 {
+        @media (min-width: 992px) {
+            @content;
+        }
+    }
+    @else if $breakpoint==miw1200 {
+        @media (min-width: 1200px) {
+            @content;
+        }
+    }
+    @else if $breakpoint==miw1400 {
+        @media (min-width: 1400px) {
+            @content;
+        }
+    }
+}
