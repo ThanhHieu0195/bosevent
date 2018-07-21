@@ -1,42 +1,7 @@
-<header class="nheader wp-inlineb">
-    <div class="ncontainer">
-        <div class="nheader__wrap">
-            <div class="nheader__left inlineb-m">
-                <a href="">
-                    <img src="assets/images/bosevent-logo.png" alt="BosEvent" class="nimg">
-                </a>
-            </div>
-            <div class="nheader__hamburger_wrap visi-1024">
-                <div class="nheader__hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
-            <div class="nheader__right inlineb-m">
-                <ul class="nheader__right-menu">
-                    <li class="item">
-                        <a href="#bos-about" title="About Us">About Us</a>
-                    </li>
-                    <li class="item">
-                        <a href="#bos-services" title="Services">Services</a>
-                    </li>
-                    <li class="item">
-                        <a href="#bos-blog" title="Blog">Blog</a>
-                    </li>
-                    <li class="item">
-                        <a href="#bos-event" title="Event Callendar">Event Callendar</a>
-                    </li>
-                    <!-- <li class="item">
-                        <a href="" title="Contact">Contact</a>
-                    </li> -->
-                </ul>
-            </div>
-
-        </div>
-    </div>
-</header>
+<?php
+get_header('bosevent');
+$path_template_url = get_template_directory_uri();
+?>
 <div class="bg-banner">
     <div class="wp-table">
         <div class="tab-cell-m txt--c bg-banner__inner">
@@ -54,16 +19,16 @@
     </div>
     <ul class="list-slide">
         <li class="list-slide__item">
-            <span class="list-slide__bg" style="background-image: url(assets/images/banner/banner-01.jpg)"></span>
+            <span class="list-slide__bg" style="background-image: url(<?php echo $path_template_url ?>/assets/images/banner/banner-01.jpg)"></span>
         </li>
         <li class="list-slide__item">
-            <span class="list-slide__bg" style="background-image: url(assets/images/banner/banner-02.jpg)"></span>
+            <span class="list-slide__bg" style="background-image: url(<?php echo $path_template_url ?>/assets/images/banner/banner-02.jpg)"></span>
         </li>
         <li class="list-slide__item">
-            <span class="list-slide__bg" style="background-image: url(assets/images/banner/banner-03.jpg)"></span>
+            <span class="list-slide__bg" style="background-image: url(<?php echo $path_template_url ?>/assets/images/banner/banner-03.jpg)"></span>
         </li>
         <li class="list-slide__item">
-            <span class="list-slide__bg" style="background-image: url(assets/images/banner/banner-04.jpg)"></span>
+            <span class="list-slide__bg" style="background-image: url(<?php echo $path_template_url ?>/assets/images/banner/banner-04.jpg)"></span>
         </li>
     </ul>
     <div class="mouse">
@@ -76,7 +41,7 @@
             <h5 class="nabout__title heading-h5 f--400 txt--up cl--grayblack inlineb-t">Who we are</h5>
             <br />
             <div class="nbrand">
-                <img src="assets/images/about-us/about-us.png" alt="" class="nimg nbrand__logo">
+                <img src="<?php echo $path_template_url ?>/assets/images/about-us/about-us.png" alt="" class="nimg nbrand__logo">
             </div>
             <br />
             <h2 class="heading-h2 f--600 txt--cap lh--12 cl--black inlineb-t">Together we expanded
@@ -93,7 +58,7 @@
         <ul class="nourteam__wrap wp-inlineb list-clm clm-04">
             <li class="nitem inlineb-t">
                 <div class="nourteam__img">
-                    <img src="assets/images/about-us/staff-01.png" alt="" class="nimg nratio--img">
+                    <img src="<?php echo $path_template_url ?>/assets/images/about-us/staff-01.png" alt="" class="nimg nratio--img">
                 </div>
                 <div class="nourteam__des txt--r">
                     <h4 class="nourteam__des-title  cl--white f--600 txt--up">Nhan Thanh Nguyen</h4>
@@ -102,7 +67,7 @@
             </li>
             <li class="nitem inlineb-t">
                 <div class="nourteam__img">
-                    <img src="assets/images/about-us/staff-02.png" alt="" class="nimg nratio--img">
+                    <img src="<?php echo $path_template_url ?>/assets/images/about-us/staff-02.png" alt="" class="nimg nratio--img">
                 </div>
                 <div class="nourteam__des txt--r">
                     <h4 class="nourteam__des-title cl--white f--600 txt--up">Vu Nguyen Minh Tri</h4>
@@ -111,7 +76,7 @@
             </li>
             <li class="nitem inlineb-t">
                 <div class="nourteam__img">
-                    <img src="assets/images/about-us/staff-03.png" alt="" class="nimg nratio--img">
+                    <img src="<?php echo $path_template_url ?>/assets/images/about-us/staff-03.png" alt="" class="nimg nratio--img">
                 </div>
                 <div class="nourteam__des txt--r">
                     <h4 class="nourteam__des-title cl--white f--600 txt--up">Ryan Hernold</h4>
@@ -120,7 +85,7 @@
             </li>
             <li class="nitem inlineb-t">
                 <div class="nourteam__img">
-                    <img src="assets/images/about-us/staff-04.png" alt="" class="nimg nratio--img">
+                    <img src="<?php echo $path_template_url ?>/assets/images/about-us/staff-04.png" alt="" class="nimg nratio--img">
                 </div>
                 <div class="nourteam__des txt--r">
                     <h4 class="nourteam__des-title cl--white f--600 txt--up">Bo Avenue</h4>
@@ -204,7 +169,7 @@
             <li class="item nservices__item">
                 <div class="wp-table">
                     <div class="nservices__item-left tab-cell-m">
-                        <img src="assets/images/services/team-building.png" alt="" class="nimg nratio--img">
+                        <img src="<?php echo $path_template_url ?>/assets/images/services/team-building.png" alt="" class="nimg nratio--img">
                     </div>
                     <div class="nservices__item-right tab-cell-m">
                         <h1 class="nservices__item-heading f--900 txt--cap lh--12">Team building</h1>
@@ -219,7 +184,7 @@
             <li class="item nservices__item">
                 <div class="wp-table">
                     <div class="nservices__item-left tab-cell-m">
-                        <img src="assets/images/services/gala-dinner.png" alt="" class="nimg nratio--img">
+                        <img src="<?php echo $path_template_url ?>/assets/images/services/gala-dinner.png" alt="" class="nimg nratio--img">
                     </div>
                     <div class="nservices__item-right tab-cell-m">
                         <h1 class="nservices__item-heading f--900 txt--cap lh--12">Gala Dinner</h1>
@@ -234,7 +199,7 @@
             <li class="item nservices__item">
                 <div class="wp-table">
                     <div class="nservices__item-left tab-cell-m">
-                        <img src="assets/images/services/travel-plan.png" alt="" class="nimg nratio--img">
+                        <img src="<?php echo $path_template_url ?>/assets/images/services/travel-plan.png" alt="" class="nimg nratio--img">
                     </div>
                     <div class="nservices__item-right tab-cell-m">
                         <h1 class="nservices__item-heading f--900 txt--cap lh--12">Travel & event planning</h1>
@@ -262,7 +227,7 @@
     <ul class="nlist-blog">
         <li class="item">
             <div class="nlist-blog__img">
-                <img src="assets/images/banner/banner-04.jpg" alt="" class="nimg nratio--img">
+                <img src="<?php echo $path_template_url ?>/assets/images/banner/banner-04.jpg" alt="" class="nimg nratio--img">
             </div>
             <div class="nlist-blog__info">
                 <h3 class="nlist-blog__info-title heading-h3 f--600 lh--11">
@@ -274,7 +239,7 @@
         </li>
         <li class="item">
             <div class="nlist-blog__img">
-                <img src="assets/images/banner/banner-02.jpg" alt="" class="nimg nratio--img">
+                <img src="<?php echo $path_template_url ?>/assets/images/banner/banner-02.jpg" alt="" class="nimg nratio--img">
             </div>
             <div class="nlist-blog__info">
                 <h3 class="nlist-blog__info-title heading-h3  f--600 lh--11">
@@ -286,7 +251,7 @@
         </li>
         <li class="item">
             <div class="nlist-blog__img">
-                <img src="assets/images/banner/banner-03.jpg" alt="" class="nimg nratio--img">
+                <img src="<?php echo $path_template_url ?>/assets/images/banner/banner-03.jpg" alt="" class="nimg nratio--img">
             </div>
             <div class="nlist-blog__info">
                 <h3 class="nlist-blog__info-title heading-h3 cl--white f--600 lh--11">
@@ -312,7 +277,7 @@
         </div>
         <div class="nevent__schedule ">
             <div class="item nevent__schedule-name">
-                <img src="assets/images/event.svg" alt="" class="nimg nicon inlineb-m">
+                <img src="<?php echo $path_template_url ?>/assets/images/event.svg" alt="" class="nimg nicon inlineb-m">
                 <h5 class="heading-h5 f--500 cl--white txt--up inlineb-m">All Events On Dashboard</h5>
                 <ul class="nevent__schedule-name__date">
                     <li class="item">
@@ -330,7 +295,7 @@
                 <li class="item nevent__schedule-info wp-inlineb">
                     <div class="inner-item inner-pane">
                         <div class="nevent__schedule-info__thumb inlineb-m">
-                            <img src="assets/images/about-us/staff-02.png" alt="Vu Nguyen Minh Tri" class="nimg nratio--img">
+                            <img src="<?php echo $path_template_url ?>/assets/images/about-us/staff-02.png" alt="Vu Nguyen Minh Tri" class="nimg nratio--img">
                         </div>
                         <div class="nevent__schedule-info__content inlineb-m">
                             <div class="time f--14">
@@ -378,7 +343,7 @@
                 <li class="item nevent__schedule-info wp-inlineb">
                     <div class="inner-item inner-pane">
                         <div class="nevent__schedule-info__thumb inlineb-m">
-                            <img src="assets/images/about-us/staff-04.png" alt="Nhan Thanh Nguyen" class="nimg nratio--img">
+                            <img src="<?php echo $path_template_url ?>/assets/images/about-us/staff-04.png" alt="Nhan Thanh Nguyen" class="nimg nratio--img">
                         </div>
                         <div class="nevent__schedule-info__content inlineb-m">
                             <div class="time f--14">
@@ -426,7 +391,7 @@
                 <li class="item nevent__schedule-info wp-inlineb">
                     <div class="inner-item inner-pane">
                         <div class="nevent__schedule-info__thumb inlineb-m">
-                            <img src="assets/images/about-us/staff-01.png" alt="Bo Avenue" class="nimg nratio--img">
+                            <img src="<?php echo $path_template_url ?>/assets/images/about-us/staff-01.png" alt="Bo Avenue" class="nimg nratio--img">
                         </div>
                         <div class="nevent__schedule-info__content inlineb-m">
                             <div class="time f--14">
@@ -475,7 +440,7 @@
                 <li class="item nevent__schedule-info wp-inlineb">
                     <div class="inner-item inner-pane">
                         <div class="nevent__schedule-info__thumb inlineb-m">
-                            <img src="assets/images/about-us/staff-03.png" alt="Bo Avenue" class="nimg nratio--img">
+                            <img src="<?php echo $path_template_url ?>/assets/images/about-us/staff-03.png" alt="Bo Avenue" class="nimg nratio--img">
                         </div>
                         <div class="nevent__schedule-info__content inlineb-m">
                             <div class="time f--14">
@@ -557,17 +522,17 @@
                 <ul class="nfooter__social wp-inlineb">
                     <li class="nitem inlineb-m">
                         <a href="" title="Facebook" target="_blank">
-                            <img src="assets/images/facebook.svg" alt="" class="nimg nicon nfacebook">
+                            <img src="<?php echo $path_template_url ?>/assets/images/facebook.svg" alt="" class="nimg nicon nfacebook">
                         </a>
                     </li>
                     <li class="nitem inlineb-m">
                         <a href="" title="Youtube" target="_blank">
-                            <img src="assets/images/youtube.svg" alt="" class="nimg nicon nyoutube">
+                            <img src="<?php echo $path_template_url ?>/assets/images/youtube.svg" alt="" class="nimg nicon nyoutube">
                         </a>
                     </li>
                     <li class="nitem inlineb-m">
                         <a href="" title="Instagram" target="_blank">
-                            <img src="assets/images/instagram.svg" alt="" class="nimg nicon ninstagram">
+                            <img src="<?php echo $path_template_url ?>/assets/images/instagram.svg" alt="" class="nimg nicon ninstagram">
                         </a>
                     </li>
                 </ul>
@@ -590,3 +555,4 @@
     </div>
 
 </footer>
+<?php get_footer(); ?>

@@ -1,17 +1,18 @@
 <?php
 namespace includes;
-foreach (glob("interfaces/*.php") as $filename)
+$dir_path = dirname(__FILE__);
+foreach (glob($dir_path . "/interfaces/*.php") as $filename)
 {
     include $filename;
 }
 
-foreach (glob("classes/*.php") as $filename)
+foreach (glob($dir_path. "/classes/*.php") as $filename)
 {
     include $filename;
 }
 
 /**
- * @property Helper $helper
+ * @property \includes\classes\Helper $helper
  * @property Hook $hook
  * @property ConfigMenu $configs
  */

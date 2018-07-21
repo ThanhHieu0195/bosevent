@@ -15,6 +15,7 @@ class Hook implements HookInterface{
 		add_action('wp_ajax_admin_ajax', [$this, 'excuteAjax']);
 		add_action('init', [$this, 'registerPostType']);
 		add_action('admin_menu', [$this, 'registerMenu']);
+        add_filter( 'template_include', [$this, 'customTemplate']);
 	}
 
 	public function registerFilter() {
@@ -30,10 +31,13 @@ class Hook implements HookInterface{
 	public function addStyles() {
 		$path = get_template_directory_uri();
 		$styles = array(
-			'bootstrap' => 'assets/css/bootstrap.css',
-			'font-awesome' => 'assets/css/font-awesome.min.css',
-			'goolgleapi-font' => 'assets/css/goolgleapi.font.css',
-			'style' => 'assets/css/style.css'
+//			'bootstrap' => 'assets/css/bootstrap.css',
+//			'font-awesome' => 'assets/css/font-awesome.min.css',
+//			'goolgleapi-font' => 'assets/css/goolgleapi.font.css',
+//			'style' => 'assets/css/style.css',
+            'slick' => 'assets/lib/css/slick.css',
+            'jquery-ui' => 'lib/css/jquery-ui.css',
+            'bosevent' => 'assets/css/bosevent.min.css'
 		);
 		foreach ($styles as $style) {
 			wp_enqueue_style($style, $path .'/'. $style, array(), self::VERSION);
@@ -43,18 +47,10 @@ class Hook implements HookInterface{
 	public function addScripts() {
 		$path = get_template_directory_uri();
 		$scripts = array(
-//			'jquery' => 'assets/js/jquery.min.js',
-			'animsition' =>'assets/js/animsition.min.js',
-			'bootstrap' => 'assets/js/bootstrap.min.js',
-			'smoothscroll' => 'assets/js/smoothscroll.js',
-			'validate' => 'assets/js/jquery.validate.min.js',
-			'wow' => 'assets/js/wow.min.js',
-			'stellar' => 'assets/js/jquery.stellar.min.js',
-			'owl' => 'assets/js/owl.carousel.min.js',
-			'pagepiling' => 'assets/js/jquery.pagepiling.js',
-			'map-api' => 'assets/js/map.api.js',
-			'gmap' => 'assets/js/gmap.js',
-			'scripts' => 'assets/js/scripts.js'
+            'jquery-3' => 'assets/lib/js/jquery-3.3.1.min.js',
+	        'slick' => 'assets/lib/js/slick.min.js',
+	        'jquery-ui' => 'assets/lib/js/jquery-ui.min.js',
+            'bosevent' => 'assets/js/bosevent.js'
 		);
 		foreach ($scripts as $script) {
 			wp_enqueue_script($script, $path .'/'. $script, array('jquery'), self::VERSION, true);
@@ -106,16 +102,26 @@ class Hook implements HookInterface{
 
             }
         }
-	    die;
+	    exit(200);
     }
 
     public function registerPostType() {
-	    \includes\classes\ProjectPostType::getInstance();
-	    \includes\classes\ProjectCategory::getInstance();
     }
 
     public function registerMenu() {
-	    $configs = \includes\classes\ConfigMenu::getInstance();
-        $configs->registerMenu();
+    }
+
+    public function customTemplate($template) {
+	    $mapping = \includes\classes\Constants::MAPP_TEMPLATE;
+	    $path = \includes\Bootstrap::getPath();
+        $slug = \includes\Bootstrap::bootstrap()->helper->getSubUrl();
+        if (array_key_exists($slug, $mapping)) {
+            $slug = $mapping[$slug];
+        }
+        $path_file = $path . '/templates/'.$slug.'.php';
+        if (file_exists($path_file)) {
+            $template = $path_file;
+        }
+	    return $template;
     }
 }
