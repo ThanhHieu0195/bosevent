@@ -31,12 +31,8 @@ class Hook implements HookInterface{
 	public function addStyles() {
 		$path = get_template_directory_uri();
 		$styles = array(
-//			'bootstrap' => 'assets/css/bootstrap.css',
-//			'font-awesome' => 'assets/css/font-awesome.min.css',
-//			'goolgleapi-font' => 'assets/css/goolgleapi.font.css',
-//			'style' => 'assets/css/style.css',
             'slick' => 'assets/lib/css/slick.css',
-            'jquery-ui' => 'lib/css/jquery-ui.css',
+            'jquery-ui' => 'assets/lib/css/jquery-ui.css',
             'bosevent' => 'assets/css/bosevent.min.css'
 		);
 		foreach ($styles as $style) {
