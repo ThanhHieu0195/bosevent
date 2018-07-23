@@ -11,6 +11,11 @@ foreach (glob($dir_path. "/classes/*.php") as $filename)
     include $filename;
 }
 
+foreach (glob($dir_path . "/shortcodes/classes/*.php") as $filename)
+{
+    include $filename;
+}
+
 /**
  * @property \includes\classes\Helper $helper
  * @property Hook $hook
@@ -28,9 +33,9 @@ class Bootstrap implements interfaces\ManagementInterface {
 	public static function init() {
 		if ( empty(self::$bootstrap) ) {
 			self::$bootstrap = new Bootstrap();
-			self::$bootstrap->registerHook();
-			self::$bootstrap->registerHelper();
-			//self::$bootstrap->configs = \includes\classes\ConfigMenu::getInstance();
+            self::$bootstrap->registerHelper();
+            self::$bootstrap->registerHook();
+            //self::$bootstrap->configs = \includes\classes\ConfigMenu::getInstance();
 		}
 	}
 

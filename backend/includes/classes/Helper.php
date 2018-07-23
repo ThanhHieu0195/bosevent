@@ -74,4 +74,13 @@ class Helper implements HelperInterface {
         }
         return $slug;
     }
+
+    public function getClassByPath($path) {
+        preg_match('/\/([a-zA-Z0-9]*).php$/', $path, $matches);
+        $class_name = '';
+        if (count($matches) > 0) {
+            $class_name = $matches[1];
+        }
+        return $class_name;
+    }
 }

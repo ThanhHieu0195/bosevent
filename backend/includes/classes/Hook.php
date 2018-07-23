@@ -2,12 +2,15 @@
 namespace includes\classes;
 
 use includes\interfaces\HookInterface;
+use includes\classes\Shortcode;
+
 class Hook implements HookInterface{
 	const VERSION = '1.0';
 	public function init() {
 		$this->registerAction();
 		$this->registerFilter();
-		$this->registerAsset();
+        $this->registerAsset();
+        $this->registerShortcodes();
 	}
 	public function registerAction() {
 		// TODO: Implement registerAction() method.
@@ -119,5 +122,19 @@ class Hook implements HookInterface{
             $template = $path_file;
         }
 	    return $template;
+    }
+
+    public function registerShortcodes() {
+        $dir_path = \includes\Bootstrap::getPath();
+        foreach (glob($dir_path . "/shortcodes/classes/*.php") as $filename)
+        {
+            $class_name = \includes\Bootstrap::bootstrap()->helper->getClassByPath($filename);
+            /**
+             * @var $model Shortcode
+             */
+            $class_name = '\\includes\\shortcodes\\'.$class_name;
+            $model = new $class_name();
+            $model->register();
+        }
     }
 }
