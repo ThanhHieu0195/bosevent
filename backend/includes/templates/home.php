@@ -9,6 +9,7 @@ foreach (glob($dir_path . "/home/*.php") as $filename)
 {
     echo \includes\Bootstrap::bootstrap()->helper->render($filename, [
             'path_template_url' => $path_template_url
+
     ]);
 }
 ?>
