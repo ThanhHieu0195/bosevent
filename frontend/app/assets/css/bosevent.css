@@ -2166,10 +2166,6 @@ img {
   @media (max-width: 1024px) {
     .postpopular__more {
       margin-top: 15px; } }
-  @media (max-width: 768px) {
-    .postpopular__more .nbutton {
-      width: 100%;
-      text-align: center; } }
 
 .postpopular__meta {
   margin-left: -15px;

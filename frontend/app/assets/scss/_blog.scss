@@ -297,12 +297,6 @@
 		@media (max-width: 1024px) {
 			margin-top: 15px;
 		}
-		@media (max-width: 768px) {
-			.nbutton {
-				width: 100%;
-				text-align: center;
-			}
-		}
 	}
 	&__meta {
 		@include mg-lr(-15, -15);
