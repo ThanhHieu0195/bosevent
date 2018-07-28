@@ -1,17 +1,23 @@
 <?php
 namespace includes;
-foreach (glob("interfaces/*.php") as $filename)
+$dir_path = dirname(__FILE__);
+foreach (glob($dir_path . "/interfaces/*.php") as $filename)
 {
     include $filename;
 }
 
-foreach (glob("classes/*.php") as $filename)
+foreach (glob($dir_path. "/classes/*.php") as $filename)
+{
+    include $filename;
+}
+
+foreach (glob($dir_path . "/shortcodes/classes/*.php") as $filename)
 {
     include $filename;
 }
 
 /**
- * @property Helper $helper
+ * @property \includes\classes\Helper $helper
  * @property Hook $hook
  * @property ConfigMenu $configs
  */
@@ -27,9 +33,9 @@ class Bootstrap implements interfaces\ManagementInterface {
 	public static function init() {
 		if ( empty(self::$bootstrap) ) {
 			self::$bootstrap = new Bootstrap();
-			self::$bootstrap->registerHook();
-			self::$bootstrap->registerHelper();
-			//self::$bootstrap->configs = \includes\classes\ConfigMenu::getInstance();
+            self::$bootstrap->registerHelper();
+            self::$bootstrap->registerHook();
+            //self::$bootstrap->configs = \includes\classes\ConfigMenu::getInstance();
 		}
 	}
 

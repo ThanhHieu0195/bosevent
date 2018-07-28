@@ -64,4 +64,23 @@ class Helper implements HelperInterface {
 		}
 		return $cat;
 	}
+
+	public function getSubUrl() {
+	    $request_url = isset($_SERVER['REDIRECT_URL']) ? $_SERVER['REDIRECT_URL'] : '';
+	    preg_match('/\/(.*)$/', $request_url, $matches);
+	    $slug = '';
+	    if (count($matches) > 0) {
+	        $slug = $matches[1];
+        }
+        return $slug;
+    }
+
+    public function getClassByPath($path) {
+        preg_match('/\/([a-zA-Z0-9]*).php$/', $path, $matches);
+        $class_name = '';
+        if (count($matches) > 0) {
+            $class_name = $matches[1];
+        }
+        return $class_name;
+    }
 }
