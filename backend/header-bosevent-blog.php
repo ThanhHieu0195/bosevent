@@ -40,16 +40,16 @@ $path_template_url = get_template_directory_uri();
                 <div class="nheader__right inlineb-m">
                     <ul class="nheader__right-menu">
                         <li class="item">
-                            <a href="index.html#bos-about" title="About Us">About Us</a>
+                            <a href="<?= get_home_url() ?>#bos-about" title="About Us">About Us</a>
                         </li>
                         <li class="item">
-                            <a href="index.html#bos-services" title="Services">Services</a>
+                            <a href="<?= get_home_url() ?>#bos-services" title="Services">Services</a>
                         </li>
                         <li class="item">
-                            <a href="index.html#bos-blog" title="Blog">Blog</a>
+                            <a href="<?= get_home_url() ?>#bos-blog" title="Blog">Blog</a>
                         </li>
                         <li class="item">
-                            <a href="index.html#bos-event" title="Event Callendar">Event Callendar</a>
+                            <a href="<?= get_home_url() ?>#bos-event" title="Event Callendar">Event Callendar</a>
                         </li>
                         <!-- <li class="item">
                             <a href="" title="Contact">Contact</a>

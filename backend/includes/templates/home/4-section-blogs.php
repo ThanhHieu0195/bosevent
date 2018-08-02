@@ -39,6 +39,6 @@ $posts = get_posts([
         <?php endforeach;?>
     </ul>
     <div class="ncontainer txt--c">
-        <a href="" class="nbutton color--1 nsize--b f--500 txt--up"><?= translate_i18n('more post') ?></a>
+        <a href="<?= \includes\Bootstrap::bootstrap()->helper->getLinkBlog() ?>" class="nbutton color--1 nsize--b f--500 txt--up"><?= translate_i18n('more post') ?></a>
     </div>
 </div>
