@@ -223,6 +223,7 @@ footer {
 		line-height: 1.6;
 	}
 	a {
+		color: rgba(238, 238, 238, .7);
 		@include prefix(transition, all .2s ease-in);
 		&:hover {
 			color: #fff;

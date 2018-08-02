@@ -34,9 +34,10 @@ class Hook implements HookInterface{
     public function addStyles() {
         $path = get_template_directory_uri();
         $styles = array(
-            'slick' => 'assets/lib/css/slick.css',
-            'jquery-ui' => 'assets/lib/css/jquery-ui.css',
-            'bosevent' => 'assets/css/bosevent.min.css'
+            'slick' => 'assets/lib/css/slick.min.css',
+            'jquery-ui' => 'assets/lib/css/jquery-ui.min.css',
+		'font-google' => 'assets/lib/css/font-google.min.css',
+		'bosevent' => 'assets/css/bosevent.min.css',
         );
         foreach ($styles as $style) {
             wp_enqueue_style($style, $path .'/'. $style, array(), self::VERSION);
