@@ -15,6 +15,7 @@ class Hook implements HookInterface{
         add_action('add_meta_boxes', [$this, 'addOtherOption']);
         add_action('wp_ajax_admin_ajax', [$this, 'excuteAjaxAdmin']);
         add_action('wp_ajax_front', [$this, 'excuteAjax']);
+        add_action('wp_ajax_nopriv_front', [$this, 'excuteAjax']);
         add_action('init', [$this, 'registerPostType']);
         add_action('admin_menu', [$this, 'registerMenu']);
         add_filter( 'template_include', [$this, 'customTemplate']);
