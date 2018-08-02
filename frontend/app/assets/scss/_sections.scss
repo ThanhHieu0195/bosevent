@@ -646,6 +646,7 @@
 	&__info-title {
 		>a {
 			border-bottom: 1px solid transparent;
+			color: #fff;
 			@include prefix(transition, all .1s ease-in);
 			&:hover {
 				border-color: #fff;
@@ -664,7 +665,7 @@
 			width: 80%;
 		}
 	}
-	&__info-des {
+	&__infooter-des {
 		margin-top: 15px;
 		font-size: $font-14;
 		@media (max-width: 568px) {

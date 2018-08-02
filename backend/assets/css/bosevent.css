@@ -1649,6 +1649,7 @@ img {
       background-color: rgba(51, 51, 51, 0.6); }
   .nlist-blog__info-title > a {
     border-bottom: 1px solid transparent;
+    color: #fff;
     transition: all 0.1s ease-in;
     -webkit-transition: all 0.1s ease-in;
     -moz-transition: all 0.1s ease-in;
@@ -1672,11 +1673,11 @@ img {
     @media (max-width: 1280px) {
       .nlist-blog__info {
         width: 80%; } }
-  .nlist-blog__info-des {
+  .nlist-blog__infooter-des {
     margin-top: 15px;
     font-size: 0.9333rem; }
     @media (max-width: 568px) {
-      .nlist-blog__info-des {
+      .nlist-blog__infooter-des {
         margin-top: 10px;
         font-size: .7rem; } }
 
@@ -2429,6 +2430,7 @@ footer {
     line-height: 1.6; } }
 
 .nfooter a {
+  color: rgba(238, 238, 238, 0.7);
   transition: all 0.2s ease-in;
   -webkit-transition: all 0.2s ease-in;
   -moz-transition: all 0.2s ease-in;
