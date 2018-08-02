@@ -16,12 +16,12 @@ $path_template_url = get_template_directory_uri();
 <div class="nchange-lang">
     <ul>
         <li class="nitem inlineb-m">
-            <a href="">
+            <a onclick="language.events.changeLanguage('vi')">
                 <img src="<?php echo $path_template_url ?>/assets/images/vietnam.svg" alt="" class="nimg flag-lang">
             </a>
         </li>
         <li class="nitem inlineb-m">
-            <a href="">
+            <a onclick="language.events.changeLanguage('en')">
                 <img src="<?php echo $path_template_url ?>/assets/images/united-kingdom.svg" alt="" class="nimg flag-lang">
             </a>
         </li>

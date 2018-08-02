@@ -49,7 +49,8 @@ class Hook implements HookInterface{
             'jquery-3' => 'assets/lib/js/jquery-3.3.1.min.js',
             'slick' => 'assets/lib/js/slick.min.js',
             'jquery-ui' => 'assets/lib/js/jquery-ui.min.js',
-            'bosevent' => 'assets/js/bosevent.js'
+            'bosevent' => 'assets/js/bosevent.js',
+            'language' => 'assets/js/language.js',
         );
         foreach ($scripts as $script) {
             wp_enqueue_script($script, $path .'/'. $script, array('jquery'), self::VERSION, true);

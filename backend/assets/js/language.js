@@ -10,15 +10,15 @@ var language = {
         current: ''
     },
     actions: {
-      setLanguage: (language) => {
-          var expires = 1;
+      setLanguage: (lan) => {
+          var exdays = 1;
           var d = new Date();
           d.setTime(d.getTime() + (exdays*24*60*60*1000));
           var expires = "expires="+ d.toUTCString();
-          document.cookie =  "language=" + language + ";" + expires + ";path=/";
+          document.cookie =  "language=" + lan + ";" + expires + ";path=/";
       },
         getLanguage: () => {
-            var name = "lanuage=";
+            var name = "language=";
             var decodedCookie = decodeURIComponent(document.cookie);
             var ca = decodedCookie.split(';');
             for(var i = 0; i <ca.length; i++) {
@@ -46,9 +46,10 @@ var language = {
             }
         }
       },
-        changeLanguage:(language) => {
-          this.actions.setLanguage(language);
-          this.events.changeLange();
+        changeLanguage:(lan) => {
+          debugger;
+          language.actions.setLanguage(lan);
+            language.events.checkLanguage();
         }
     },
   init: () => {
