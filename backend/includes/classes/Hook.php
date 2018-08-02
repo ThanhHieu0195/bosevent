@@ -119,11 +119,13 @@ class Hook implements HookInterface{
                         'meta_query' => $query_params
                     ]);
 
-                    foreach ($events as $event){
-                        $filename = \includes\Bootstrap::getPath() . '/templates/events/item.php';
-                        echo \includes\Bootstrap::bootstrap()->helper->render($filename, [
-                            'event' => $event
-                        ]);
+                    if (!empty($events) && count($events) > 0) {
+                        foreach ($events as $event){
+                            $filename = \includes\Bootstrap::getPath() . '/templates/events/item.php';
+                            echo \includes\Bootstrap::bootstrap()->helper->render($filename, [
+                                'event' => $event
+                            ]);
+                        }
                     }
                     break;
             }
