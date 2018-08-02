@@ -64,4 +64,4 @@ if (count($cat_ids) > 0) {
             </div>
         </div>
     </div>
-<?php get_footer('bosevent-blog'); ?>
+<?php get_footer('bosevent'); ?>

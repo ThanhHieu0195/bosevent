@@ -1281,8 +1281,7 @@ img {
           -ms-transform: translateY(0);
           -o-transform: translateY(0); }
         .nmorale__wrap > .nitem:hover .nmorale__img {
-          -webkit-box-shadow: 0 7px 30px -5px rgba(51, 51, 51, 0.7);
-                  box-shadow: 0 7px 30px -5px rgba(51, 51, 51, 0.7); }
+          box-shadow: 0 7px 30px -5px rgba(51, 51, 51, 0.7); }
         .nmorale__wrap > .nitem:hover .nmorale__img:after {
           background-color: rgba(245, 76, 76, 0.85); }
         @media (max-width: 812px) {
@@ -1295,8 +1294,7 @@ img {
             .nmorale__wrap > .nitem:hover .nmorale__img:after {
               background-color: rgba(51, 51, 51, 0.15); }
             .nmorale__wrap > .nitem:hover .nmorale__img {
-              -webkit-box-shadow: none;
-                      box-shadow: none; } }
+              box-shadow: none; } }
   .nmorale__img {
     position: relative;
     overflow: hidden;

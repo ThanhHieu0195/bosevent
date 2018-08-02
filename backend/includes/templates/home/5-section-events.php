@@ -25,7 +25,7 @@ $events = get_posts([
                         <input type="text" id="end-date" class="nform-control custom-datepick" placeholder="End Date">
                     </li>
                     <li class="item">
-                        <a id="filter-events" href="javascript:void(0)" class="nbutton color--1 nsize--b f--500 txt--up" title="Find Event">Find Event</a>
+                        <a id="filter-events"  class="nbutton color--1 nsize--b f--500 txt--up" title="Find Event">Find Event</a>
                     </li>
                 </ul>
             </div>

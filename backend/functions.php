@@ -6,7 +6,6 @@
  *
  * @package bosevent
  */
-
 if ( ! function_exists( 'bosevent_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
