@@ -19,7 +19,7 @@ $path_template_url = get_template_directory_uri();
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php body_class(); ?> id="blog-page">
     <!-- Header -->
     <header class="nheader no-fix wp-inlineb">
         <div class="ncontainer">
