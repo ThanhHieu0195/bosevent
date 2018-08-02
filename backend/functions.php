@@ -163,3 +163,6 @@ if ( defined( 'JETPACK__VERSION' ) ) {
  * Bootstrap manager.
  */
 require get_template_directory() . '/includes/Bootstrap.php';
+function translate_i18n($text) {
+    return $text;
+}
