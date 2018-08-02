@@ -32,6 +32,22 @@ gulp.task("sass", function () {
         .pipe(reload({
             stream: true
         }));
+    gulp.src(sassFiles)
+        .pipe(sass({
+            style: 'expanded'
+        }))
+        .pipe(autoprefixer({
+            browsers: autoprefixBrowsers,
+        }))
+        .pipe(gulp.dest("../backend/assets/css"))
+        .pipe(rename({
+            suffix: '.min'
+        }))
+        .pipe(minifycss())
+        .pipe(gulp.dest('../backend/assets/css'))
+        .pipe(reload({
+            stream: true
+        }));
 
 });
 
