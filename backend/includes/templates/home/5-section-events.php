@@ -19,10 +19,10 @@ $events = get_posts([
                 <h5 class="heading-h5 f--500 cl--white txt--up inlineb-m"><?= translate_i18n('All Events On Dashboard') ?></h5>
                 <ul class="nevent__schedule-name__date">
                     <li class="item">
-                        <input type="text" id="start-date" class="nform-control custom-datepick" placeholder="Start Date">
+                        <input type="text" id="start-date" class="nform-control custom-datepick" placeholder="Start Date" readonly>
                     </li>
                     <li class="item">
-                        <input type="text" id="end-date" class="nform-control custom-datepick" placeholder="End Date">
+                        <input type="text" id="end-date" class="nform-control custom-datepick" placeholder="End Date" readonly>
                     </li>
                     <li class="item">
                         <a id="filter-events"  class="nbutton color--1 nsize--b f--500 txt--up" title="Find Event">Find Event</a>
@@ -50,13 +50,17 @@ $events = get_posts([
                 $('#filter-events').on('click', () => {
                     let ajaxurl = $('ajaxurl').data('ajax');
                     let start = $('#start-date').val();
-                    let end = $('#end-date').val();
+			  let end = $('#end-date').val();
                     if (Date.parse(start) <= Date.parse(end)) {
                         $.post(ajaxurl, {action: 'front', method: 'filterEvent', start: Date.parse(start), end: Date.parse(end)}, res => {
-                            $('#content-events').html(res);
+				    $('#content-events').html(res);
+				    alert('thanh cong');
                         })
-                    } else {
-                        alert('Not empty!');
+                    }else if (Date.parse(start) > Date.parse(end)){
+				  alert('Please ensure that the End Date is greater than or equal to the Start Date.');
+				//   return false;
+			  } else if (start == '' || end == '') {
+				alert('Not empty!');
                     }
                 });
             }
