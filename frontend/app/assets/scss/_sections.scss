@@ -710,7 +710,12 @@
 			}
 		}
 		&__date {
+			display: inline-block;
 			@include mg-tb(15, 5);
+			@media (max-width: 568px) {
+				margin-top: 5px;
+				display: block;
+			}
 			>.item {
 				display: inline-block;
 				vertical-align: middle;
@@ -727,6 +732,55 @@
 					.nbutton.nsize--b {
 						min-width: auto;
 						width: 100%;
+					}
+				}
+			}
+			.nevent__error {
+				position: fixed;
+				z-index: 222;
+				margin-right: 0;
+				bottom: 120px;
+				right: 10px;
+				width: 400px;
+				opacity: 0;
+				visibility: hidden;
+				text-align: left;
+				@include prefix(transition, all .6s cubic-bezier(0.25, 0.8, 0.25, 1));
+				@include prefix(transform, translate(100%, 0));
+				@media (max-width: 1024px) {
+					bottom: 0;
+					left: 50%;
+					right: auto;
+					width: 100%;
+					text-align: center;
+					@include pd-lr(15, 15);
+					@include prefix(transform, translate(-50%, 100%));
+				}
+				&.active {
+					opacity: 1;
+					visibility: visible;
+					@include prefix(transform, translate(0, 0));
+					@media (max-width: 1024px) {
+						@include prefix(transform, translate(-50%, 0));
+					}
+				}
+				.error {
+					font-weight: 500;
+					padding: 20px 30px;
+					font-size: $font-12;
+					background-color: #fff;
+					color: $color-main;
+					border-left: 8px solid;
+					border-radius: 2px;
+					-webkit-border-radius: 2px;
+					-moz-border-radius: 2px;
+					-ms-border-radius: 2px;
+					-o-border-radius: 2px;
+					box-shadow: 0 3px 19px -5px rgba(51, 51, 51, .5);
+					-webkit-box-shadow: 0 3px 19px -5px rgba(51, 51, 51, .5);
+					@media (max-width: 1024px) {
+						padding: 15px 10px;
+						border-left: none;
 					}
 				}
 			}
@@ -846,6 +900,44 @@
 			}
 			.nclear {
 				clear: both;
+			}
+		}
+	}
+	.no-events {
+		opacity: 0;
+		visibility: hidden;
+		padding: 0;
+		height: 0;
+		@include prefix(transition, opacity .2s ease-in-out);
+		&.active {
+			opacity: 1;
+			visibility: visible;
+			height: auto;
+			padding: 120px 30px;
+			@media (max-width: 812px) {
+				padding: 80px 15px;
+			}
+		}
+		&__img {
+			max-width: 200px;
+			display: block;
+			margin: auto;
+			@media (max-width: 812px) {
+				max-width: 150px;
+			}
+		}
+		&__txt {
+			margin-top: 40px;
+			font-size: $font-20;
+			font-style: italic;
+			color: rgba($color-black, .6);
+			@media (max-width: 812px) {
+				margin-top: 20px;
+			}
+			.txt-small {
+				letter-spacing: -0.2px;
+				font-size: $font-13;
+				color: rgba($color-black, .45);
 			}
 		}
 	}

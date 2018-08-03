@@ -12,7 +12,7 @@ $event_location = get_field('event_location', $event->ID, '');
 $avt = get_the_post_thumbnail_url($event->ID);
 $tags = wp_get_post_tags($event->ID);
 ?>
-<li class="item nevent__schedule-info wp-inlineb">
+<div class="item nevent__schedule-info wp-inlineb">
     <div class="inner-item inner-pane">
         <div class="nevent__schedule-info__thumb inlineb-m">
             <img src="<?= $avt ?>" alt="Vu Nguyen Minh Tri" class="nimg nratio--img">
@@ -53,4 +53,4 @@ $tags = wp_get_post_tags($event->ID);
             <br class="nclear" />
         </div>
     </div>
-</li>
+</div>

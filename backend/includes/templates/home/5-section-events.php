@@ -13,33 +13,42 @@ $events = get_posts([
                 <div class="nline-title white-after"></div>
             </h2>
         </div>
-        <div class="nevent__schedule ">
+        <div class="nevent__schedule">
             <div class="item nevent__schedule-name">
                 <img src="<?php echo $path_template_url ?>/assets/images/event.svg" alt="" class="nimg nicon inlineb-m">
-                <h5 class="heading-h5 f--500 cl--white txt--up inlineb-m"><?= translate_i18n('All Events On Dashboard') ?></h5>
+                <h5 class="heading-h5 f--500 cl--white txt--up inlineb-m"><?= translate_i18n('All Events On Dashboard') ?></h5> <br />
                 <ul class="nevent__schedule-name__date">
-                    <li class="item">
-                        <input type="text" id="start-date" class="nform-control custom-datepick" placeholder="Start Date" readonly>
-                    </li>
-                    <li class="item">
-                        <input type="text" id="end-date" class="nform-control custom-datepick" placeholder="End Date" readonly>
-                    </li>
-                    <li class="item">
-                        <a id="filter-events"  class="nbutton color--1 nsize--b f--500 txt--up" title="Find Event">Find Event</a>
-                    </li>
+				<li class="item nevent__error">
+					<div class="error"></div>
+				</li>
+				<li class="item">
+				<input type="text" id="start-date" class="nform-control custom-datepick" placeholder="Start Date" readonly>
+				</li>
+				<li class="item">
+				<input type="text" id="end-date" class="nform-control custom-datepick" placeholder="End Date" readonly>
+				</li>
+				<li class="item">
+				<a id="filter-events"  class="nbutton color--1 nsize--b f--500 txt--up" title="Find Event">Find Event</a>
+				</li>
                 </ul>
             </div>
-            <ul id="content-events">
-                <?php
-                foreach ($events as $event){
-                    $filename = \includes\Bootstrap::getPath() . '/templates/events/item.php';
-                    echo \includes\Bootstrap::bootstrap()->helper->render($filename, [
-                        'event' => $event
-                    ]);
-                }
-                ?>
-            </ul>
-
+            <div id="content-events">
+			<?php
+			foreach ($events as $event){
+				$filename = \includes\Bootstrap::getPath() . '/templates/events/item.php';
+				echo \includes\Bootstrap::bootstrap()->helper->render($filename, [
+					'event' => $event
+				]);
+			}
+			?>
+            </div>
+		<div class="no-events txt--c">
+			<img src="<?php echo $path_template_url ?>/assets/images/sad.svg" alt="" class="nimg no-events__img">
+			<div class="no-events__txt f--500">
+				Oops, Sorry we can't find other events !!! <br />
+				<p class="txt-small f--400">Please check Start Date and End Date to find again.</p>
+			</div>
+		</div>
         </div>
     </div>
 </div>
@@ -47,22 +56,48 @@ $events = get_posts([
     var Events = {
         events: {
             filterEvents: () => {
-                $('#filter-events').on('click', () => {
-                    let ajaxurl = $('ajaxurl').data('ajax');
-                    let start = $('#start-date').val();
-			  let end = $('#end-date').val();
-                    if (Date.parse(start) <= Date.parse(end)) {
-                        $.post(ajaxurl, {action: 'front', method: 'filterEvent', start: Date.parse(start), end: Date.parse(end)}, res => {
-				    $('#content-events').html(res);
-				    alert('thanh cong');
-                        })
-                    }else if (Date.parse(start) > Date.parse(end)){
-				  alert('Please ensure that the End Date is greater than or equal to the Start Date.');
-				//   return false;
-			  } else if (start == '' || end == '') {
-				alert('Not empty!');
-                    }
-                });
+
+			function checkDate(element, message) {
+				element.addClass('active');
+				element.find('.error').text(message);
+				setTimeout(() => {
+					element.removeClass('active');
+				}, 3000);
+			}
+
+			let filterElement  = $('.nevent__schedule #filter-events');
+			filterElement.on('click', () => {
+				let  ajaxurl = $('ajaxurl').data('ajax'),
+					startDate = $('#start-date').val(),
+					endDate = $('#end-date').val(),
+					errorElement = $('.nevent__error'),
+					startDateParse = Date.parse(startDate),
+					endDateParse = Date.parse(endDate);
+
+				if (startDate == '' || endDate == '') {
+					checkDate(errorElement, 'Please fill in all fields !');
+					return;
+				}
+				if (startDateParse > endDateParse) {
+					checkDate(errorElement, 'Please ensure that the End Date is greater than or equal to the Start Date !');
+					return;
+				}
+
+				$.post(ajaxurl, {
+					action: 'front',
+					method: 'filterEvent', 
+					dataType: 'jsonp',
+					start: startDateParse, 
+					end: endDateParse }, res => {
+						$('.nevent__schedule #content-events').html(res);
+						$.main.accordionContent($('.nevent__schedule-info .inner-pane'), $('.nevent__schedule-info .inner-content'));
+						$('.no-events').removeClass('active');
+						if (!res.length) {
+							$('.no-events').addClass('active');
+						}
+				})
+				
+			});
             }
         },
         init: () => {
@@ -71,6 +106,6 @@ $events = get_posts([
         }
     };
     jQuery(function ($) {
-        Events.init();
+	  Events.init();
     });
 </script>

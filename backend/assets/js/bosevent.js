@@ -142,7 +142,7 @@ $.main = {
 			}
 			checkClick = false;
 		})
-	}
+	},
 };
 
 $(function () {

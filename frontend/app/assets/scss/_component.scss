@@ -143,8 +143,7 @@
 }
 
 .nform-control {
-	font-family: 'Montserrat',
-	sans-serif;
+	font-family: 'Montserrat', sans-serif;
 	height: 51px;
 	border-radius: 5px;
 	-webkit-border-radius: 5px;
@@ -269,4 +268,26 @@
 			font-size: $font-25;
 		}
 	}
+}
+
+.ui-datepicker-current-day a.ui-state-active {
+	background-color: $color-main;
+	border: none;
+	color: #fff;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-ms-border-radius: 5px;
+	-o-border-radius: 5px;
+}
+
+.ui-datepicker-today a.ui-state-highlight {
+	background-color: $color-grayblack;
+	border: none;
+	color: #fff;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-ms-border-radius: 5px;
+	-o-border-radius: 5px;
 }
