@@ -8,6 +8,12 @@ Class Constants {
 	const HOME_SESSIONS = array(1, 2, 3, 4, 5, 6);
 	const MAPP_TEMPLATE = [
 	    '' => 'home',
-	    'wordpress/blogs' => 'blogs'
+	    'vi/' => 'home',
+	    
+	    'wordpress/blogs' => 'blogs',
+	    'wordpress/vi/blogs' => 'blogs',
+	    
+	    'blogs' => 'blogs',
+	    'vi/blogs' => 'blogs',
     ];
 }

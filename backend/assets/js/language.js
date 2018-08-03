@@ -36,6 +36,7 @@ var language = {
     events: {
       checkLanguage: () => {
         let href = window.location.href;
+        language.params.current = language.actions.getLanguage();
         if (language.params.current == language.params.vi) {
             if (href.match(/\/vi\//) == null) {
                 window.location.href = window.location.origin + '/vi'  + window.location.pathname;
@@ -47,14 +48,12 @@ var language = {
         }
       },
         changeLanguage:(lan) => {
-          debugger;
           language.actions.setLanguage(lan);
-            language.events.checkLanguage();
+          language.events.checkLanguage();
         }
     },
   init: () => {
       console.log('init language');
-      language.params.current = language.actions.getLanguage();
       language.events.checkLanguage();
   }
 };
