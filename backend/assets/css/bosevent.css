@@ -2598,7 +2598,8 @@ footer {
 
 .nfooter__title {
   font-size: 1.2rem;
-  margin-bottom: 20px; }
+  margin-bottom: 20px;
+  line-height: 1.4; }
   @media (max-width: 812px) {
     .nfooter__title {
       margin-bottom: 5px; } }

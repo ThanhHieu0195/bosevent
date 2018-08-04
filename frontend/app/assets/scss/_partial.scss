@@ -232,6 +232,7 @@ footer {
 	&__title {
 		font-size: $font-18;
 		margin-bottom: 20px;
+		line-height: 1.4;
 		@media (max-width: 812px) {
 			margin-bottom: 5px;
 		}
