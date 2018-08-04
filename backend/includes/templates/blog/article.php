@@ -19,7 +19,7 @@ if (count($cat_ids) > 0) {
     </div>
     <div class="postpopular-header">
         <h2 class="postpopular__title">
-            <a href="javascript:void(0)"><?= get_the_title($post_id) ?></a>
+            <a href="<?= \includes\Bootstrap::bootstrap()->helper->getLinkBlogDetail($post_id) ?>"><?= get_the_title($post_id) ?></a>
         </h2>
         <ul class="postpopular__meta wp-inlineb">
             <li class="item inlineb-t">

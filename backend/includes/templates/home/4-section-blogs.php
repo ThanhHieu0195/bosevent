@@ -12,8 +12,8 @@ $posts = get_posts([
 <div class="nsection nblog" id="bos-blog">
     <div class="nheading__wrap txt--c">
         <div class="ncontainer">
-            <h5 class="nheading__wrap-h5 heading-h5 f--400 txt--up cl--black"><?= translate_i18n('Read from our blog') ?></h5>
-            <h2 class="heading-h2 f--600 txt--cap lh--12 cl--black inlineb-t"><?= translate_i18n('Latest from blog') ?>
+            <h5 class="nheading__wrap-h5 heading-h5 f--400 txt--up cl--black"><?= translateText('blog_session/title/main') ?></h5>
+            <h2 class="heading-h2 f--600 txt--cap lh--12 cl--black inlineb-t"><?= translateText('blog_session/description/main') ?>
                 <div class="nline-title "></div>
             </h2>
         </div>
@@ -39,6 +39,6 @@ $posts = get_posts([
         <?php endforeach;?>
     </ul>
     <div class="ncontainer txt--c">
-        <a href="<?= \includes\Bootstrap::bootstrap()->helper->getLinkBlog() ?>" class="nbutton color--1 nsize--b f--500 txt--up"><?= translate_i18n('more post') ?></a>
+        <a href="<?= \includes\Bootstrap::bootstrap()->helper->getLinkBlog() ?>" class="nbutton color--1 nsize--b f--500 txt--up"><?= translateText('blog_session/button/more_button') ?></a>
     </div>
 </div>

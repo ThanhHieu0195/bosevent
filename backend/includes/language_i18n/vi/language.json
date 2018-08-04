@@ -1,0 +1,12 @@
+{
+   "blogs": {
+      "title": {
+         "page-blogs": "Blogs vi",
+         "page-detail": "Blog Detail",
+         "page-cat":"Blogs filter by category"
+      },
+      "session": {
+         "cat": "'Show Categories'"
+      }
+   }
+}

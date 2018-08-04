@@ -4,7 +4,7 @@
  */
 ?>
 <aside class="nwidget nwidget-categories">
-    <div class="nwidget__title"><?= translate_i18n('Categories') ?></div>
+    <div class="nwidget__title"><?= translate_i18n('article/cat/title') ?></div>
     <ul class="nwidget__list categories">
         <?php foreach ($cats as $cat): ?>
             <li class="item">

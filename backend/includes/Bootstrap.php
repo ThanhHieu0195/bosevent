@@ -1,5 +1,7 @@
 <?php
 namespace includes;
+use includes\classes\Language;
+
 $dir_path = dirname(__FILE__);
 foreach (glob($dir_path . "/interfaces/*.php") as $filename)
 {
@@ -20,6 +22,7 @@ foreach (glob($dir_path . "/shortcodes/classes/*.php") as $filename)
  * @property \includes\classes\Helper $helper
  * @property Hook $hook
  * @property ConfigMenu $configs
+ * @property Language $language
  */
 class Bootstrap implements interfaces\ManagementInterface {
 	/**
@@ -28,6 +31,7 @@ class Bootstrap implements interfaces\ManagementInterface {
 	static $bootstrap;
 	public $helper;
 	public $hook;
+	public $language;
 	//public $configs;
 
 	public static function init() {
@@ -35,6 +39,7 @@ class Bootstrap implements interfaces\ManagementInterface {
 			self::$bootstrap = new Bootstrap();
             self::$bootstrap->registerHelper();
             self::$bootstrap->registerHook();
+            self::$bootstrap->registerLanguage();
             //self::$bootstrap->configs = \includes\classes\ConfigMenu::getInstance();
 		}
 	}
@@ -62,5 +67,11 @@ class Bootstrap implements interfaces\ManagementInterface {
 		$helper->init();
 		$this->helper = $helper;
 	}
+
+	public function registerLanguage() {
+        $language = new \includes\classes\Language();
+        $language->init();
+        $this->language = $language;
+    }
 }
 \includes\Bootstrap::init();

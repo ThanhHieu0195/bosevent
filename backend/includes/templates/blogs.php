@@ -8,14 +8,14 @@ $list_posts = [];
 $all_cats = get_categories();
 // get new posts
 $new_posts = get_posts();
-$page_title = translate_i18n('Blogs');
+$page_title = translateText('blogs/title/page-blogs');
 //
 if (isset($_GET['id'])) {
     $post_id = intval($_GET['id']);
     $list_posts[] = get_post($post_id);
-    $page_title = translate_i18n('Blog Detail');
+    $page_title = translateText('blogs/title/page-detail');
 } else if (isset($_GET['cat'])){
-    $page_title = translate_i18n('Blogs filter by category');
+    $page_title = translateText('blogs/title/page-cat');
     $cat = $_GET['cat'];
     $list_posts = get_posts([
             'category' => $cat
@@ -47,11 +47,11 @@ if (count($cat_ids) > 0) {
         <div class="ncontainer">
             <div class="wp-inlineb sidebar">
                 <div class="sidebar__left item inlineb-t">
-                    <div class="categories-mb txt--c"><?= translate_i18n('Show Categories') ?></div>
+                    <div class="categories-mb txt--c"><?= translateText('blogs/session/cat') ?></div>
                     <div class="inner categories-mb__sub cus-bg">
                         <?=  \includes\Bootstrap::bootstrap()->helper->render($dir_path . '/blog/article-cat.php', ['cats' => $all_cats, 'path_template_url' => $path_template_url]); ?>
-                        <?=  \includes\Bootstrap::bootstrap()->helper->render($dir_path . '/blog/article-post.php', ['posts' => $new_posts, 'title' => translate_i18n('Popular Posts'),'path_template_url' => $path_template_url]); ?>
-                        <?=  \includes\Bootstrap::bootstrap()->helper->render($dir_path . '/blog/article-post.php', ['posts' => $recent_posts, 'title' => translate_i18n('Recent Posts'), 'path_template_url' => $path_template_url]); ?>
+                        <?=  \includes\Bootstrap::bootstrap()->helper->render($dir_path . '/blog/article-post.php', ['posts' => $new_posts, 'title' => translateText('Popular Posts'),'path_template_url' => $path_template_url]); ?>
+                        <?=  \includes\Bootstrap::bootstrap()->helper->render($dir_path . '/blog/article-post.php', ['posts' => $recent_posts, 'title' => translateText('Recent Posts'), 'path_template_url' => $path_template_url]); ?>
                     </div>
                 </div>
                 <div class="sidebar__right item inlineb-t">

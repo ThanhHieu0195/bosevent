@@ -7,16 +7,16 @@ $events = get_posts([
 <div class="nsection nevent" id="bos-event">
     <div class="ncontainer">
         <div class="nheading__wrap txt--c">
-            <h5 class="nheading__wrap-h5 heading-h5 f--400 txt--up cl--white1"><?= translate_i18n('Event Schedule') ?></h5>
-            <h2 class="heading-h2 f--600 txt--cap lh--12 cl--white inlineb-t"><?= translate_i18n('Event scheduling') ?>
-                <br /><?= translate_i18n('software - mobile apps') ?>
+            <h5 class="nheading__wrap-h5 heading-h5 f--400 txt--up cl--white1"><?= translateText('event_session/title/main') ?></h5>
+            <h2 class="heading-h2 f--600 txt--cap lh--12 cl--white inlineb-t">
+                <?= translateText('event_session/description') ?>
                 <div class="nline-title white-after"></div>
             </h2>
         </div>
         <div class="nevent__schedule ">
             <div class="item nevent__schedule-name">
                 <img src="<?php echo $path_template_url ?>/assets/images/event.svg" alt="" class="nimg nicon inlineb-m">
-                <h5 class="heading-h5 f--500 cl--white txt--up inlineb-m"><?= translate_i18n('All Events On Dashboard') ?></h5>
+                <h5 class="heading-h5 f--500 cl--white txt--up inlineb-m"><?= translateText('event_session/title/filter') ?></h5>
                 <ul class="nevent__schedule-name__date">
                     <li class="item">
                         <input type="text" id="start-date" class="nform-control custom-datepick" placeholder="Start Date" readonly>
@@ -25,7 +25,7 @@ $events = get_posts([
                         <input type="text" id="end-date" class="nform-control custom-datepick" placeholder="End Date" readonly>
                     </li>
                     <li class="item">
-                        <a id="filter-events"  class="nbutton color--1 nsize--b f--500 txt--up" title="Find Event">Find Event</a>
+                        <a id="filter-events"  class="nbutton color--1 nsize--b f--500 txt--up" title="Find Event"><?= translateText('event_session/button') ?></a>
                     </li>
                 </ul>
             </div>

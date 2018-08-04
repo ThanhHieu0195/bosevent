@@ -163,5 +163,9 @@ if ( defined( 'JETPACK__VERSION' ) ) {
  */
 require get_template_directory() . '/includes/Bootstrap.php';
 function translate_i18n($text) {
-    return $text;
+    return \includes\Bootstrap::bootstrap()->language->translateText($text);
+}
+
+function translateText($text) {
+    return \includes\Bootstrap::bootstrap()->language->translateText($text);
 }
