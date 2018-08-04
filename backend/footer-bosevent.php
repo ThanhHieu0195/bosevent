@@ -61,7 +61,7 @@ $path_template_url = get_template_directory_uri();
                 </ul>
                 <ul class="nfooter__social wp-inlineb">
                     <li class="nitem inlineb-m">
-                        <a href="" title="Facebook" target="_blank">
+                        <a href="https://www.facebook.com/bearonsky.events" title="Facebook" target="_blank">
                             <img src="<?php echo $path_template_url ?>/assets/images/facebook.svg" alt="" class="nimg nicon nfacebook">
                         </a>
                     </li>
