@@ -46,7 +46,7 @@ $path_template_url = get_template_directory_uri();
                         <a href="#bos-services" title="Services">Services</a>
                     </li>
                     <li class="item">
-                        <a href="#bos-blog" title="Blog">Blog</a>
+                        <a href="#bos-blog" title="News">News</a>
                     </li>
                     <li class="item">
                         <a href="#bos-event" title="Event Callendar">Event Callendar</a>
