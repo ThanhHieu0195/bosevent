@@ -177,6 +177,11 @@ body {
 	-webkit-font-smoothing: antialiased;
 	-webkit-text-size-adjust: 100%;
 	overflow-x: hidden;
+	&.admin-bar {
+		>.nheader {
+			margin-top: 31px;
+		}
+	}
 }
 
 a {

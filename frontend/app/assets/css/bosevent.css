@@ -169,6 +169,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -webkit-text-size-adjust: 100%;
   overflow-x: hidden; }
+  body.admin-bar > .nheader {
+    margin-top: 31px; }
 
 a {
   transition: all 0.3s ease-in-out;
@@ -734,6 +736,26 @@ textarea {
     @media (max-width: 667px) {
       .banner-title__inner {
         font-size: 1.563rem; } }
+
+.ui-datepicker-current-day a.ui-state-active {
+  background-color: #f54c4c;
+  border: none;
+  color: #fff;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px; }
+
+.ui-datepicker-today a.ui-state-highlight {
+  background-color: #333;
+  border: none;
+  color: #fff;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px; }
 
 .bg-banner {
   position: relative;
@@ -1743,8 +1765,13 @@ textarea {
       .nevent__schedule-name .nicon + .heading-h5 {
         margin-left: 10px; }
     .nevent__schedule-name__date {
+      display: inline-block;
       margin-top: 15px;
       margin-bottom: 5px; }
+      @media (max-width: 568px) {
+        .nevent__schedule-name__date {
+          margin-top: 5px;
+          display: block; } }
       .nevent__schedule-name__date > .item {
         display: inline-block;
         vertical-align: middle;
@@ -1760,6 +1787,73 @@ textarea {
             .nevent__schedule-name__date > .item .nbutton.nsize--b {
               min-width: auto;
               width: 100%; } }
+      .nevent__schedule-name__date .nevent__error {
+        position: fixed;
+        z-index: 222;
+        margin-right: 0;
+        bottom: 120px;
+        right: 10px;
+        width: 400px;
+        opacity: 0;
+        visibility: hidden;
+        text-align: left;
+        transition: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+        -webkit-transition: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+        -moz-transition: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+        -ms-transition: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+        -o-transition: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+        transform: translate(100%, 0);
+        -webkit-transform: translate(100%, 0);
+        -moz-transform: translate(100%, 0);
+        -ms-transform: translate(100%, 0);
+        -o-transform: translate(100%, 0); }
+        @media (max-width: 1024px) {
+          .nevent__schedule-name__date .nevent__error {
+            bottom: 0;
+            left: 50%;
+            right: auto;
+            width: 100%;
+            text-align: center;
+            padding-left: 15px;
+            padding-right: 15px;
+            transform: translate(-50%, 100%);
+            -webkit-transform: translate(-50%, 100%);
+            -moz-transform: translate(-50%, 100%);
+            -ms-transform: translate(-50%, 100%);
+            -o-transform: translate(-50%, 100%); } }
+        .nevent__schedule-name__date .nevent__error.active {
+          opacity: 1;
+          visibility: visible;
+          transform: translate(0, 0);
+          -webkit-transform: translate(0, 0);
+          -moz-transform: translate(0, 0);
+          -ms-transform: translate(0, 0);
+          -o-transform: translate(0, 0); }
+          @media (max-width: 1024px) {
+            .nevent__schedule-name__date .nevent__error.active {
+              transform: translate(-50%, 0);
+              -webkit-transform: translate(-50%, 0);
+              -moz-transform: translate(-50%, 0);
+              -ms-transform: translate(-50%, 0);
+              -o-transform: translate(-50%, 0); } }
+        .nevent__schedule-name__date .nevent__error .error {
+          font-weight: 500;
+          padding: 20px 30px;
+          font-size: 0.8rem;
+          background-color: #fff;
+          color: #f54c4c;
+          border-left: 8px solid;
+          border-radius: 2px;
+          -webkit-border-radius: 2px;
+          -moz-border-radius: 2px;
+          -ms-border-radius: 2px;
+          -o-border-radius: 2px;
+          box-shadow: 0 3px 19px -5px rgba(51, 51, 51, 0.5);
+          -webkit-box-shadow: 0 3px 19px -5px rgba(51, 51, 51, 0.5); }
+          @media (max-width: 1024px) {
+            .nevent__schedule-name__date .nevent__error .error {
+              padding: 15px 10px;
+              border-left: none; } }
   .nevent__schedule-info {
     border-bottom: 1px solid #eee; }
     .nevent__schedule-info:last-child {
@@ -1884,6 +1978,43 @@ textarea {
               margin-top: 20px; } }
       .nevent__schedule-info__content-inner .nclear {
         clear: both; }
+  .nevent .no-events {
+    opacity: 0;
+    visibility: hidden;
+    padding: 0;
+    height: 0;
+    transition: opacity 0.2s ease-in-out;
+    -webkit-transition: opacity 0.2s ease-in-out;
+    -moz-transition: opacity 0.2s ease-in-out;
+    -ms-transition: opacity 0.2s ease-in-out;
+    -o-transition: opacity 0.2s ease-in-out; }
+    .nevent .no-events.active {
+      opacity: 1;
+      visibility: visible;
+      height: auto;
+      padding: 120px 30px; }
+      @media (max-width: 812px) {
+        .nevent .no-events.active {
+          padding: 80px 15px; } }
+    .nevent .no-events__img {
+      max-width: 200px;
+      display: block;
+      margin: auto; }
+      @media (max-width: 812px) {
+        .nevent .no-events__img {
+          max-width: 150px; } }
+    .nevent .no-events__txt {
+      margin-top: 40px;
+      font-size: 1.333rem;
+      font-style: italic;
+      color: rgba(0, 0, 0, 0.6); }
+      @media (max-width: 812px) {
+        .nevent .no-events__txt {
+          margin-top: 20px; } }
+      .nevent .no-events__txt .txt-small {
+        letter-spacing: -0.2px;
+        font-size: 0.8667rem;
+        color: rgba(0, 0, 0, 0.45); }
 
 .npage-content {
   padding-top: 100px;
@@ -2225,7 +2356,7 @@ textarea {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 2;
+  z-index: 22;
   transition: all 0.4s cubic-bezier(0.445, 0.05, 0.55, 0.95);
   -webkit-transition: all 0.4s cubic-bezier(0.445, 0.05, 0.55, 0.95);
   -moz-transition: all 0.4s cubic-bezier(0.445, 0.05, 0.55, 0.95);

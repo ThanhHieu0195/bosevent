@@ -6,7 +6,7 @@
 	top: 0;
 	left: 0;
 	width: 100%;
-	z-index: 2;
+	z-index: 22;
 	@include prefix(transition, all .4s cubic-bezier(0.445, 0.05, 0.55, 0.95));
 	&.affix,
 	&.no-fix {
