@@ -169,3 +169,9 @@ function translate_i18n($text) {
 function translateText($text) {
     return \includes\Bootstrap::bootstrap()->language->translateText($text);
 }
+
+/**
+ * import acf 
+ */
+require get_template_directory() . '/acfs/scripts.php';
+

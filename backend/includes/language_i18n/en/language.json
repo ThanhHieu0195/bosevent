@@ -49,13 +49,18 @@
       "title": "Services"
     },
     "blog": {
-      "title": "Blog"
+      "title": "News"
     },
     "event": {
       "title": "Event Callendar"
     },
     "contact": {
       "title": "Contact"
+    }
+  },
+  "banner": {
+    "button": {
+      "next_lesson": "Next lesson"
     }
   }
 }

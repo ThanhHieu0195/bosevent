@@ -1,12 +1,66 @@
 {
+   "event_session": {
+      "title": {
+         "main": "Sự kiện",
+         "filter": "Tất cả sự kiện"
+      },
+      "description": "Sự kiện  <br> software - mobile apps",
+      "button": "Tìm sự kiện"
+   },
+   "blog_session": {
+      "title": {
+         "main": "Tìm hiểu bài viết của chúng tôi"
+      },
+      "description": {
+         "main": "Bài viêt mới nhất"
+      },
+      "button": {
+         "more_button": "Xem nhiều hơn"
+      }
+   },
    "blogs": {
       "title": {
-         "page-blogs": "Blogs vi",
-         "page-detail": "Blog Detail",
-         "page-cat":"Blogs filter by category"
+         "page-blogs": "Bài viết",
+         "page-detail": "Bài viết",
+         "page-cat": "Bài viết"
       },
       "session": {
-         "cat": "'Show Categories'"
+         "cat": "Hiện thị với mục lục"
+      }
+   },
+   "article": {
+      "cat": {
+         "title": "Mục lục"
+      }
+   },
+   "service_session": {
+      "title": {
+         "main": "Dịch vụ"
+      },
+      "button": {
+         "view_more": "Xem thêm"
+      }
+   },
+   "menu": {
+      "about": {
+         "title": "Về chúng tôi"
+      },
+      "service": {
+         "title": "Dịch vụ"
+      },
+      "blog": {
+         "title": "Bài viết"
+      },
+      "event": {
+         "title": "Sự kiện"
+      },
+      "contact": {
+         "title": "Liên hệ"
+      }
+   },
+   "banner": {
+      "button": {
+         "next_lesson": "Bài kế tiếp"
       }
    }
 }

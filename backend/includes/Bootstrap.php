@@ -73,5 +73,6 @@ class Bootstrap implements interfaces\ManagementInterface {
         $language->init();
         $this->language = $language;
     }
+
 }
 \includes\Bootstrap::init();

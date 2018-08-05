@@ -41,16 +41,16 @@ $path_template_url = get_template_directory_uri();
             <div class="nheader__right inlineb-m">
                 <ul class="nheader__right-menu">
                     <li class="item">
-                        <a href="#bos-about" title="About Us">About Us</a>
+                        <a href="#bos-about" title="About Us"><?= translateText('menu/about/title') ?></a>
                     </li>
                     <li class="item">
-                        <a href="#bos-services" title="Services">Services</a>
+                        <a href="#bos-services" title="Services"><?= translateText('menu/service/title') ?></a>
                     </li>
                     <li class="item">
-                        <a href="#bos-blog" title="News">News</a>
+                        <a href="#bos-blog" title="News"><?= translateText('menu/blog/title') ?></a>
                     </li>
                     <li class="item">
-                        <a href="#bos-event" title="Event Callendar">Event Callendar</a>
+                        <a href="#bos-event" title="Event Callendar"><?= translateText('menu/event/title') ?></a>
                     </li>
                     <!-- <li class="item">
                         <a href="" title="Contact">Contact</a>

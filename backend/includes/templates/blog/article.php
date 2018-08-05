@@ -24,7 +24,7 @@ if (count($cat_ids) > 0) {
         <ul class="postpopular__meta wp-inlineb">
             <li class="item inlineb-t">
                 <img src="<?= $path_template_url ?>/assets/images/calendar.svg" alt="Calendar" class="nimg icon-meta">
-                <span class="text-meta"><?= get_the_date('Y-m-d', $post_id) ?></span>
+                <span class="text-meta"><?= get_the_date(get_option('data_format'), $post_id) ?></span>
             </li>
             <li class="item inlineb-t">
                 <img src="<?= $path_template_url ?>/assets/images/tags.svg" alt="Tags" class="nimgs icon-meta">

@@ -18,7 +18,7 @@
                 </div>
                 <div class="img-info">
                     <a href="<?= \includes\Bootstrap::bootstrap()->helper->getLinkBlogDetail($post->ID) ?>" class="item__title" title="<?= $post->post_title ?>"><?= $post->post_title ?></a>
-                    <span class="ndate"><?= get_the_date('Y-m-d',$post->ID) ?></span>
+                    <span class="ndate"><?= get_the_date(get_option('data_format'),$post->ID) ?></span>
                 </div>
             </li>
         <?php endforeach; ?>
