@@ -185,10 +185,12 @@ class Hook implements HookInterface{
 
     public function customTitle($params) {
         $slug = \includes\Bootstrap::bootstrap()->helper->getSubUrl();
-        switch ($slug) {
-            case 'blogs':
-                $params['title'] = 'Blogs';
-                break;
+        $key = \includes\Bootstrap::bootstrap()->helper->slugToKey($slug);
+        $mapping = \includes\classes\Constants::MAPPING_TITLE;
+
+        if (isset($mapping[$key])) {
+            $params['title'] = $mapping[$key];
+
         }
         return $params;
     }

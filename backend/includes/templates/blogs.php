@@ -50,8 +50,8 @@ if (count($cat_ids) > 0) {
                     <div class="categories-mb txt--c"><?= translateText('blogs/session/cat') ?></div>
                     <div class="inner categories-mb__sub cus-bg">
                         <?=  \includes\Bootstrap::bootstrap()->helper->render($dir_path . '/blog/article-cat.php', ['cats' => $all_cats, 'path_template_url' => $path_template_url]); ?>
-                        <?=  \includes\Bootstrap::bootstrap()->helper->render($dir_path . '/blog/article-post.php', ['posts' => $new_posts, 'title' => translateText('Popular Posts'),'path_template_url' => $path_template_url]); ?>
-                        <?=  \includes\Bootstrap::bootstrap()->helper->render($dir_path . '/blog/article-post.php', ['posts' => $recent_posts, 'title' => translateText('Recent Posts'), 'path_template_url' => $path_template_url]); ?>
+                        <?=  \includes\Bootstrap::bootstrap()->helper->render($dir_path . '/blog/article-post.php', ['posts' => $new_posts, 'title' => translateText('blogs/title/popular'),'path_template_url' => $path_template_url]); ?>
+                        <?=  \includes\Bootstrap::bootstrap()->helper->render($dir_path . '/blog/article-post.php', ['posts' => $recent_posts, 'title' => translateText('blogs/title/recent'), 'path_template_url' => $path_template_url]); ?>
                     </div>
                 </div>
                 <div class="sidebar__right item inlineb-t">

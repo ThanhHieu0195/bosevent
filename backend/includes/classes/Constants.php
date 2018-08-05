@@ -16,4 +16,12 @@ Class Constants {
 	    'blogs' => 'blogs',
 	    'vi/blogs' => 'blogs',
     ];
+
+	const SLUG_TO_KEY = [
+        'vi/blogs' => 'blogs'
+    ];
+
+	const MAPPING_TITLE = [
+        'blogs' => 'Blogs'
+    ];
 }

@@ -75,6 +75,14 @@ class Helper implements HelperInterface {
         return $slug;
     }
 
+    public function slugToKey($slug) {
+        $mapping = \includes\classes\Constants::SLUG_TO_KEY;
+        if ( isset($mapping[$slug]) ) {
+            $slug = $mapping[$slug];
+        }
+        return $slug;
+    }
+
     public function getClassByPath($path) {
         preg_match('/\/([a-zA-Z0-9]*).php$/', $path, $matches);
         $class_name = '';

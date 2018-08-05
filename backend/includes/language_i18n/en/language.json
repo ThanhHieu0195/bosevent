@@ -22,7 +22,9 @@
     "title": {
       "page-blogs": "Blogs",
       "page-detail": "Blog Detail",
-      "page-cat": "Blogs filter by category"
+      "page-cat": "Blogs filter by category",
+      "popular": "Popular Posts",
+      "recent":"Recent Posts"
     },
     "session": {
       "cat": "'Show Categories'"

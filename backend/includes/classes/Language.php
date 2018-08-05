@@ -12,9 +12,9 @@ class Language implements HelperInterface {
         // TODO: Implement init() method.
         $blog = get_blog_details(get_current_blog_id());
         $path = $blog->path;
-        $lang = str_replace('/', '', $path);
-        if (!empty($lang)) {
-            $this->lang = $lang;
+        preg_match('/\/([a-zA-Z]*)\/$/', $path, $arr);
+        if (count($arr) > 0) {
+            $this->lang = $arr[count($arr)-1];
         } else {
             $path = '/en/';
         }
