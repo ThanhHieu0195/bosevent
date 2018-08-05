@@ -64,5 +64,16 @@
     "button": {
       "next_lesson": "Next lesson"
     }
+  },
+  "footer": {
+    "description": {
+     "1":{
+       "title": "BOS Media And Events <br />Company Limited",
+       "description": " Beyond Your Best Imagination.<br />Business Registration Certificate No: <br />0315137128 issued by Department of Planning<br /> and Investment of HCMC<br /><br /> © BosEvents Team, 2018."
+     },
+      "2": {
+
+      }
+    }
   }
 }

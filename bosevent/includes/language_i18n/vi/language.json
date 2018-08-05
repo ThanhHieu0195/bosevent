@@ -1,0 +1,67 @@
+{
+   "event_session": {
+      "title": {
+         "main": "LỊCH SỰ KIỆN",
+         "filter": ""
+      },
+      "description": "",
+      "button": "Tìm sự kiện"
+   },
+   "blog_session": {
+      "title": {
+         "main": "Tìm hiểu bài viết của chúng tôi"
+      },
+      "description": {
+         "main": "Bài viêt mới nhất"
+      },
+      "button": {
+         "more_button": "Xem nhiều hơn"
+      }
+   },
+   "blogs": {
+      "title": {
+         "page-blogs": "TIN TỨC",
+         "page-cat": "Theo categories",
+         "popular": "Bài viết phổ biến",
+         "recent":"Bài viết gần đây"
+      },
+      "session": {
+         "cat": "Hiện thị với mục lục"
+      }
+   },
+   "article": {
+      "cat": {
+         "title": "Mục lục"
+      }
+   },
+   "service_session": {
+      "title": {
+         "main": "Dịch vụ"
+      },
+      "button": {
+         "view_more": "Xem thêm"
+      }
+   },
+   "menu": {
+      "about": {
+         "title": "Về chúng tôi"
+      },
+      "service": {
+         "title": "Dịch vụ"
+      },
+      "blog": {
+         "title": "Tin tức"
+      },
+      "event": {
+         "title": "Lịch sự kiện"
+      },
+      "contact": {
+         "title": "Liên hệ"
+      }
+   },
+   "banner": {
+      "button": {
+         "next_lesson": "Bài kế tiếp"
+      }
+   }
+}
