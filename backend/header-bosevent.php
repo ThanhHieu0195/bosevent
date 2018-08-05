@@ -16,6 +16,7 @@ $path_template_url = get_template_directory_uri();
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="profile" href="https://gmpg.org/xfn/11">
+    <meta name="format-detection" content="telephone=no">
     <?php wp_head(); ?>
 </head>
 
@@ -46,7 +47,7 @@ $path_template_url = get_template_directory_uri();
                         <a href="#bos-services" title="Services">Services</a>
                     </li>
                     <li class="item">
-                        <a href="#bos-blog" title="Blog">Blog</a>
+                        <a href="#bos-blog" title="News">News</a>
                     </li>
                     <li class="item">
                         <a href="#bos-event" title="Event Callendar">Event Callendar</a>

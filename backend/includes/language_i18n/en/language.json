@@ -1,14 +1,11 @@
 {
   "event_session": {
     "title": {
-      "main": "Event Schedule",
+      "main": "Event Calendar",
       "filter": "All Events On Dashboard"
     },
     "description": "Event scheduling <br> software - mobile apps",
-    "button": "Find Event",
-    "item": {
-      "location": "where"
-    }
+    "button": "Find Event"
   },
   "blog_session": {
     "title": {

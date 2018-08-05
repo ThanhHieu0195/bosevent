@@ -37,35 +37,31 @@ $path_template_url = get_template_directory_uri();
     <div class="ncontainer lh--19">
         <ul class="wp-inlineb nfooter txt--c">
             <li class="item inlineb-t txt--l">
-                <h5 class="nfooter__title heading-h5 cl--white">BosEvents Team</h5>
+                <h5 class="nfooter__title heading-h5 cl--white">BOS Media And Events <br />Company Limited</h5>
                 <p class="f--13 cl--white1">
-                    Together We Expanded Vision, Create
-                    <br />And Make It.
-                    <br />
-                    <br /> © BosEvents Team, 2018.
+                    Beyond Your Best Imagination.
+			  <br />
+			  Business Registration Certificate No: <br />0315137128 issued by Department of Planning<br /> and Investment of HCMC<br /><br /> © BosEvents Team, 2018.
                 </p>
             </li>
             <li class="item inlineb-t txt--l">
-                <h5 class="nfooter__title heading-h5 cl--white txt--cap">Our Address</h5>
+                <h5 class="nfooter__title heading-h5 cl--white txt--cap">Address</h5>
                 <p class="f--13 cl--white1">
-                    43 Ly Tu Trong,
-                    <br /> Distric 1,
-                    <br />CA 96022 HCM City - VietNam.
+                    62N HT5 St.,
+                    <br /> Hiep Thanh Ward,
+			  <br />District 12, HCMC.
                 </p>
             </li>
             <li class="item inlineb-t txt--l">
-                <h5 class="nfooter__title heading-h5 cl--white txt--cap">Get In Touch</h5>
+                <h5 class="nfooter__title heading-h5 cl--white txt--cap">Contact</h5>
                 <ul>
                     <li class="mb--5">
-                        <a href="" title="hello@gmail.com" class="f--13 cl--white1">hello@gmail.com</a>
-                    </li>
-                    <li>
-                        <a href="" title="+44 (0)1484 643 078" class="f--13 cl--white1">+44 (0)1484 643 078</a>
+                        <a href="mailto:bearonsky.events@gmail.com" title="bearonsky.events@gmail.com" class="f--13 cl--white1">bearonsky.events@gmail.com</a>
                     </li>
                 </ul>
                 <ul class="nfooter__social wp-inlineb">
                     <li class="nitem inlineb-m">
-                        <a href="" title="Facebook" target="_blank">
+                        <a href="https://www.facebook.com/bearonsky.events" title="Facebook" target="_blank">
                             <img src="<?php echo $path_template_url ?>/assets/images/facebook.svg" alt="" class="nimg nicon nfacebook">
                         </a>
                     </li>
@@ -84,18 +80,17 @@ $path_template_url = get_template_directory_uri();
             <li class="item inlineb-t txt--l">
                 <h5 class="nfooter__title heading-h5 cl--white txt--cap">Hotline</h5>
                 <p class="f--13 cl--white mb--10">
-                    <span class="cl--white">Ryan Hernold</span>
+                    <span class="cl--white">Ruler Lee (Mr.)</span>
                     <br />
-                    <a href="" class="cl--white1">+84 9873 362</a>
+                    <a href="tel:841697738979" class="cl--white1">(+84) 169 7738979</a>
                 </p>
                 <p class="f--13 cl--white">
-                    <span class="cl--white">Vu Nguyen Minh Tri</span>
+                    <span class="cl--white">Daniel Vu (Mr.)</span>
                     <br />
-                    <a href="" class="cl--white1">+84 9873 362</a>
+                     <a href="tel:84906131296" class="cl--white1">(+84) 906 131296</a>
                 </p>
             </li>
         </ul>
-
     </div>
 
 </footer>
