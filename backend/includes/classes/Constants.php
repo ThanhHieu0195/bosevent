@@ -9,12 +9,14 @@ Class Constants {
 	const MAPP_TEMPLATE = [
 	    '' => 'home',
 	    'vi/' => 'home',
-	    
-	    'wordpress/blogs' => 'blogs',
-	    'wordpress/vi/blogs' => 'blogs',
-	    
 	    'blogs' => 'blogs',
 	    'vi/blogs' => 'blogs',
+
+        //
+        'wordpress/' => 'home',
+        'wordpress/vi/' => 'home',
+        'wordpress/blogs' => 'blogs',
+        'wordpress/vi/blogs' => 'blogs',
     ];
 
 	const SLUG_TO_KEY = [
