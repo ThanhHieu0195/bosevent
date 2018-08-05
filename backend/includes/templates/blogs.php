@@ -12,8 +12,9 @@ $page_title = translateText('blogs/title/page-blogs');
 //
 if (isset($_GET['id'])) {
     $post_id = intval($_GET['id']);
-    $list_posts[] = get_post($post_id);
-    $page_title = translateText('blogs/title/page-detail');
+    $post = get_post($post_id);
+    $list_posts[] = $post;
+    $page_title = $post->post_title;
 } else if (isset($_GET['cat'])){
     $page_title = translateText('blogs/title/page-cat');
     $cat = $_GET['cat'];

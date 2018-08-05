@@ -20,9 +20,8 @@
    },
    "blogs": {
       "title": {
-         "page-blogs": "TIN TỨC <br> Sự kiện bổ ích, tuyệt vời và hấp dẫn nhất",
-         "page-detail": "TIN TỨC <br> Sự kiện bổ ích, tuyệt vời và hấp dẫn nhất",
-         "page-cat": "TIN TỨC <br> Sự kiện bổ ích, tuyệt vời và hấp dẫn nhất",
+         "page-blogs": "TIN TỨC",
+         "page-cat": "Theo categories",
          "popular": "Bài viết phổ biến",
          "recent":"Bài viết gần đây"
       },
