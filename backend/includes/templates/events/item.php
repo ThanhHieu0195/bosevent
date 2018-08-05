@@ -45,7 +45,7 @@ $tags = wp_get_post_tags($event->ID);
                     <?php endforeach; ?>
                 </ul>
                 <div class="nlocation">
-                    <div class="where f--14 txt--up f--600">where</div>
+                    <div class="where f--14 txt--up f--600"><?= translateText('event_session/item/location') ?></div>
                     <div class="address txt--cap f--13"><?= $event_location ?></div>
                 </div>
             </div>

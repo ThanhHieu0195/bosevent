@@ -11,7 +11,7 @@ $path_template_url = get_template_directory_uri();
             $position = $params['position'.$idx];
             echo '<li class="nitem inlineb-t">
                     <div class="nourteam__img">
-                        <img src="'.$background.'" alt="" class="nimg nratio--img">
+                        <img src="'.$background.'" alt="'.$name.'" class="nimg nratio--img">
                     </div>
                     <div class="nourteam__des txt--r">
                         <h4 class="nourteam__des-title  cl--white f--600 txt--up">'.$name.'</h4>

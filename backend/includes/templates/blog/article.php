@@ -14,7 +14,7 @@ if (count($cat_ids) > 0) {
 <article class="postpopular detail">
     <div class="postpopular__img">
         <a href="<?= \includes\Bootstrap::bootstrap()->helper->getLinkBlogDetail($post_id) ?>">
-            <img src="<?= get_the_post_thumbnail_url($post_id) ?>" alt="Beautiful Day With Friends In Paris" class="nimg nratio--img">
+            <img src="<?= get_the_post_thumbnail_url($post_id) ?>" alt="<?= get_the_title($post_id) ?>" class="nimg nratio--img">
         </a>
     </div>
     <div class="postpopular-header">

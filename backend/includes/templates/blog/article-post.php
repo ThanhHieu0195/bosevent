@@ -13,7 +13,7 @@
             <li class="item clear-f">
                 <div class="img-wrap">
                     <a href="<?= \includes\Bootstrap::bootstrap()->helper->getLinkBlogDetail($post->ID) ?>">
-                        <img src="<?= esc_url($thumnail_url) ?>" alt="Beautiful Day With Friends" class="nimg nratio--img">
+                        <img src="<?= esc_url($thumnail_url) ?>" alt="<?= $post->post_title ?>" class="nimg nratio--img">
                     </a>
                 </div>
                 <div class="img-info">
