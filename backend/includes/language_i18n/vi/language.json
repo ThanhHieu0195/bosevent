@@ -1,10 +1,10 @@
 {
    "event_session": {
       "title": {
-         "main": "Sự kiện",
-         "filter": "Tất cả sự kiện"
+         "main": "LỊCH SỰ KIỆN",
+         "filter": ""
       },
-      "description": "Sự kiện  <br> software - mobile apps",
+      "description": "",
       "button": "Tìm sự kiện"
    },
    "blog_session": {
@@ -20,9 +20,9 @@
    },
    "blogs": {
       "title": {
-         "page-blogs": "Bài viết",
-         "page-detail": "Bài viết",
-         "page-cat": "Bài viết",
+         "page-blogs": "TIN TỨC <br> Sự kiện bổ ích, tuyệt vời và hấp dẫn nhất",
+         "page-detail": "TIN TỨC <br> Sự kiện bổ ích, tuyệt vời và hấp dẫn nhất",
+         "page-cat": "TIN TỨC <br> Sự kiện bổ ích, tuyệt vời và hấp dẫn nhất",
          "popular": "Bài viết phổ biến",
          "recent":"Bài viết gần đây"
       },
@@ -51,10 +51,10 @@
          "title": "Dịch vụ"
       },
       "blog": {
-         "title": "Bài viết"
+         "title": "Tin tức"
       },
       "event": {
-         "title": "Sự kiện"
+         "title": "Lịch sự kiện"
       },
       "contact": {
          "title": "Liên hệ"
