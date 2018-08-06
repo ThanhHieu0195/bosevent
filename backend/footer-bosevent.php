@@ -92,6 +92,7 @@ $path_template_url = get_template_directory_uri();
             </li>
         </ul>
     </div>
+    <div id="home_url" data-url="<?= get_home_url() ?>"></div>
 
 </footer>
 

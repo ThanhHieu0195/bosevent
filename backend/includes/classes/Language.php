@@ -10,11 +10,16 @@ class Language implements HelperInterface {
     public $data=[];
     public function init() {
         // TODO: Implement init() method.
-        $blog = get_blog_details(get_current_blog_id());
-        $path = $blog->path;
-        preg_match('/\/([a-zA-Z]*)\/$/', $path, $arr);
+        $arr = [];
+        if (function_exists('get_blog_details')) {
+            $blog = get_blog_details(get_current_blog_id());
+            $path = $blog->path;
+            preg_match('/\/vi\/$/', $path, $arr);     
+        }
+       
         if (count($arr) > 0) {
-            $this->lang = $arr[count($arr)-1];
+            $this->lang = 'vi';
+            $path= '/vi/';
         } else {
             $path = '/en/';
         }
