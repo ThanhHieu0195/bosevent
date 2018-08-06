@@ -2,6 +2,7 @@
 /**
  * @var $cats Array
  */
+if (count($cats) > 0):
 ?>
 <aside class="nwidget nwidget-categories">
     <div class="nwidget__title"><?= translate_i18n('article/cat/title') ?></div>
@@ -14,3 +15,4 @@
         <?php endforeach; ?>
     </ul>
 </aside>
+<?php endif; ?>

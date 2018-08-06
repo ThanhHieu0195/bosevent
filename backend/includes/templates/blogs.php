@@ -10,18 +10,22 @@ $all_cats = get_categories();
 $new_posts = get_posts();
 $page_title = translateText('blogs/title/page-blogs');
 //
-if (isset($_GET['id'])) {
-    $post_id = intval($_GET['id']);
-    $post = get_post($post_id);
+if (isset($_GET['slug'])) {
+    $name = $_GET['slug'];
+    $post = get_page_by_path($name, OBJECT, 'post');
     $list_posts[] = $post;
     $page_title = $post->post_title;
 } else if (isset($_GET['cat'])){
     $page_title = translateText('blogs/title/page-cat');
-    $cat = $_GET['cat'];
+    $slug = $_GET['cat'];
+    $cat = get_term_by('slug', $slug, 'category');
     $list_posts = get_posts([
-            'category' => $cat
+            'category' => isset($cat->term_id) ? $cat->term_id : ''
     ]);
-    $all_cats = [get_category($cat)];
+    $all_cats = [];
+    if (!empty($cat)) {
+        $all_cats = [$cat];
+    }
 } else {
     $list_posts = $new_posts;
 }
