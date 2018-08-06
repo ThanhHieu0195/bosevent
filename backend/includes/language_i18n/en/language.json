@@ -1,79 +1,99 @@
 {
-  "event_session": {
-    "title": {
-      "main": "Event Calendar",
-      "filter": "All Events On Dashboard"
-    },
-    "description": "Event scheduling <br> software - mobile apps",
-    "button": "Find Event"
-  },
-  "blog_session": {
-    "title": {
-      "main": "Read from our blog"
-    },
-    "description": {
-      "main": "Latest from blog"
-    },
-    "button": {
-      "more_button": "More button"
-    }
-  },
-  "blogs": {
-    "title": {
-      "page-blogs": "Blogs",
-      "page-detail": "Blog Detail",
-      "page-cat": "Blogs filter by category",
-      "popular": "Popular Posts",
-      "recent":"Recent Posts"
-    },
-    "session": {
-      "cat": "'Show Categories'"
-    }
-  },
-  "article": {
-    "cat": {
-      "title": "Categories"
-    }
-  },
-  "service_session": {
-    "title": {
-      "main": "Our services"
-    },
-    "button": {
-      "view_more": "View more"
-    }
-  },
-  "menu": {
-    "about": {
-      "title": "About Us"
-    },
-    "service": {
-      "title": "Services"
-    },
-    "blog": {
-      "title": "News"
-    },
-    "event": {
-      "title": "Event Callendar"
-    },
-    "contact": {
-      "title": "Contact"
-    }
-  },
-  "banner": {
-    "button": {
-      "next_lesson": "Next lesson"
-    }
-  },
-  "footer": {
-    "description": {
-     "1":{
-       "title": "BOS Media And Events <br />Company Limited",
-       "description": " Beyond Your Best Imagination.<br />Business Registration Certificate No: <br />0315137128 issued by Department of Planning<br /> and Investment of HCMC<br /><br /> © BosEvents Team, 2018."
-     },
-      "2": {
-
-      }
-    }
-  }
+	"event_session": {
+		"title": {
+			"main": "",
+			"filter": "All Events On Dashboard"
+		},
+		"description": "EVENT CALENDAR",
+		"item": {
+			"location": "Location"
+		},
+		"button": "Find Event",
+		"error": {
+			"error-01": "Oops, we can't find other events !!! ",
+			"error-02": "Please check Start Date and End Date to find again."
+		},
+		"field": {
+			"start-date": "Start date",
+			"end-date": "End date"
+		}
+	},
+	"blog_session": {
+		"title": {
+			"main": "News"
+		},
+		"description": {
+			"main": "Top biggest news stories<br /> for your event solution"
+		},
+		"button": {
+			"more_button": "View More"
+		}
+	},
+	"blogs": {
+		"title": {
+			"page-blogs": "Blogs",
+			"page-detail": "Blog Detail",
+			"page-cat": "Blogs filter by category",
+			"popular": "Popular Posts",
+			"recent": "Recent Posts"
+		},
+		"session": {
+			"cat": "'Show Categories'"
+		}
+	},
+	"article": {
+		"cat": {
+			"title": "Categories"
+		}
+	},
+	"service_session": {
+		"title": {
+			"main": "Our services"
+		},
+		"button": {
+			"view_more": "View more"
+		}
+	},
+	"menu": {
+		"about": {
+			"title": "About Us"
+		},
+		"service": {
+			"title": "Services"
+		},
+		"blog": {
+			"title": "News"
+		},
+		"event": {
+			"title": "Event Callendar"
+		},
+		"contact": {
+			"title": "Contact"
+		}
+	},
+	"banner": {
+		"button": {
+			"next_lesson": "Next lesson"
+		}
+	},
+	"footer": {
+		"description": {
+			"info": {
+				"title": "BOS Media And Events <br />Company Limited",
+				"description": " Beyond Your Best Imagination.<br />Business Registration Certificate No: <br />0315137128 issued by Department of Planning<br /> and Investment of HCMC<br /><br /> © BosEvents Team, 2018."
+			},
+			"address": {
+				"title": "Address",
+				"description": "62N HT5 St.,<br /> Hiep Thanh Ward,<br />District 12,  HCMC."
+			},
+			"contact": {
+				"title": "Contact"
+			},
+			"hotline": {
+				"title": "Hotline",
+				"name-staff-01": "Ruler Lee (Mr.).",
+				"name-staff-02": "Daniel Vu (Mr.)"
+			}
+		}
+	}
 }

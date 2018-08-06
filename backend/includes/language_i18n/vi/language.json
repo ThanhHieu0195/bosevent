@@ -1,67 +1,98 @@
 {
-   "event_session": {
-      "title": {
-         "main": "LỊCH SỰ KIỆN",
-         "filter": ""
-      },
-      "description": "",
-      "button": "Tìm sự kiện"
-   },
-   "blog_session": {
-      "title": {
-         "main": "Tìm hiểu bài viết của chúng tôi"
-      },
-      "description": {
-         "main": "Bài viêt mới nhất"
-      },
-      "button": {
-         "more_button": "Xem nhiều hơn"
-      }
-   },
-   "blogs": {
-      "title": {
-         "page-blogs": "TIN TỨC",
-         "page-cat": "Theo categories",
-         "popular": "Bài viết phổ biến",
-         "recent":"Bài viết gần đây"
-      },
-      "session": {
-         "cat": "Hiện thị với mục lục"
-      }
-   },
-   "article": {
-      "cat": {
-         "title": "Mục lục"
-      }
-   },
-   "service_session": {
-      "title": {
-         "main": "Dịch vụ"
-      },
-      "button": {
-         "view_more": "Xem thêm"
-      }
-   },
-   "menu": {
-      "about": {
-         "title": "Về chúng tôi"
-      },
-      "service": {
-         "title": "Dịch vụ"
-      },
-      "blog": {
-         "title": "Tin tức"
-      },
-      "event": {
-         "title": "Lịch sự kiện"
-      },
-      "contact": {
-         "title": "Liên hệ"
-      }
-   },
-   "banner": {
-      "button": {
-         "next_lesson": "Bài kế tiếp"
-      }
-   }
+	"event_session": {
+		"title": {
+			"main": "",
+			"filter": "Thông tin sự kiện"
+		},
+		"description": "LỊCH SỰ KIỆN",
+		"item": {
+			"location": "Vị trí"
+		},
+		"button": "Tìm sự kiện",
+		"error": {
+			"error-01": "Rất tiếc,  Chúng tôi không thể tìm được những sự kiện khác !!! ",
+			"error-02": "Vui lòng điền lại ngày bắt đầu và ngày kết thúc để tìm kiếm sự kiện khác."
+		},
+		"field": {
+			"start-date": "Ngày bắt đầu",
+			"end-date": "Ngày kết thúc"
+		}
+	},
+	"blog_session": {
+		"title": {
+			"main": "Tin Tức"
+		},
+		"description": {
+			"main": "Sự kiện bổ ích, <br />tuyệt vời và hấp dẫn nhất"
+		},
+		"button": {
+			"more_button": "Xem Thêm"
+		}
+	},
+	"blogs": {
+		"title": {
+			"page-blogs": "TIN TỨC",
+			"page-cat": "Theo categories",
+			"popular": "Bài viết phổ biến",
+			"recent": "Bài viết gần đây"
+		},
+		"session": {
+			"cat": "Hiện thị với mục lục"
+		}
+	},
+	"article": {
+		"cat": {
+			"title": "Mục lục"
+		}
+	},
+	"service_session": {
+		"title": {
+			"main": "Dịch vụ"
+		},
+		"button": {
+			"view_more": "Xem thêm"
+		}
+	},
+	"menu": {
+		"about": {
+			"title": "Về chúng tôi"
+		},
+		"service": {
+			"title": "Dịch vụ"
+		},
+		"blog": {
+			"title": "Tin tức"
+		},
+		"event": {
+			"title": "Lịch sự kiện"
+		},
+		"contact": {
+			"title": "Liên hệ"
+		}
+	},
+	"banner": {
+		"button": {
+			"next_lesson": "Bài kế tiếp"
+		}
+	},
+	"footer": {
+		"description": {
+			"info": {
+				"title": "CÔNG TY TNHH <br />TRUYỀN THÔNG VÀ SỰ KIỆN BOS",
+				"description": " Hơn cả trí tưởng tượng tuyệt vời nhất của bạn <br />Số GPKD: 0315137128 <br /> do Sở Kế Hoạch và Đầu Tư Thành Phố Hồ Chí Minh cấp <br /> © BosEvents Team, 2018."
+			},
+			"address": {
+				"title": "ĐỊA CHỈ",
+				"description": "62N Đường HT5.,<br /> Phường Hiệp Thành,<br />Quận 12, TP.HCM."
+			},
+			"contact": {
+				"title": "LIÊN HỆ"
+			},
+			"hotline": {
+				"title": "ĐIỆN THOẠI",
+				"name-staff-01": "Lê Hoàng Phúc (Mr.).",
+				"name-staff-02": "Vũ Nguyễn Minh Trí (Mr.)"
+			}
+		}
+	}
 }

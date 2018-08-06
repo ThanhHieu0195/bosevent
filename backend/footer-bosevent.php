@@ -37,23 +37,19 @@ $path_template_url = get_template_directory_uri();
     <div class="ncontainer lh--19">
         <ul class="wp-inlineb nfooter txt--c">
             <li class="item inlineb-t txt--l">
-                <h5 class="nfooter__title heading-h5 cl--white">BOS Media And Events <br />Company Limited</h5>
+                <h5 class="nfooter__title heading-h5 cl--white"><?= translateText('footer/description/info/title') ?></h5>
                 <p class="f--13 cl--white1">
-                    Beyond Your Best Imagination.
-			  <br />
-			  Business Registration Certificate No: <br />0315137128 issued by Department of Planning<br /> and Investment of HCMC<br /><br /> © BosEvents Team, 2018.
+		   	 <?= translateText('footer/description/info/description') ?>
                 </p>
             </li>
             <li class="item inlineb-t txt--l">
-                <h5 class="nfooter__title heading-h5 cl--white txt--cap">Address</h5>
+                <h5 class="nfooter__title heading-h5 cl--white txt--cap"><?= translateText('footer/description/address/title') ?></h5>
                 <p class="f--13 cl--white1">
-                    62N HT5 St.,
-                    <br /> Hiep Thanh Ward,
-			  <br />District 12, HCMC.
+                    <?= translateText('footer/description/address/description') ?>
                 </p>
             </li>
             <li class="item inlineb-t txt--l">
-                <h5 class="nfooter__title heading-h5 cl--white txt--cap">Contact</h5>
+                <h5 class="nfooter__title heading-h5 cl--white txt--cap"><?= translateText('footer/description/contact/title') ?></h5>
                 <ul>
                     <li class="mb--5">
                         <a href="mailto:bearonsky.events@gmail.com" title="bearonsky.events@gmail.com" class="f--13 cl--white1">bearonsky.events@gmail.com</a>
@@ -78,14 +74,14 @@ $path_template_url = get_template_directory_uri();
                 </ul>
             </li>
             <li class="item inlineb-t txt--l">
-                <h5 class="nfooter__title heading-h5 cl--white txt--cap">Hotline</h5>
+                <h5 class="nfooter__title heading-h5 cl--white txt--cap"><?= translateText('footer/description/hotline/title') ?></h5>
                 <p class="f--13 cl--white mb--10">
-                    <span class="cl--white">Ruler Lee (Mr.)</span>
+                    <span class="cl--white"><?= translateText('footer/description/hotline/name-staff-01') ?></span>
                     <br />
                     <a href="tel:841697738979" class="cl--white1">(+84) 169 7738979</a>
                 </p>
                 <p class="f--13 cl--white">
-                    <span class="cl--white">Daniel Vu (Mr.)</span>
+                    <span class="cl--white"><?= translateText('footer/description/hotline/name-staff-02') ?></span>
                     <br />
                      <a href="tel:84906131296" class="cl--white1">(+84) 906 131296</a>
                 </p>

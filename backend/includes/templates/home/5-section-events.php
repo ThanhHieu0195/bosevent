@@ -22,10 +22,10 @@ $events = get_posts([
 					<div class="error"></div>
 				</li>
 				<li class="item">
-				<input type="text" id="start-date" class="nform-control custom-datepick" placeholder="Start Date" readonly>
+				<input type="text" id="start-date" class="nform-control custom-datepick" placeholder="<?= translateText('event_session/field/start-date') ?>" readonly>
 				</li>
 				<li class="item">
-				<input type="text" id="end-date" class="nform-control custom-datepick" placeholder="End Date" readonly>
+				<input type="text" id="end-date" class="nform-control custom-datepick" placeholder="<?= translateText('event_session/field/end-date') ?>" readonly>
 				</li>
 				<li class="item">
 				<a id="filter-events"  class="nbutton color--1 nsize--b f--500 txt--up" title="Find Event"><?= translateText('event_session/button') ?></a>
@@ -45,8 +45,8 @@ $events = get_posts([
 		<div class="no-events txt--c">
 			<img src="<?php echo $path_template_url ?>/assets/images/sad.svg" alt="" class="nimg no-events__img">
 			<div class="no-events__txt f--500">
-				Oops, Sorry we can't find other events !!! <br />
-				<p class="txt-small f--400">Please check Start Date and End Date to find again.</p>
+				<?= translateText('event_session/error/error-01') ?><br />
+				<p class="txt-small f--400"><?= translateText('event_session/error/error-02') ?></p>
 			</div>
 		</div>
         </div>

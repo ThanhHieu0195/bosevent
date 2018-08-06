@@ -19,7 +19,7 @@ $tags = wp_get_post_tags($event->ID);
         </div>
         <div class="nevent__schedule-info__content inlineb-m">
             <div class="time f--14">
-                <i class="time-date"><?= "${event_time_start} - ${event_start}" ?></i>
+                <i class="time-date"><?= "${event_start}" ?></i>
             </div>
             <div class="event-title f--25 f--900"><?= $event->post_title ?></div>
             <div class="person f--12 lh--12">By
