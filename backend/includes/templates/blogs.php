@@ -9,6 +9,7 @@ $all_cats = get_categories();
 // get new posts
 $new_posts = get_posts();
 $page_title = translateText('blogs/title/page-blogs');
+$breadcrumbs = [];
 //
 if (isset($_GET['slug'])) {
     $name = $_GET['slug'];
