@@ -22,7 +22,7 @@ $banner_galley = get_field('banner_background', $page->ID, []);
         <?php
         if (count($banner_galley) > 0) {
             foreach ($banner_galley as $gallery) {
-                $url = wp_get_attachment_thumb_url($gallery, 'full');
+                $url = wp_get_attachment_image_url($gallery, 'full');
                 echo '<li class="list-slide__item">
                         <span class="list-slide__bg" style="background-image: url('.$url.')"></span>
                     </li>';
