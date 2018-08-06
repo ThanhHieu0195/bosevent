@@ -332,6 +332,19 @@
 			}
 			&:hover {
 				@include prefix(transform, translateY(-10px));
+				.nmorale {
+					&__info-num,
+					&__info-title {
+						opacity: 0;
+						visibility: hidden;
+					}
+					&__info-num {
+						@include prefix(transform, translateY(-100%));
+					}
+					&__info-title {
+						@include prefix(transform, translateY(100%));
+					}
+				}
 				.nmorale__info-des {
 					opacity: 1;
 					visibility: visible;
@@ -383,25 +396,35 @@
 			padding: 15px;
 		}
 	}
+	&__info-num,
+	&__info-title {
+		@include prefix(transition, all 1s cubic-bezier(0.25, 0.8, 0.25, 1));
+	}
 	&__info-num {
+		display: block;
 		font-size: $font-14;
 	}
 	&__info-title {
 		@include mg-tb(10, 5);
+		font-size: $font-25;
 		@media (max-width: 568px) {
 			font-size: 2rem;
 		}
 	}
 	&__info-des {
-		font-size: $font-15;
+		position: absolute;
+		top: 0;
+		left: 0;
 		opacity: 0;
 		visibility: hidden;
-		@include prefix(transform, translateY(50px));
+		font-size: $font-15;
 		@include prefix(transition, all .3s cubic-bezier(0.25, 0.8, 0.25, 1));
 		@media (max-width: 812px) {
+			position: relative;
+			top: auto;
+			left: auto;
 			opacity: 1;
 			visibility: visible;
-			@include prefix(transform, none);
 		}
 	}
 }
