@@ -7,7 +7,8 @@ var language = {
     params: {
         en: 'en',
         vi: 'vi',
-        current: ''
+        current: '',
+        home_url: ''
     },
     actions: {
       setLanguage: (lan) => {
@@ -39,7 +40,7 @@ var language = {
         language.params.current = language.actions.getLanguage();
         if (language.params.current == language.params.vi) {
             if (href.match(/\/vi\//) == null) {
-                window.location.href = window.location.origin + '/vi'  + window.location.pathname;
+                window.location.href = language.params.home_url + '/vi'  + href.replace(language.params.home_url, '');
             }
         } else {
             if (href.match(/\/vi\//) != null) {
@@ -54,6 +55,7 @@ var language = {
     },
   init: () => {
       console.log('init language');
+      language.params.home_url = $('#home_url').data('url');
       language.events.checkLanguage();
   }
 };
