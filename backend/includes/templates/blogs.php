@@ -9,13 +9,27 @@ $all_cats = get_categories();
 // get new posts
 $new_posts = get_posts();
 $page_title = translateText('blogs/title/page-blogs');
-$breadcrumbs = [];
+$breadcrumbs = [
+        'blogs'
+];
 //
 if (isset($_GET['slug'])) {
     $name = $_GET['slug'];
     $post = get_page_by_path($name, OBJECT, 'post');
-    $list_posts[] = $post;
-    $page_title = $post->post_title;
+    if (!empty($post)) {
+        $list_posts[] = $post;
+        $page_title = $post->post_title;
+
+        $cat_ids = wp_get_post_categories($post->ID);
+        if (count($cat_ids) > 0) {
+            $cat = get_category($cat_ids[0]);
+            if (!empty($cat)) {
+                $all_cats = [$cat];
+                $breadcrumbs[] = $cat->name;
+            }
+        }
+        $breadcrumbs[] = $post->post_name;
+    }
 } else if (isset($_GET['cat'])){
     $page_title = translateText('blogs/title/page-cat');
     $slug = $_GET['cat'];
@@ -26,6 +40,7 @@ if (isset($_GET['slug'])) {
     $all_cats = [];
     if (!empty($cat)) {
         $all_cats = [$cat];
+        $breadcrumbs[] = $cat->name;
     }
 } else {
     $list_posts = $new_posts;
@@ -47,6 +62,14 @@ if (count($cat_ids) > 0) {
     <div class="banner-title txt--c" style="background-image: url(<?= $path_template_url ?>/assets/images/blog/banner-blog.jpg)">
         <div class="banner-title__inner">
             <?= $page_title ?>
+        </div>
+        <div class="breadcrumbs">
+            <?php for ($i=0; $i<count($breadcrumbs); $i++): ?>
+                <span><?= $breadcrumbs[$i] ?></span>
+                <?php if ($i<count($breadcrumbs)-1): ?>
+                    >
+                <?php endif; ?>
+            <?php endfor; ?>
         </div>
     </div>
     <div class="npage-content">

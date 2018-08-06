@@ -9,7 +9,7 @@ if (count($cats) > 0):
     <ul class="nwidget__list categories">
         <?php foreach ($cats as $cat): ?>
             <li class="item">
-                <a href="<?= \includes\Bootstrap::bootstrap()->helper->getLinkFilterCat($cat->term_id) ?>" title="<?= $cat->name ?>" class="item__title"><?= ucfirst($cat->name) ?></a>
+                <a href="<?= \includes\Bootstrap::bootstrap()->helper->getLinkFilterCat($cat->slug) ?>" title="<?= $cat->name ?>" class="item__title"><?= ucfirst($cat->name) ?></a>
                 <span class="number">(<?= ucfirst($cat->count) ?>)</span>
             </li>
         <?php endforeach; ?>
