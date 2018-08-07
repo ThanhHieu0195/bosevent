@@ -12,7 +12,9 @@
 		"button": "Tìm sự kiện",
 		"error": {
 			"error_01": "Rất tiếc,  Chúng tôi không thể tìm được những sự kiện khác !!! ",
-			"error_02": "Vui lòng điền lại ngày bắt đầu và ngày kết thúc để tìm kiếm sự kiện khác."
+			"error_02": "Vui lòng điền lại ngày bắt đầu và ngày kết thúc để tìm kiếm sự kiện khác.",
+			"error_field_01": "Vui lòng không bỏ trống !",
+			"error_field_02": "Vui lòng đảm bảo rằng Ngày Kết Thúc lớn hơn hoặc bằng Ngày Bắt Đầu !"
 		},
 		"field": {
 			"start_date": "Ngày bắt đầu",

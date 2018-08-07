@@ -2,7 +2,7 @@
 $path_template_url = get_template_directory_uri();
 ?>
 <div class="nourteam">
-    <ul class="nourteam__wrap wp-inlineb list-clm clm-04">
+    <ul class="nourteam__wrap wp-inlineb list-clm clm-05">
         <?php
         $idx = 0;
         while (isset($params['name'.$idx])) {

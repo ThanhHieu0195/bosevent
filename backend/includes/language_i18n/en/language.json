@@ -12,7 +12,9 @@
 		"button": "Find Event",
 		"error": {
 			"error_01": "Oops, we can't find other events !!! ",
-			"error_02": "Please check Start Date and End Date to find again."
+			"error_02": "Please check Start Date and End Date to find again.",
+			"error_field_01": "Please fill in all fields !",
+			"error_field_02": "Please ensure that the End Date is greater than or equal to the Start Date !"
 		},
 		"field": {
 			"start_date": "Start date",

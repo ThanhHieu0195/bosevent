@@ -57,12 +57,13 @@ $events = get_posts([
         events: {
             filterEvents: () => {
 
-			function checkDate(element, message) {
+			function checkDate(element, message, e ) {
 				element.addClass('active');
 				element.find('.error').text(message);
+				e.preventDefault();
 				setTimeout(() => {
 					element.removeClass('active');
-				}, 3000);
+				}, 5000);
 			}
 
 			let filterElement  = $('.nevent__schedule #filter-events');
@@ -73,13 +74,16 @@ $events = get_posts([
 					errorElement = $('.nevent__error'),
 					startDateParse = Date.parse(startDate),
 					endDateParse = Date.parse(endDate);
-
+					// console.log(startDate);
+					// console.log(endDate);
+					// console.log(startDateParse);
+					// console.log(endDateParse);
 				if (startDate == '' || endDate == '') {
-					checkDate(errorElement, 'Please fill in all fields !');
+					checkDate(errorElement, '<?= translateText('event_session/error/error_field_01') ?>', event);
 					return;
 				}
 				if (startDateParse > endDateParse) {
-					checkDate(errorElement, 'Please ensure that the End Date is greater than or equal to the Start Date !');
+					checkDate(errorElement, '<?= translateText('event_session/error/error_field_02') ?>', event);
 					return;
 				}
 
