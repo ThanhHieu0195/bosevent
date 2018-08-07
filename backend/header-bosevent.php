@@ -61,4 +61,4 @@ $path_template_url = get_template_directory_uri();
         </div>
     </div>
 </header>
-<div id="content" class="site-content">
+<div id="content" class="site-content language-<?= \includes\Bootstrap::bootstrap()->language->lang ?>">

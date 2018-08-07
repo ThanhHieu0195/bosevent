@@ -4,7 +4,7 @@ $events = get_posts([
 ]);
 ?>
 
-<div class="nsection nevent language-<?= \includes\Bootstrap::bootstrap()->language->lang ?>" id="bos-event">
+<div class="nsection nevent" id="bos-event">
     <div class="ncontainer">
         <div class="nheading__wrap txt--c">
             <h5 class="nheading__wrap-h5 heading-h5 f--400 txt--up cl--white1"><?= translateText('event_session/title/main') ?></h5>
