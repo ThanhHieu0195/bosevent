@@ -11,7 +11,7 @@
 $path_template_url = get_template_directory_uri();
 ?>
 <!doctype html>
-<html <?php language_attributes(); ?>>
+<html <?php language_attributes(); ?> class="language-<?= \includes\Bootstrap::bootstrap()->language->lang ?>">
 <head>
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -61,4 +61,4 @@ $path_template_url = get_template_directory_uri();
         </div>
     </div>
 </header>
-<div id="content" class="site-content language-<?= \includes\Bootstrap::bootstrap()->language->lang ?>">
+<div id="content" class="site-content">
