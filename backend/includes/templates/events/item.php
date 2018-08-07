@@ -31,7 +31,7 @@ $tags = wp_get_post_tags($event->ID);
         <div class="nevent__schedule-info__content-inner">
             <div class="inner">
                 <div class="time-start f--14">
-                    Time start:
+			    <?= translateText('event_session/item/time_start') ?>:
                     <span class="f--600"><?= "${event_time_start} - ${event_time_end}" ?></span>
                 </div>
                 <div class="description f--14">

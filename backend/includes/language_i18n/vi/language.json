@@ -6,16 +6,17 @@
 		},
 		"description": "LỊCH SỰ KIỆN",
 		"item": {
-			"location": "Vị trí"
+			"location": "Vị trí",
+			"time_start": "Thời gian"
 		},
 		"button": "Tìm sự kiện",
 		"error": {
-			"error-01": "Rất tiếc,  Chúng tôi không thể tìm được những sự kiện khác !!! ",
-			"error-02": "Vui lòng điền lại ngày bắt đầu và ngày kết thúc để tìm kiếm sự kiện khác."
+			"error_01": "Rất tiếc,  Chúng tôi không thể tìm được những sự kiện khác !!! ",
+			"error_02": "Vui lòng điền lại ngày bắt đầu và ngày kết thúc để tìm kiếm sự kiện khác."
 		},
 		"field": {
-			"start-date": "Ngày bắt đầu",
-			"end-date": "Ngày kết thúc"
+			"start_date": "Ngày bắt đầu",
+			"end_date": "Ngày kết thúc"
 		}
 	},
 	"blog_session": {
@@ -90,8 +91,8 @@
 			},
 			"hotline": {
 				"title": "ĐIỆN THOẠI",
-				"name-staff-01": "Lê Hoàng Phúc (Mr.).",
-				"name-staff-02": "Vũ Nguyễn Minh Trí (Mr.)"
+				"name_staff_01": "Lê Hoàng Phúc (Mr.).",
+				"name_staff_02": "Vũ Nguyễn Minh Trí (Mr.)"
 			}
 		}
 	}

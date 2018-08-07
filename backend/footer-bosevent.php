@@ -76,12 +76,12 @@ $path_template_url = get_template_directory_uri();
             <li class="item inlineb-t txt--l">
                 <h5 class="nfooter__title heading-h5 cl--white txt--cap"><?= translateText('footer/description/hotline/title') ?></h5>
                 <p class="f--13 cl--white mb--10">
-                    <span class="cl--white"><?= translateText('footer/description/hotline/name-staff-01') ?></span>
+                    <span class="cl--white"><?= translateText('footer/description/hotline/name_staff_01') ?></span>
                     <br />
                     <a href="tel:841697738979" class="cl--white1">(+84) 169 7738979</a>
                 </p>
                 <p class="f--13 cl--white">
-                    <span class="cl--white"><?= translateText('footer/description/hotline/name-staff-02') ?></span>
+                    <span class="cl--white"><?= translateText('footer/description/hotline/name_staff_02') ?></span>
                     <br />
                      <a href="tel:84906131296" class="cl--white1">(+84) 906 131296</a>
                 </p>

@@ -6,16 +6,17 @@
 		},
 		"description": "EVENT CALENDAR",
 		"item": {
-			"location": "Location"
+			"location": "Location",
+			"time_start": "Time start"
 		},
 		"button": "Find Event",
 		"error": {
-			"error-01": "Oops, we can't find other events !!! ",
-			"error-02": "Please check Start Date and End Date to find again."
+			"error_01": "Oops, we can't find other events !!! ",
+			"error_02": "Please check Start Date and End Date to find again."
 		},
 		"field": {
-			"start-date": "Start date",
-			"end-date": "End date"
+			"start_date": "Start date",
+			"end_date": "End date"
 		}
 	},
 	"blog_session": {
@@ -91,8 +92,8 @@
 			},
 			"hotline": {
 				"title": "Hotline",
-				"name-staff-01": "Ruler Lee (Mr.).",
-				"name-staff-02": "Daniel Vu (Mr.)"
+				"name_staff_01": "Ruler Lee (Mr.).",
+				"name_staff_02": "Daniel Vu (Mr.)"
 			}
 		}
 	}
