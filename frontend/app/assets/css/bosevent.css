@@ -600,8 +600,8 @@ textarea {
 
 .nchange-lang {
   position: fixed;
-  bottom: 0;
-  right: 0;
+  bottom: 50%;
+  right: -22px;
   padding: 0 5px;
   background-color: #fff;
   z-index: 2;
@@ -616,19 +616,17 @@ textarea {
   -moz-transition: all 200ms ease;
   -ms-transition: all 200ms ease;
   -o-transition: all 200ms ease;
-  transform: translateY(100%);
-  -webkit-transform: translateY(100%);
-  -moz-transform: translateY(100%);
-  -ms-transform: translateY(100%);
-  -o-transform: translateY(100%); }
+  transform: translate(0, -50%) rotate(-90deg);
+  -webkit-transform: translate(0, -50%) rotate(-90deg);
+  -moz-transform: translate(0, -50%) rotate(-90deg);
+  -ms-transform: translate(0, -50%) rotate(-90deg);
+  -o-transform: translate(0, -50%) rotate(-90deg); }
+  @media (max-width: 812px) {
+    .nchange-lang {
+      right: -19px; } }
   .nchange-lang.active {
     opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-    -webkit-transform: translateY(0);
-    -moz-transform: translateY(0);
-    -ms-transform: translateY(0);
-    -o-transform: translateY(0); }
+    visibility: visible; }
   .nchange-lang .nitem a {
     display: block;
     width: 30px;
@@ -638,13 +636,17 @@ textarea {
     -moz-transition: all 300ms ease-in;
     -ms-transition: all 300ms ease-in;
     -o-transition: all 300ms ease-in; }
+    @media (max-width: 812px) {
+      .nchange-lang .nitem a {
+        width: 25px;
+        height: 25px; } }
     .nchange-lang .nitem a:hover {
       opacity: .8; }
 
 .nbacktotop {
   position: fixed;
-  right: 12px;
-  bottom: 50px;
+  right: 5px;
+  bottom: 20px;
   cursor: pointer;
   z-index: 2;
   opacity: 0;
@@ -659,17 +661,14 @@ textarea {
   -moz-transition: all 300ms ease-in;
   -ms-transition: all 300ms ease-in;
   -o-transition: all 300ms ease-in; }
-  @media (max-width: 768px) {
-    .nbacktotop {
-      right: 16px; } }
   .nbacktotop.active {
     opacity: 1;
     visibility: visible; }
   .nbacktotop .rocket {
     width: 50px; }
-    @media (max-width: 768px) {
+    @media (max-width: 812px) {
       .nbacktotop .rocket {
-        width: 40px; } }
+        width: 35px; } }
 
 @-webkit-keyframes rocket {
   0% {
