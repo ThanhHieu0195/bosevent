@@ -11,7 +11,7 @@
 $path_template_url = get_template_directory_uri();
 ?>
 <!doctype html>
-<html <?php language_attributes(); ?> class="language-<?= \includes\Bootstrap::bootstrap()->language->lang ?>">
+<html <?php language_attributes(); ?>>
 <head>
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,7 +20,7 @@ $path_template_url = get_template_directory_uri();
     <?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?> id="home-page">
+<body <?php body_class('language-'.\includes\Bootstrap::bootstrap()->language->lang); ?> id="home-page">
 <ajaxurl data-ajax="<?= admin_url('admin-ajax.php') ?>"></ajaxurl>
 <header class="nheader wp-inlineb">
     <div class="ncontainer">
