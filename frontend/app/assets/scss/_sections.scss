@@ -214,21 +214,34 @@
 }
 
 .nourteam {
-	padding: 0 0 40%;
+	padding: 0 0 38%;
 	background: $color-black1;
 	margin-top: 80px;
 	@media (max-width: 1024px) {
 		padding: 0 0 55%;
 	}
 	&__wrap {
-		&.list-clm.clm-04 {
+		&.list-clm.clm-05 {
 			.nitem {
 				@media (max-width: 812px) {
+					width: 33.333%;
+				}
+				@media (max-width: 568px) {
 					width: 50%;
 				}
 				@media (max-width: 320px) {
 					width: 100%;
-				}
+					@include pd-lr(20,20);
+					margin-top: 10px;
+					border-radius: 5px;
+					-webkit-border-radius: 5px;
+					-moz-border-radius: 5px;
+					-ms-border-radius: 5px;
+					-o-border-radius: 5px;
+					&:first-child {
+						margin-top: 20px;
+					}
+}
 			}
 		}
 	}
@@ -242,6 +255,9 @@
 				@include prefix (filter, grayscale(0));
 				&:after {
 					background-color: transparent;
+					@media (max-width: 812px) {
+						background-color: auto;
+					}
 				}
 			}
 			.nourteam__des-title {
@@ -259,6 +275,9 @@
 		@include aspect-ratio(1, 1);
 		@include prefix(filter, grayscale(100%));
 		@include prefix(transition, all .2s cubic-bezier(0.25, 0.8, 0.25, 1));
+		@media (max-width: 812px) {
+			@include prefix(filter, grayscale(0));
+		}
 		&:after {
 			content: '';
 			position: absolute;
@@ -268,6 +287,9 @@
 			right: 0;
 			background-color: rgba($color-black1, .65);
 			@include prefix(transition, background-color .4s cubic-bezier(0.25, 0.8, 0.25, 1));
+			@media (max-width: 812px) {
+				background-color: rgba($color-black1, .15);
+			}
 		}
 	}
 	&__des {
@@ -279,7 +301,7 @@
 		padding-bottom: 20px;
 	}
 	&__des-title {
-		font-size: $font-20;
+		font-size: $font-18;
 		@include prefix(transition, all .4s cubic-bezier(0.25, 0.8, 0.25, 1));
 		@media (max-width: 568px) {
 			font-size: 1rem;
@@ -337,12 +359,22 @@
 					&__info-title {
 						opacity: 0;
 						visibility: hidden;
+						@media (max-width: 812px) {
+							opacity: 1;
+							visibility: visible;
+						}
 					}
 					&__info-num {
-						@include prefix(transform, translateY(-100%));
+						@include prefix(transform, translateY(-30px));
+						@media (max-width: 812px) {
+							@include prefix(transform, none);
+						}
 					}
 					&__info-title {
-						@include prefix(transform, translateY(100%));
+						@include prefix(transform, translateY(30px));
+						@media (max-width: 812px) {
+							@include prefix(transform, none);
+						}
 					}
 				}
 				.nmorale__info-des {
@@ -398,17 +430,17 @@
 	}
 	&__info-num,
 	&__info-title {
-		@include prefix(transition, all 1s cubic-bezier(0.25, 0.8, 0.25, 1));
+		@include prefix(transition, all .5s cubic-bezier(0.25, 0.8, 0.25, 1));
 	}
 	&__info-num {
 		display: block;
 		font-size: $font-14;
 	}
 	&__info-title {
-		@include mg-tb(10, 5);
+		margin-bottom: 5px;
 		font-size: $font-25;
 		@media (max-width: 568px) {
-			font-size: 2rem;
+			font-size: 1.5rem;
 		}
 	}
 	&__info-des {
@@ -418,7 +450,7 @@
 		opacity: 0;
 		visibility: hidden;
 		font-size: $font-15;
-		@include prefix(transition, all .3s cubic-bezier(0.25, 0.8, 0.25, 1));
+		@include prefix(transition, all .7s cubic-bezier(0.25, 0.8, 0.25, 1));
 		@media (max-width: 812px) {
 			position: relative;
 			top: auto;
@@ -817,6 +849,9 @@
 		}
 		.inner-item {
 			padding: 25px;
+			@media (max-width: 667px) {
+				padding: 15px;
+			}
 			&.inner-pane {
 				cursor: pointer;
 				@include prefix(transition, background-color .2s ease-in-out);
@@ -862,7 +897,10 @@
 				color: $color-main;
 				margin-top: 2px;
 				@media (max-width: 568px) {
-					font-size: 1.4rem;
+					font-size: 1.3rem;
+				}
+				@media (max-width: 320px) {
+					font-size: 1.2rem;
 				}
 			}
 		}
