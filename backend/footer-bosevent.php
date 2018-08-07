@@ -27,6 +27,7 @@ $path_template_url = get_template_directory_uri();
         </li>
     </ul>
 </div>
+<div id="current-language" data-language="<?= \includes\Bootstrap::bootstrap()->language->lang ?>"></div>
 <!-- 07. End of Change Language -->
 
 <!-- 08. Back To Top -->
