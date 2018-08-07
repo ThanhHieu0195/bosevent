@@ -71,7 +71,7 @@ $events = get_posts([
 					startDate = $('#start-date').val(),
 					endDate = $('#end-date').val(),
 					errorElement = $('.nevent__error'),
-					startDateParse = Date.parse(startDate),
+					startDateParse = `Date.parse(startDate),
 					endDateParse = Date.parse(endDate);
 
 				if (startDate == '' || endDate == '') {

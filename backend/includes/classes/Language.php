@@ -6,8 +6,9 @@ use includes\Bootstrap;
 use includes\interfaces\HelperInterface;
 
 class Language implements HelperInterface {
-    private $lang = 'en';
+    public $lang = 'en';
     public $data=[];
+    public $format='';
     public function init() {
         // TODO: Implement init() method.
         $arr = [];
@@ -20,8 +21,10 @@ class Language implements HelperInterface {
         if (count($arr) > 0) {
             $this->lang = 'vi';
             $path= '/vi/';
+            $this->format = Bootstrap::DATET_FM_VI;
         } else {
             $path = '/en/';
+            $this->format = Bootstrap::DATET_FM_EN;
         }
         $dir_path = Bootstrap::getPath();
         $filename = $dir_path . '/language_i18n' .  $path . 'language.json';
