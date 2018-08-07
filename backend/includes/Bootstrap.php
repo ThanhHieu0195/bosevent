@@ -32,6 +32,8 @@ class Bootstrap implements interfaces\ManagementInterface {
 	public $helper;
 	public $hook;
 	public $language;
+    const DATET_FM_EN = 'mm/dd/yyyy';
+    const DATET_FM_VI = 'dd/mm/yyyy';
 	//public $configs;
 
 	public static function init() {

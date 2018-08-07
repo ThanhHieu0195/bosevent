@@ -4,7 +4,16 @@
  */
 $author = get_field('event_author', $event->ID, '');
 $event_start = get_field('event_start', $event->ID, '');
-$event_start = substr($event_start, 0, 4) . '/' . substr($event_start, 4, 2) . '/' . substr($event_start, 6, 2);
+
+$y = substr($event_start, 0, 4);
+$m = substr($event_start, 4, 2);
+$d = substr($event_start, 6, 2);
+
+$event_start = \includes\Bootstrap::bootstrap()->language->format;
+$event_start = str_replace('dd', $d, $event_start);
+$event_start = str_replace('mm', $m, $event_start);
+$event_start = str_replace('yyyy', $y, $event_start);
+
 $event_time_start = get_field('event_time_start', $event->ID, '');
 $event_time_end = get_field('event_time_end', $event->ID, '');
 $event_author = get_field('event_author', $event->ID, '');
