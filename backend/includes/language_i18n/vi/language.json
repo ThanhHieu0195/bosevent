@@ -6,6 +6,7 @@
 		},
 		"description": "LỊCH SỰ KIỆN",
 		"item": {
+			"by": "Bởi",
 			"location": "Vị trí",
 			"time_start": "Thời gian"
 		},

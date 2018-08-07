@@ -31,7 +31,8 @@ $tags = wp_get_post_tags($event->ID);
                 <i class="time-date"><?= "${event_start}" ?></i>
             </div>
             <div class="event-title f--25 f--900"><?= $event->post_title ?></div>
-            <div class="person f--12 lh--12">By
+            <div class="person f--12 lh--12">
+			<?= translateText('event_session/item/by') ?>
                 <span class="f--500 cl--grayblack"><?= $author ?></span>
             </div>
         </div>
