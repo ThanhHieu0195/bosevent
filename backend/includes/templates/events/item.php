@@ -10,9 +10,9 @@ $m = substr($event_start, 4, 2);
 $d = substr($event_start, 6, 2);
 
 $event_start = \includes\Bootstrap::bootstrap()->language->format;
-$event_start = str_replace('dd', $d, $event_start);
-$event_start = str_replace('mm', $m, $event_start);
-$event_start = str_replace('yyyy', $y, $event_start);
+$event_start = str_replace('d', $d, $event_start);
+$event_start = str_replace('m', $m, $event_start);
+$event_start = str_replace('Y', $y, $event_start);
 
 $event_time_start = get_field('event_time_start', $event->ID, '');
 $event_time_end = get_field('event_time_end', $event->ID, '');
