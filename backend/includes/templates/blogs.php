@@ -10,7 +10,7 @@ $all_cats = get_categories();
 $new_posts = get_posts();
 $page_title = translateText('blogs/title/page-blogs');
 $breadcrumbs = [
-        'blogs'
+        'home' => get_home_url()
 ];
 //
 if (isset($_GET['slug'])) {
@@ -25,10 +25,10 @@ if (isset($_GET['slug'])) {
             $cat = get_category($cat_ids[0]);
             if (!empty($cat)) {
                 $all_cats = [$cat];
-                $breadcrumbs[] = $cat->name;
+                $breadcrumbs[$cat->name] = \includes\Bootstrap::bootstrap()->helper->getLinkFilterCat($cat->slug);
             }
         }
-        $breadcrumbs[] = $post->post_name;
+        $breadcrumbs[$post->post_name] = '';
     }
 } else if (isset($_GET['cat'])){
     $page_title = translateText('blogs/title/page-cat');
@@ -40,7 +40,8 @@ if (isset($_GET['slug'])) {
     $all_cats = [];
     if (!empty($cat)) {
         $all_cats = [$cat];
-        $breadcrumbs[] = $cat->name;
+        $breadcrumbs[$cat->name] = '';
+
     }
 } else {
     $list_posts = $new_posts;
@@ -64,12 +65,17 @@ if (count($cat_ids) > 0) {
             <?= $page_title ?>
         </div>
         <div class="breadcrumbs">
-            <?php for ($i=0; $i<count($breadcrumbs); $i++): ?>
-                <span><?= $breadcrumbs[$i] ?></span>
-                <?php if ($i<count($breadcrumbs)-1): ?>
-                    >
-                <?php endif; ?>
-            <?php endfor; ?>
+            <?php
+            foreach($breadcrumbs as $key => $val) {
+                if (!empty($val)) {
+                    echo '<a href="'.$val.'">' . $key . '</a>';
+                    echo '>';
+
+                } else {
+                    echo '<span>'.$key.'</span>';
+                }
+            }
+            ?>
         </div>
     </div>
     <div class="npage-content">
