@@ -43,6 +43,10 @@
 		},
 		"session": {
 			"cat": "'Show Categories'"
+		},
+		"breadcrumbs": {
+			"home": "Home",
+			"blog": "Blog"
 		}
 	},
 	"article": {

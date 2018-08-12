@@ -42,6 +42,10 @@
 		},
 		"session": {
 			"cat": "Hiện thị với mục lục"
+		},
+		"breadcrumbs": {
+			"home": "trang chủ",
+			"blog": "Tin tức"
 		}
 	},
 	"article": {
