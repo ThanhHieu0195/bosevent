@@ -711,6 +711,8 @@ textarea {
     content: none; }
   .nbreadcrumbs-list .item a {
     color: rgba(255, 255, 255, 0.8); }
+    .nbreadcrumbs-list .item a:hover {
+      color: #fff; }
 
 .banner-title {
   position: relative;
