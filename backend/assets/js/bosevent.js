@@ -80,7 +80,6 @@ $.main = {
 			var curSection = $(this).attr('href'),
 				headerHeight = $('.nheader').height();
 			setTimeout(() => {
-
 				$('html, body').animate({
 					// scrollTop: $(curSection).offset().top - headerHeight + 2
 					scrollTop: $(curSection).offset().top - 40
@@ -104,7 +103,7 @@ $.main = {
 		})
 	},
 	/*------------------------------------------------------------
-	    0.4. Back To Top
+	    0.5. Back To Top
 	------------------------------------------------------------*/
 	backToTop: function () {
 		$(document).on('click', '.nbacktotop', function (e) {
@@ -117,7 +116,7 @@ $.main = {
 		});
 	},
 	/*------------------------------------------------------------
-	    0.5. Scroll first section
+	    0.6. Scroll first section
 	------------------------------------------------------------*/
 	scrollFirstSection: function () {
 		$(document).on('click', '#scroll-down', function (e) {
@@ -129,6 +128,9 @@ $.main = {
 		});
 	},
 
+	/*------------------------------------------------------------
+	    0.7. Categories mobile
+	------------------------------------------------------------*/
 	categoriesMobile: function () {
 		var checkClick = true,
 			sideBarLeftCategory = '.sidebar__left';
@@ -143,12 +145,56 @@ $.main = {
 			checkClick = false;
 		})
 	},
+	/*------------------------------------------------------------
+		0.8. Set default datepicker
+	------------------------------------------------------------*/
+	setDefaultDatePicker: function () {
+		$("#start-date").datepicker();
+		$("#end-date").datepicker();
+		if ($('body').hasClass('language-vi')) {
+			$.datepicker.regional["vi-VN"] = {
+				closeText: "Đóng",
+				prevText: "Trước",
+				nextText: "Sau",
+				currentText: "Hôm nay",
+				monthNames: ["Tháng một", "Tháng hai", "Tháng ba", "Tháng tư", "Tháng năm", "Tháng sáu", "Tháng bảy", "Tháng tám", "Tháng chín", "Tháng mười", "Tháng mười một", "Tháng mười hai"],
+				monthNamesShort: ["Một", "Hai", "Ba", "Bốn", "Năm", "Sáu", "Bảy", "Tám", "Chín", "Mười", "Mười một", "Mười hai"],
+				dayNames: ["Chủ nhật", "Thứ hai", "Thứ ba", "Thứ tư", "Thứ năm", "Thứ sáu", "Thứ bảy"],
+				dayNamesShort: ["CN", "Hai", "Ba", "Tư", "Năm", "Sáu", "Bảy"],
+				dayNamesMin: ["CN", "T2", "T3", "T4", "T5", "T6", "T7"],
+				weekHeader: "Tuần",
+				dateFormat: "dd/mm/yy",
+				firstDay: 1,
+				isRTL: false,
+				showMonthAfterYear: false,
+				yearSuffix: ""
+			};
+			$.datepicker.setDefaults($.datepicker.regional["vi-VN"]);
+		}
+	},
+
+	/*------------------------------------------------------------
+		0.9. Cacular height admin bar
+	------------------------------------------------------------*/
+	cacularAdminBar: function () {
+		var heightWpAdminBar = $('#wpadminbar').height(),
+			headerElement = $('.nheader'),
+			windowWidth = $(window).width();
+		$(window).on('resize', function () {
+			if (windowWidth <= 782) {
+				headerElement.css({
+					'margin-top': heightWpAdminBar - 1 + 'px'
+				})
+			}
+		})
+	}
+
 };
+
 
 $(function () {
 	var currentUrl = window.location.href,
 		bodyID = $('body').attr('id');
-	// alert(currentUrl);
 	if (bodyID == 'home-page') {
 		$.main.affixHeader();
 		$.main.menuMobile();
@@ -163,4 +209,8 @@ $(function () {
 		$.main.showBackToTop();
 		$.main.backToTop();
 	}
+	$.main.setDefaultDatePicker();
+	$.main.cacularAdminBar();
 });
+
+
