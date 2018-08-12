@@ -10,13 +10,17 @@ $all_cats = get_categories();
 $new_posts = get_posts();
 $page_title = translateText('blogs/title/page-blogs');
 $breadcrumbs = [
-        'home' => get_home_url()
+    translate_i18n('blogs/breadcrumbs/home') => get_home_url(),
+    translate_i18n('blogs/breadcrumbs/blog') => \includes\Bootstrap::bootstrap()->helper->getLinkBlog()
 ];
+
+$class = 'blog';
 //
 if (isset($_GET['slug'])) {
     $name = $_GET['slug'];
     $post = get_page_by_path($name, OBJECT, 'post');
     if (!empty($post)) {
+        $class = 'blog-detail';
         $list_posts[] = $post;
         $page_title = $post->post_title;
 
@@ -31,6 +35,7 @@ if (isset($_GET['slug'])) {
         $breadcrumbs[$post->post_name] = '';
     }
 } else if (isset($_GET['cat'])){
+    $class = 'blog-cat';
     $page_title = translateText('blogs/title/page-cat');
     $slug = $_GET['cat'];
     $cat = get_term_by('slug', $slug, 'category');
@@ -65,21 +70,23 @@ if (count($cat_ids) > 0) {
             <?= $page_title ?>
 			<div class="nbreadcrumbs">
 			<ul class="nbreadcrumbs-list">
-				<?php
-					foreach($breadcrumbs as $key => $val) {
-					if (!empty($val)) {
-						echo '<li class="item inlineb-t"><a href="'.$val.'">' . $key . '</a></li>';
-					} else {
-						echo '<li class="item inlineb-t">'.$key.'</li>';
-					}
-					}
-				?>
+                <?php
+                $i = 0;
+                foreach($breadcrumbs as $key => $val) {
+                    if (!empty($val)) {
+                        echo '<li class="item inlineb-t"><a href="'.$val.'">' . $key . '</a></li>';
+
+                    } else {
+                        echo '<li class="item inlineb-t">'.$key.'</li>';
+                    }
+                    $i ++;
+                }
+                ?>
 			</ul>
-		</div>
+            </div>
         </div>
-        
     </div>
-    <div class="npage-content">
+    <div class="npage-content <?= $class ?>">
         <div class="ncontainer">
             <div class="wp-inlineb sidebar">
                 <div class="sidebar__left item inlineb-t">

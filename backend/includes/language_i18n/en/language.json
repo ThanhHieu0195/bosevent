@@ -42,7 +42,11 @@
 			"recent": "Recent Posts"
 		},
 		"session": {
-			"cat": "Show Categories"
+			"cat": "'Show Categories'"
+		},
+		"breadcrumbs": {
+			"home": "Home",
+			"blog": "Blog"
 		}
 	},
 	"article": {
