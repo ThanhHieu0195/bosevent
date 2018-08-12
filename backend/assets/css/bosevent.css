@@ -696,6 +696,22 @@ textarea {
        -moz-transform: translateY(0);
             transform: translateY(0); } }
 
+.nbreadcrumbs-list {
+  font-size: 0.8rem;
+  margin-top: 15px;
+  line-height: 1.4; }
+  @media (max-width: 667px) {
+    .nbreadcrumbs-list {
+      margin-top: 8px; } }
+  .nbreadcrumbs-list .item:after {
+    content: '/';
+    display: inline-block;
+    margin: 0 7px; }
+  .nbreadcrumbs-list .item:last-child:after {
+    content: none; }
+  .nbreadcrumbs-list .item a {
+    color: rgba(255, 255, 255, 0.8); }
+
 .banner-title {
   position: relative;
   overflow: hidden;
@@ -705,10 +721,13 @@ textarea {
   .banner-title:before {
     content: '';
     display: block;
-    padding-top: 20%; }
-    @media (max-width: 768px) {
+    padding-top: 30%; }
+    @media (max-width: 812px) {
       .banner-title:before {
-        padding-top: 30%; } }
+        padding-top: 40%; } }
+    @media (max-width: 667px) {
+      .banner-title:before {
+        padding-top: 55%; } }
   .banner-title:after {
     content: '';
     position: absolute;
@@ -723,7 +742,8 @@ textarea {
     left: 50%;
     color: #fff;
     font-weight: 900;
-    font-size: 2.667rem;
+    font-size: 2rem;
+    line-height: 1.2;
     z-index: 2;
     text-transform: uppercase;
     padding-left: 15px;
@@ -733,9 +753,14 @@ textarea {
     -moz-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     -o-transform: translate(-50%, -50%); }
-    @media (max-width: 667px) {
+    @media (max-width: 812px) {
       .banner-title__inner {
-        font-size: 1.563rem; } }
+        font-size: 1.563rem;
+        width: 85%; } }
+    @media (max-width: 677px) {
+      .banner-title__inner {
+        font-size: 1.2rem;
+        width: 95%; } }
 
 .ui-datepicker-current-day a.ui-state-active {
   background-color: #f54c4c;
@@ -1558,7 +1583,7 @@ textarea {
     margin-top: 120px; }
     @media (max-width: 812px) {
       .nservices__wrap {
-        margin-top: 70px; } }
+        margin-top: 60px; } }
   .nservices__item-left {
     width: 50%;
     position: relative;
@@ -2176,6 +2201,10 @@ textarea {
       -moz-transform: translateY(20px);
       -ms-transform: translateY(20px);
       -o-transform: translateY(20px); } }
+  @media (max-width: 667px) {
+    .categories-mb__sub {
+      max-height: 350px;
+      overflow-y: auto; } }
 
 .nwidget + .nwidget {
   margin-top: 40px; }

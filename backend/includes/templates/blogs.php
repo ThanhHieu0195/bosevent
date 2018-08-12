@@ -68,23 +68,22 @@ if (count($cat_ids) > 0) {
     <div class="banner-title txt--c" style="background-image: url(<?= $path_template_url ?>/assets/images/blog/banner-blog.jpg)">
         <div class="banner-title__inner">
             <?= $page_title ?>
-        </div>
-        <div class="breadcrumbs">
-            <?php
-            $i = 0;
-            foreach($breadcrumbs as $key => $val) {
-                if (!empty($val)) {
-                    echo '<a href="'.$val.'">' . $key . '</a>';
+			<div class="nbreadcrumbs">
+			<ul class="nbreadcrumbs-list">
+                <?php
+                $i = 0;
+                foreach($breadcrumbs as $key => $val) {
+                    if (!empty($val)) {
+                        echo '<li class="item inlineb-t"><a href="'.$val.'">' . $key . '</a></li>';
 
-                } else {
-                    echo '<span>'.$key.'</span>';
+                    } else {
+                        echo '<li class="item inlineb-t">'.$key.'</li>';
+                    }
+                    $i ++;
                 }
-                if ($i < count($breadcrumbs)-1) {
-                    echo '>';
-                }
-                $i ++;
-            }
-            ?>
+                ?>
+			</ul>
+            </div>
         </div>
     </div>
     <div class="npage-content <?= $class ?>">
