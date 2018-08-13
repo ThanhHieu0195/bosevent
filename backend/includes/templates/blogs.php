@@ -64,7 +64,6 @@ if (isset($_GET['slug'])) {
 
     }
 } else {
-<<<<<<< HEAD
     $page = isset($_GET['page']) ? intval($_GET['page']) : 1;
     $limit = 3;
     $offset = ($page - 1) * $limit;
@@ -81,8 +80,6 @@ if (isset($_GET['slug'])) {
         'numberposts' => $limit,
         'offset' => $offset
     ));
-=======
->>>>>>> c3e9e80d1d74c8b6b1dcde769af394539e2087df
     $list_posts = $new_posts;
 }
 
