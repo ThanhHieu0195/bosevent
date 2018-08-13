@@ -93,11 +93,27 @@ $path_template_url = get_template_directory_uri();
 
 </footer>
 
+<div class="nloading">
+	<div class="wp-table">
+		<div class="tab-cell-m txt--c">
+			<div class="loading-img">
+				<img src="<?php echo $path_template_url ?>/assets/images/about-us/about-us.png" alt="Bosevent Logo" class="nimg">
+			</div>
+			<div class="loading-percent">
+				<span class="f--900"></span>
+			</div>
+		</div>
+	</div>
+</div>
+
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
 <script>
     $(function () {
+	    $(window).on('beforeunload', function(){
+		$(window).scrollTop(0);
+		});
         $('.nlist-blog').slick({
             centerMode: true,
             centerPadding: '200px',
@@ -126,6 +142,21 @@ $path_template_url = get_template_directory_uri();
                 }
             }]
 	  });
+
+
+	  function loading() {
+		  var num = 0;
+		  for(i=0; i <= 100; i++) {
+			  setTimeout(() => {
+				$('.loading-percent span').html(num + '%');
+				if(num == 100) {
+					$('.nloading').fadeOut();
+				}
+				num++;
+			  }, i*20);
+		  }
+	  }
+	   loading();
     })
 </script>
 </body>

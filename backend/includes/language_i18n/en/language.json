@@ -35,18 +35,18 @@
 	},
 	"blogs": {
 		"title": {
-			"page-blogs": "Blogs",
-			"page-detail": "Blog Detail",
-			"page-cat": "Blogs filter by category",
+			"page-blogs": "News",
+			"page-detail": "News Detail",
+			"page-cat": "News filter by category",
 			"popular": "Popular Posts",
 			"recent": "Recent Posts"
 		},
 		"session": {
-			"cat": "'Show Categories'"
+			"cat": "Show Categories"
 		},
 		"breadcrumbs": {
 			"home": "Home",
-			"blog": "Blog"
+			"blog": "News"
 		}
 	},
 	"article": {
