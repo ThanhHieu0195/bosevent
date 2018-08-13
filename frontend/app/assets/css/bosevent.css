@@ -2436,7 +2436,7 @@ textarea {
           max-height: none;
           margin-top: 10px; } }
   .postpopular + .postpopular {
-    margin-top: 40px; }
+    margin-top: 35px; }
     @media (max-width: 1024px) {
       .postpopular + .postpopular {
         margin-top: 20px; } }
