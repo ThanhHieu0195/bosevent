@@ -3,7 +3,6 @@ get_header('bosevent-blog');
 $dir_path = dirname(__FILE__);
 $path_template_url = get_template_directory_uri();
 $list_posts = [];
-
 // get all cats
 $all_cats = get_categories();
 // get new posts
@@ -12,10 +11,8 @@ $breadcrumbs = [
     translate_i18n('blogs/breadcrumbs/home') => get_home_url(),
     translate_i18n('blogs/breadcrumbs/blog') => \includes\Bootstrap::bootstrap()->helper->getLinkBlog()
 ];
-
 $class = 'blog';
 $option_pagination = [];
-
 $page = isset($_GET['page']) ? intval($_GET['page']) : 1;
 $limit = 5;
 $offset = ($page - 1) * $limit;
@@ -24,7 +21,9 @@ $option_pagination = array(
     'total' => $count->publish / $limit + ($count->publish % $limit > 0),
     'current' => $page,
     'base' => \includes\Bootstrap::bootstrap()->helper->getLinkBlog().'%_%',
-    'format' => '?page=%#%'
+    'format' => '?page=%#%',
+    'prev_text'          => __( '←' ),
+    'next_text'          => __( '→' ),
 );
 $new_posts = get_posts(array(
     'numberposts' => $limit,
@@ -38,7 +37,6 @@ if (isset($_GET['slug'])) {
         $class = 'blog-detail';
         $list_posts[] = $post;
         $page_title = $post->post_title;
-
         $cat_ids = wp_get_post_categories($post->ID);
         if (count($cat_ids) > 0) {
             $cat = get_category($cat_ids[0]);
@@ -61,28 +59,10 @@ if (isset($_GET['slug'])) {
     if (!empty($cat)) {
         $all_cats = [$cat];
         $breadcrumbs[$cat->name] = '';
-
     }
 } else {
-    $page = isset($_GET['page']) ? intval($_GET['page']) : 1;
-    $limit = 3;
-    $offset = ($page - 1) * $limit;
-    $count = wp_count_posts();
-    $option_pagination = array(
-        'total' => $count->publish / $limit + ($count->publish % $limit > 0),
-        'current' => $page,
-        'base' => \includes\Bootstrap::bootstrap()->helper->getLinkBlog().'%_%',
-	  'format' => '?page=%#%',
-	  'prev_text'          => __( '←' ),
-	  'next_text'          => __( '→' ),
-    );
-    $new_posts = get_posts(array(
-        'numberposts' => $limit,
-        'offset' => $offset
-    ));
     $list_posts = $new_posts;
 }
-
 // get recent posts
 $cat_ids = [];
 if (count($list_posts) > 0) {
@@ -106,7 +86,6 @@ if (count($cat_ids) > 0) {
                 foreach($breadcrumbs as $key => $val) {
                     if (!empty($val)) {
                         echo '<li class="item inlineb-t"><a href="'.$val.'">' . $key . '</a></li>';
-
                     } else {
                         echo '<li class="item inlineb-t">'.$key.'</li>';
                     }
