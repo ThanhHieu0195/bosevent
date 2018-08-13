@@ -2228,7 +2228,9 @@ textarea {
       margin: auto; } }
   @media (max-width: 667px) {
     .sidebar {
-      width: auto; } }
+      width: auto;
+      margin-left: -15px;
+      margin-right: -15px; } }
   .sidebar__left {
     width: 35%; }
     @media (max-width: 1024px) {
@@ -2416,22 +2418,28 @@ textarea {
 
 .postpopular {
   background-color: #fff; }
-  .postpopular.detail .postpopular__content {
-    max-height: none;
-    overflow: normal; }
-    @media (max-width: 1024px) {
-      .postpopular.detail .postpopular__content {
-        max-height: none; } }
-    @media (max-width: 768px) {
-      .postpopular.detail .postpopular__content {
-        max-height: none;
-        margin-top: 10px; } }
+  .postpopular.detail {
+    padding: 20px 20px 10px 20px;
+    border-radius: 2px;
+    -webkit-border-radius: 2px; }
+    @media (max-width: 812px) {
+      .postpopular.detail {
+        padding: 15px 15px 10px; } }
+    .postpopular.detail .postpopular__content {
+      max-height: none;
+      overflow: normal; }
+      @media (max-width: 1024px) {
+        .postpopular.detail .postpopular__content {
+          max-height: none; } }
+      @media (max-width: 768px) {
+        .postpopular.detail .postpopular__content {
+          max-height: none;
+          margin-top: 10px; } }
   .postpopular + .postpopular {
-    margin-top: 50px;
-    border-top: 1px solid #eee; }
+    margin-top: 40px; }
     @media (max-width: 1024px) {
       .postpopular + .postpopular {
-        margin-top: 30px; } }
+        margin-top: 20px; } }
   .postpopular:hover .postpopular__img:after {
     opacity: 1;
     visibility: visible; }
@@ -2475,8 +2483,6 @@ textarea {
       -moz-transition: all 200ms ease-in-out;
       -ms-transition: all 200ms ease-in-out;
       -o-transition: all 200ms ease-in-out; }
-    .postpopular__img .nratio--img {
-      padding: 20px 20px 0 20px; }
   .postpopular__title {
     font-size: 1.333rem;
     font-weight: 600;
@@ -2491,9 +2497,6 @@ textarea {
     @media (max-width: 768px) {
       .postpopular__title {
         margin-bottom: 10px; } }
-  .postpopular__wrap {
-    padding-left: 20px;
-    padding-right: 20px; }
   .postpopular__content {
     font-size: 0.9333rem;
     margin-top: 20px;
@@ -2560,6 +2563,11 @@ textarea {
 .npagination {
   font-size: 1rem;
   margin-top: 40px; }
+  @media (max-width: 1024px) {
+    .npagination {
+      text-align: center;
+      font-size: 0.8rem;
+      margin-top: 25px; } }
   .npagination .page-numbers {
     display: inline-block;
     padding: 10px 15px;
@@ -2569,11 +2577,16 @@ textarea {
     background-color: #fff;
     color: #000;
     margin-right: 3px;
+    margin-bottom: 5px;
     transition: all 300ms ease-in-out;
     -webkit-transition: all 300ms ease-in-out;
     -moz-transition: all 300ms ease-in-out;
     -ms-transition: all 300ms ease-in-out;
     -o-transition: all 300ms ease-in-out; }
+    @media (max-width: 667px) {
+      .npagination .page-numbers {
+        padding: 8px 10px;
+        min-width: 35px; } }
     .npagination .page-numbers:hover {
       background-color: #f54c4c;
       color: #fff; }
