@@ -9,8 +9,15 @@
 .sidebar {
 	@include mg-lr(-15, -15);
 	position: relative;
+	@media (max-width: 1024px) {
+		width: 90%;
+		margin: auto;
+	}
+	@media (max-width: 667px) {
+		width: auto;
+	}
 	&__left {
-		width: 30%;
+		width: 35%;
 		@media (max-width: 1024px) {
 			width: 100%;
 			&.active {
@@ -27,25 +34,34 @@
 				}
 			}
 		}
+		.inner {
+			background-color: #fff;
+			&.cus-bg {
+				padding: 25px;
+				@media (max-width: 768px) {
+					padding: 15px;
+				}
+			}
+		}
 	}
 	&__right {
-		width: 70%;
+		width: 65%;
 		@media (max-width: 1024px) {
 			width: 100%;
+		}
+		.inner {
+			&.cus-bg {
+				padding: 0;
+			}
 		}
 	}
 	.inner {
 		&.cus-bg {
-			background-color: #fff;
-			padding: 25px;
 			border-radius: 2px;
 			-webkit-border-radius: 2px;
 			-moz-border-radius: 2px;
 			-ms-border-radius: 2px;
 			-o-border-radius: 2px;
-			@media (max-width: 768px) {
-				padding: 15px;
-			}
 		}
 	}
 	>.item {
@@ -190,6 +206,7 @@
 }
 
 .postpopular {
+	background-color: #fff;
 	&.detail {
 		.postpopular__content {
 			max-height: none;
@@ -204,11 +221,9 @@
 		}
 	}
 	+.postpopular {
-		padding-top: 50px;
 		margin-top: 50px;
 		border-top: 1px solid $color-gray;
 		@media (max-width: 1024px) {
-			padding-top: 35px;
 			margin-top: 30px;
 		}
 	}
@@ -241,6 +256,9 @@
 			visibility: hidden;
 			@include prefix(transition, all 200ms ease-in-out);
 		}
+		.nratio--img {
+			padding: 20px 20px 0 20px;
+		}
 	}
 	&__title {
 		font-size: $font-20;
@@ -259,6 +277,9 @@
 		@media (max-width: 768px) {
 			margin-bottom: 10px;
 		}
+	}
+	&__wrap {
+		@include pd-lr(20, 20);
 	}
 	&__content {
 		font-size: $font-14;
@@ -325,6 +346,30 @@
 		.text-meta {
 			font-size: $font-12;
 			vertical-align: middle;
+		}
+	}
+}
+
+.npagination {
+	font-size: $font-15;
+	margin-top: 40px;
+	.page-numbers {
+		display: inline-block;
+		padding: 10px 15px;
+		min-width: 45px;
+		text-align: center;
+		border-radius: 2px;
+		background-color: #fff;
+		color: $color-black;
+		margin-right: 3px;
+		@include prefix(transition, all 300ms ease-in-out);
+		&:hover {
+			background-color: #f54c4c;
+			color: #fff;
+		}
+		&.current {
+			background-color: #f54c4c;
+			color: #fff;
 		}
 	}
 }
