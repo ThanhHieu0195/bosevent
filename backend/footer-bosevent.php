@@ -93,19 +93,6 @@ $path_template_url = get_template_directory_uri();
 
 </footer>
 
-<div class="nloading">
-	<div class="wp-table">
-		<div class="tab-cell-m txt--c">
-			<div class="loading-img">
-				<img src="<?php echo $path_template_url ?>/assets/images/about-us/about-us.png" alt="Bosevent Logo" class="nimg">
-			</div>
-			<div class="loading-percent">
-				<span class="f--900"></span>
-			</div>
-		</div>
-	</div>
-</div>
-
 </div><!-- #page -->
 
 <?php wp_footer(); ?>

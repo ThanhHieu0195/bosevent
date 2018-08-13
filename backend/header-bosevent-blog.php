@@ -19,7 +19,18 @@ $path_template_url = get_template_directory_uri();
 	<meta name="format-detection" content="telephone=no">
 	<?php wp_head(); ?>
 </head>
-
+<div class="nloading">
+    <div class="wp-table">
+        <div class="tab-cell-m txt--c">
+            <div class="loading-img">
+                <img src="<?php echo $path_template_url ?>/assets/images/about-us/about-us.png" alt="Bosevent Logo" class="nimg">
+            </div>
+            <div class="loading-percent">
+                <span class="f--900"></span>
+            </div>
+        </div>
+    </div>
+</div>
 <body <?php body_class(); ?> id="blog-page">
     <!-- Header -->
     <header class="nheader no-fix wp-inlineb">
