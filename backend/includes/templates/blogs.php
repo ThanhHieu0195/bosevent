@@ -7,7 +7,6 @@ $list_posts = [];
 // get all cats
 $all_cats = get_categories();
 // get new posts
-$new_posts = get_posts();
 $page_title = translateText('blogs/title/page-blogs');
 $breadcrumbs = [
     translate_i18n('blogs/breadcrumbs/home') => get_home_url(),
@@ -15,6 +14,7 @@ $breadcrumbs = [
 ];
 
 $class = 'blog';
+$option_pagination = [];
 //
 if (isset($_GET['slug'])) {
     $name = $_GET['slug'];
@@ -49,6 +49,20 @@ if (isset($_GET['slug'])) {
 
     }
 } else {
+    $page = isset($_GET['page']) ? intval($_GET['page']) : 1;
+    $limit = 5;
+    $offset = ($page - 1) * $limit;
+    $count = wp_count_posts();
+    $option_pagination = array(
+        'total' => $count->publish / $limit + ($count->publish % $limit > 0),
+        'current' => $page,
+        'base' => \includes\Bootstrap::bootstrap()->helper->getLinkBlog().'%_%',
+        'format' => '?page=%#%'
+    );
+    $new_posts = get_posts(array(
+        'numberposts' => $limit,
+        'offset' => $offset
+    ));
     $list_posts = $new_posts;
 }
 
@@ -100,8 +114,17 @@ if (count($cat_ids) > 0) {
                 <div class="sidebar__right item inlineb-t">
                     <div class="inner  cus-bg">
                         <?php foreach ($list_posts as $post): ?>
-                        <?=  \includes\Bootstrap::bootstrap()->helper->render($dir_path . '/blog/article.php', ['post_id' => $post->ID, 'path_template_url' => $path_template_url]); ?>
+                            <?=  \includes\Bootstrap::bootstrap()->helper->render($dir_path . '/blog/article.php', ['post_id' => $post->ID, 'path_template_url' => $path_template_url]); ?>
                         <?php endforeach; ?>
+                        <?php
+                        if (isset($option_pagination) && !empty($option_pagination) ){
+                            ?>
+                            <div class="pagination">
+                                <?= paginate_links($option_pagination) ?>
+                            </div>
+                            <?php
+                        }
+                        ?>
                     </div>
                 </div>
             </div>
