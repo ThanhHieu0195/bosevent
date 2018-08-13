@@ -82,6 +82,10 @@
 			@include prefix(transition, all 200ms cubic-bezier(.445, .05, .55, .95));
 			@include prefix(transform, translateY(20px));
 		}
+		@media (max-width: 667px) {
+			max-height: 350px;
+			overflow-y: auto;
+		}
 	}
 }
 
