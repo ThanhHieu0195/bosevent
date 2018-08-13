@@ -15,6 +15,21 @@ $breadcrumbs = [
 
 $class = 'blog';
 $option_pagination = [];
+
+$page = isset($_GET['page']) ? intval($_GET['page']) : 1;
+$limit = 5;
+$offset = ($page - 1) * $limit;
+$count = wp_count_posts();
+$option_pagination = array(
+    'total' => $count->publish / $limit + ($count->publish % $limit > 0),
+    'current' => $page,
+    'base' => \includes\Bootstrap::bootstrap()->helper->getLinkBlog().'%_%',
+    'format' => '?page=%#%'
+);
+$new_posts = get_posts(array(
+    'numberposts' => $limit,
+    'offset' => $offset
+));
 //
 if (isset($_GET['slug'])) {
     $name = $_GET['slug'];
@@ -49,6 +64,7 @@ if (isset($_GET['slug'])) {
 
     }
 } else {
+<<<<<<< HEAD
     $page = isset($_GET['page']) ? intval($_GET['page']) : 1;
     $limit = 3;
     $offset = ($page - 1) * $limit;
@@ -65,6 +81,8 @@ if (isset($_GET['slug'])) {
         'numberposts' => $limit,
         'offset' => $offset
     ));
+=======
+>>>>>>> c3e9e80d1d74c8b6b1dcde769af394539e2087df
     $list_posts = $new_posts;
 }
 
