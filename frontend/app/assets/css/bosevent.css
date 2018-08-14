@@ -514,6 +514,7 @@ textarea {
   text-decoration: none;
   border-color: transparent;
   border-radius: 5px;
+  font-weight: 600;
   -webkit-border-radius: 5px;
   transition: all 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
   -webkit-transition: all 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
@@ -880,6 +881,55 @@ textarea {
     -o-transform: translateY(-10px);
     filter: graysc1ale(0%);
     -webkit-filter: graysc1ale(0%); } }
+
+.error404 {
+  overflow-y: hidden; }
+  @media (orientation: landscape) {
+    .error404 {
+      overflow-y: auto; } }
+  .error404 .site-header {
+    display: none; }
+  .error404 .site,
+  .error404 .site-main,
+  .error404 .site-content,
+  .error404 .content-area {
+    height: 100%; }
+
+.error-404 {
+  height: 100%;
+  text-align: center; }
+  .error-404 .robot-404 {
+    max-width: 250px;
+    margin: auto; }
+    @media (max-width: 667px) {
+      .error-404 .robot-404 {
+        max-width: 50%; } }
+  .error-404 .page-content {
+    margin: 0;
+    padding: 15px; }
+  .error-404 .error-title {
+    font-size: 5.882rem;
+    line-height: 1;
+    margin-top: 30px;
+    margin-bottom: 10px; }
+    @media (min-width: 1400px) {
+      .error-404 .error-title {
+        font-size: 8.824rem; } }
+    @media (max-width: 768px) {
+      .error-404 .error-title {
+        margin-top: 15px; } }
+  .error-404 .error-stitle {
+    line-height: 1;
+    font-size: 2rem; }
+    @media (max-width: 768px) {
+      .error-404 .error-stitle {
+        font-size: 1.2rem; } }
+  .error-404 .error-des {
+    margin-top: 10px;
+    margin-bottom: 20px; }
+    @media (max-width: 768px) {
+      .error-404 .error-des {
+        margin-bottom: 15px; } }
 
 .bg-banner {
   position: relative;
@@ -2199,7 +2249,6 @@ textarea {
     .nevent .no-events__txt {
       margin-top: 40px;
       font-size: 1.333rem;
-      font-style: italic;
       color: rgba(0, 0, 0, 0.6); }
       @media (max-width: 812px) {
         .nevent .no-events__txt {
