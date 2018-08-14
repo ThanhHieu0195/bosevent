@@ -17,7 +17,7 @@ $class = 'blog';
 $option_pagination = [];
 
 $page = isset($_GET['page']) ? intval($_GET['page']) : 1;
-$limit = 3;
+$limit = 5;
 $offset = ($page - 1) * $limit;
 $count = wp_count_posts();
 $option_pagination = array(

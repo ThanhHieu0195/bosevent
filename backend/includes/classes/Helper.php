@@ -101,8 +101,7 @@ class Helper implements HelperInterface {
     }
 
     public function getLinkBlogDetail($id) {
-        $post = get_post($id);
-        return $this->getLinkBlog() . '?slug='.$post->post_name;
+        return get_permalink($id);
     }
 
     public function getLinkFilterCat($cat) {
