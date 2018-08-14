@@ -33,25 +33,7 @@ $new_posts = get_posts(array(
     'offset' => $offset
 ));
 //
-if (isset($_GET['slug'])) {
-    $name = $_GET['slug'];
-    $post = get_page_by_path($name, OBJECT, 'post');
-    if (!empty($post)) {
-        $class = 'blog-detail';
-        $list_posts[] = $post;
-        $page_title = $post->post_title;
-
-        $cat_ids = wp_get_post_categories($post->ID);
-        if (count($cat_ids) > 0) {
-            $cat = get_category($cat_ids[0]);
-            if (!empty($cat)) {
-                $all_cats = [$cat];
-                $breadcrumbs[$cat->name] = \includes\Bootstrap::bootstrap()->helper->getLinkFilterCat($cat->slug);
-            }
-        }
-        $breadcrumbs[$post->post_name] = '';
-    }
-} else if (isset($_GET['cat'])){
+if (isset($_GET['cat'])){
     $class = 'blog-cat';
     $page_title = translateText('blogs/title/page-cat');
     $slug = $_GET['cat'];

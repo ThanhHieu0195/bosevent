@@ -1,5 +1,4 @@
 <?php
-$page = get_page_by_title('home');
 $banner_title = get_field('banner_title', $page->ID, '');
 $banner_description = get_field('banner_description', $page->ID, '');
 $banner_galley = get_field('banner_background', $page->ID, []);
