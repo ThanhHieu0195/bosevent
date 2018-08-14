@@ -15,6 +15,8 @@
 	}
 	@media (max-width: 667px) {
 		width: auto;
+		@include mg-lr(-15, -15);
+
 	}
 	&__left {
 		width: 35%;
@@ -208,6 +210,12 @@
 .postpopular {
 	background-color: #fff;
 	&.detail {
+		padding: 20px 20px 10px 20px;
+		border-radius: 2px;
+		-webkit-border-radius: 2px;
+		@media (max-width: 812px) {
+			padding: 15px 15px 10px;
+		}
 		.postpopular__content {
 			max-height: none;
 			overflow: normal;
@@ -221,10 +229,9 @@
 		}
 	}
 	+.postpopular {
-		margin-top: 50px;
-		border-top: 1px solid $color-gray;
+		margin-top: 35px;
 		@media (max-width: 1024px) {
-			margin-top: 30px;
+			margin-top: 20px;
 		}
 	}
 	&:hover {
@@ -256,9 +263,6 @@
 			visibility: hidden;
 			@include prefix(transition, all 200ms ease-in-out);
 		}
-		.nratio--img {
-			padding: 20px 20px 0 20px;
-		}
 	}
 	&__title {
 		font-size: $font-20;
@@ -277,9 +281,6 @@
 		@media (max-width: 768px) {
 			margin-bottom: 10px;
 		}
-	}
-	&__wrap {
-		@include pd-lr(20, 20);
 	}
 	&__content {
 		font-size: $font-14;
@@ -353,6 +354,11 @@
 .npagination {
 	font-size: $font-15;
 	margin-top: 40px;
+	@media (max-width: 1024px) {
+		text-align: center;
+		font-size: $font-12;
+		margin-top: 25px;
+	}
 	.page-numbers {
 		display: inline-block;
 		padding: 10px 15px;
@@ -362,7 +368,12 @@
 		background-color: #fff;
 		color: $color-black;
 		margin-right: 3px;
+		margin-bottom: 5px;
 		@include prefix(transition, all 300ms ease-in-out);
+		@media (max-width: 667px) {
+			padding: 8px 10px;
+    			min-width: 35px;
+		}
 		&:hover {
 			background-color: #f54c4c;
 			color: #fff;
