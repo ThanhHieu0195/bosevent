@@ -15,12 +15,13 @@ Class Constants {
         //
         'wordpress/' => 'home',
         'wordpress/vi/' => 'home',
+        'wordpress/en/' => 'home',
         'wordpress/blogs' => 'blogs',
-        'wordpress/vi/blogs' => 'blogs',
+        'wordpress/en/blogs' => 'blogs',
     ];
 
 	const SLUG_TO_KEY = [
-        'vi/blogs' => 'blogs'
+        'en/blogs' => 'blogs'
     ];
 
 	const MAPPING_TITLE = [

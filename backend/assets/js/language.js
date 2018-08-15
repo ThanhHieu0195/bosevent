@@ -38,13 +38,13 @@ var language = {
       checkLanguage: () => {
         let href = window.location.href;
         language.params.current = language.actions.getLanguage();
-        if (language.params.current == language.params.vi) {
-            if (href.match(/\/vi\//) == null) {
-                window.location.href = language.params.home_url + '/vi'  + href.replace(language.params.home_url, '');
+        if (language.params.current == language.params.en) {
+            if (href.match(/\/en\//) == null) {
+                window.location.href = language.params.home_url + '/en'  + href.replace(language.params.home_url, '');
             }
         } else {
-            if (href.match(/\/vi\//) != null) {
-                window.location.href = href.replace('/vi', '');
+            if (href.match(/\/en\//) != null) {
+                window.location.href = href.replace('/en', '');
             }
         }
       },
