@@ -103,5 +103,10 @@
 				"name_staff_02": "Daniel Vu (Mr.)"
 			}
 		}
+	},
+	"error404": {
+		"title": "Oops! Something went wrong",
+		"description": "It looks like nothing was found at this location.<br /> Please click the button below to come back our HomePage",
+		"button_description": "Go Home"
 	}
 }

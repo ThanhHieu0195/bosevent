@@ -102,5 +102,10 @@
 				"name_staff_02": "Vũ Nguyễn Minh Trí (Mr.)"
 			}
 		}
+	},
+	"error404": {
+		"title": "Rất tiếc! Đã xảy ra sự cố",
+		"description": "Dường như không tìm thấy điều gì tại đây <br />. Vui lòng nhấn nút bên dưới để quay lại Trang Chủ",
+		"button_description": "Về Ngay"
 	}
 }
