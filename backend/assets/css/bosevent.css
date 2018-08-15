@@ -2643,6 +2643,13 @@ textarea {
       background-color: #f54c4c;
       color: #fff; }
 
+.single-post .postpopular__title a {
+  cursor: default;
+  pointer-events: none; }
+
+.single-post .postpopular__title:hover > a {
+  color: #000; }
+
 .nheader {
   position: absolute;
   top: 0;
