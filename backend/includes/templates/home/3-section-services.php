@@ -1,5 +1,4 @@
 <?php
-$page = get_page_by_title('home');
 $service_title = get_field('service_title', $page->ID, '');
 $service_subtitle = get_field('service_subtitle', $page->ID, '');
 $service_description = get_field('service_description', $page->ID, '');

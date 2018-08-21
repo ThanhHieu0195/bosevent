@@ -35,14 +35,18 @@
 	},
 	"blogs": {
 		"title": {
-			"page-blogs": "Blogs",
-			"page-detail": "Blog Detail",
-			"page-cat": "Blogs filter by category",
+			"page-blogs": "News",
+			"page-detail": "News Detail",
+			"page-cat": "Categories",
 			"popular": "Popular Posts",
 			"recent": "Recent Posts"
 		},
 		"session": {
-			"cat": "'Show Categories'"
+			"cat": "Show Categories"
+		},
+		"breadcrumbs": {
+			"home": "Home",
+			"blog": "News"
 		}
 	},
 	"article": {
@@ -99,5 +103,10 @@
 				"name_staff_02": "Daniel Vu (Mr.)"
 			}
 		}
+	},
+	"error404": {
+		"title": "Oops! Something went wrong",
+		"description": "It looks like nothing was found at this location.<br /> Please click the button below to come back our HomePage",
+		"button_description": "Go Home"
 	}
 }

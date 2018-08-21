@@ -9,8 +9,17 @@
 .sidebar {
 	@include mg-lr(-15, -15);
 	position: relative;
+	@media (max-width: 1024px) {
+		width: 90%;
+		margin: auto;
+	}
+	@media (max-width: 667px) {
+		width: auto;
+		@include mg-lr(-15, -15);
+
+	}
 	&__left {
-		width: 30%;
+		width: 35%;
 		@media (max-width: 1024px) {
 			width: 100%;
 			&.active {
@@ -27,25 +36,34 @@
 				}
 			}
 		}
+		.inner {
+			background-color: #fff;
+			&.cus-bg {
+				padding: 25px;
+				@media (max-width: 768px) {
+					padding: 15px;
+				}
+			}
+		}
 	}
 	&__right {
-		width: 70%;
+		width: 65%;
 		@media (max-width: 1024px) {
 			width: 100%;
+		}
+		.inner {
+			&.cus-bg {
+				padding: 0;
+			}
 		}
 	}
 	.inner {
 		&.cus-bg {
-			background-color: #fff;
-			padding: 25px;
 			border-radius: 2px;
 			-webkit-border-radius: 2px;
 			-moz-border-radius: 2px;
 			-ms-border-radius: 2px;
 			-o-border-radius: 2px;
-			@media (max-width: 768px) {
-				padding: 15px;
-			}
 		}
 	}
 	>.item {
@@ -81,6 +99,10 @@
 			visibility: hidden;
 			@include prefix(transition, all 200ms cubic-bezier(.445, .05, .55, .95));
 			@include prefix(transform, translateY(20px));
+		}
+		@media (max-width: 667px) {
+			max-height: 350px;
+			overflow-y: auto;
 		}
 	}
 }
@@ -186,7 +208,14 @@
 }
 
 .postpopular {
+	background-color: #fff;
 	&.detail {
+		padding: 20px 20px 10px 20px;
+		border-radius: 2px;
+		-webkit-border-radius: 2px;
+		@media (max-width: 812px) {
+			padding: 15px 15px 10px;
+		}
 		.postpopular__content {
 			max-height: none;
 			overflow: normal;
@@ -200,12 +229,9 @@
 		}
 	}
 	+.postpopular {
-		padding-top: 50px;
-		margin-top: 50px;
-		border-top: 1px solid $color-gray;
+		margin-top: 35px;
 		@media (max-width: 1024px) {
-			padding-top: 35px;
-			margin-top: 30px;
+			margin-top: 20px;
 		}
 	}
 	&:hover {
@@ -321,6 +347,40 @@
 		.text-meta {
 			font-size: $font-12;
 			vertical-align: middle;
+		}
+	}
+}
+
+.npagination {
+	font-size: $font-15;
+	margin-top: 40px;
+	@media (max-width: 1024px) {
+		text-align: center;
+		font-size: $font-12;
+		margin-top: 25px;
+	}
+	.page-numbers {
+		display: inline-block;
+		padding: 10px 15px;
+		min-width: 45px;
+		text-align: center;
+		border-radius: 2px;
+		background-color: #fff;
+		color: $color-black;
+		margin-right: 3px;
+		margin-bottom: 5px;
+		@include prefix(transition, all 300ms ease-in-out);
+		@media (max-width: 667px) {
+			padding: 8px 10px;
+    			min-width: 35px;
+		}
+		&:hover {
+			background-color: #f54c4c;
+			color: #fff;
+		}
+		&.current {
+			background-color: #f54c4c;
+			color: #fff;
 		}
 	}
 }

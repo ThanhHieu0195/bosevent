@@ -19,7 +19,6 @@ class Hook implements HookInterface{
         add_action('init', [$this, 'registerPostType']);
         add_action('admin_menu', [$this, 'registerMenu']);
         add_filter( 'template_include', [$this, 'customTemplate']);
-        add_filter('document_title_parts', [$this, 'customTitle']);
     }
 
     public function registerFilter() {
@@ -181,17 +180,5 @@ class Hook implements HookInterface{
             $model = new $class_name();
             $model->register();
         }
-    }
-
-    public function customTitle($params) {
-        $slug = \includes\Bootstrap::bootstrap()->helper->getSubUrl();
-        $key = \includes\Bootstrap::bootstrap()->helper->slugToKey($slug);
-        $mapping = \includes\classes\Constants::MAPPING_TITLE;
-
-        if (isset($mapping[$key])) {
-            $params['title'] = $mapping[$key];
-
-        }
-        return $params;
     }
 }

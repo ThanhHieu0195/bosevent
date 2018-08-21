@@ -17,22 +17,24 @@ if (count($cat_ids) > 0) {
             <img src="<?= get_the_post_thumbnail_url($post_id) ?>" alt="<?= get_the_title($post_id) ?>" class="nimg nratio--img">
         </a>
     </div>
-    <div class="postpopular-header">
-        <h2 class="postpopular__title">
-            <a href="<?= \includes\Bootstrap::bootstrap()->helper->getLinkBlogDetail($post_id) ?>"><?= get_the_title($post_id) ?></a>
-        </h2>
-        <ul class="postpopular__meta wp-inlineb">
-            <li class="item inlineb-t">
-                <img src="<?= $path_template_url ?>/assets/images/calendar.svg" alt="Calendar" class="nimg icon-meta">
-                <span class="text-meta"><?= get_the_date(\includes\Bootstrap::bootstrap()->language->format, $post_id) ?></span>
-            </li>
-            <li class="item inlineb-t">
-                <img src="<?= $path_template_url ?>/assets/images/tags.svg" alt="Tags" class="nimgs icon-meta">
-                <span class="text-meta"><?= implode(', ', $cats) ?></span>
-            </li>
-        </ul>
-    </div>
-    <div class="postpopular__content">
-        <?= apply_filters('the_content', get_post_field('post_content', $post_id)) ?>
+    <div class="postpopular__wrap">
+	<div class="postpopular-header">
+		<h2 class="postpopular__title">
+			<a href="<?= \includes\Bootstrap::bootstrap()->helper->getLinkBlogDetail($post_id) ?>"><?= get_the_title($post_id) ?></a>
+		</h2>
+		<ul class="postpopular__meta wp-inlineb">
+			<li class="item inlineb-t">
+			<img src="<?= $path_template_url ?>/assets/images/calendar.svg" alt="Calendar" class="nimg icon-meta">
+			<span class="text-meta"><?= get_the_date(\includes\Bootstrap::bootstrap()->language->format, $post_id) ?></span>
+			</li>
+			<li class="item inlineb-t">
+			<img src="<?= $path_template_url ?>/assets/images/tags.svg" alt="Tags" class="nimgs icon-meta">
+			<span class="text-meta"><?= implode(', ', $cats) ?></span>
+			</li>
+		</ul>
+	</div>
+	<div class="postpopular__content">
+		<?= apply_filters('the_content', get_post_field('post_content', $post_id)) ?>
+	</div>
     </div>
 </article>

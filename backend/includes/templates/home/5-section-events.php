@@ -57,27 +57,32 @@ $events = get_posts([
         events: {
             filterEvents: () => {
 
-			function checkDate(element, message, e ) {
+			function checkDate(element, message, event ) {
 				element.addClass('active');
 				element.find('.error').text(message);
-				e.preventDefault();
+				event.preventDefault();
 				setTimeout(() => {
 					element.removeClass('active');
 				}, 5000);
 			}
 
-			let filterElement  = $('.nevent__schedule #filter-events');
+			var filterElement  = $('.nevent__schedule #filter-events');
 			filterElement.on('click', () => {
-				let  ajaxurl = $('ajaxurl').data('ajax'),
-					startDate = $('#start-date').val(),
-					endDate = $('#end-date').val(),
-					errorElement = $('.nevent__error'),
-					startDateParse = Date.parse(startDate),
-					endDateParse = Date.parse(endDate);
-					// console.log(startDate);
-					// console.log(endDate);
-					// console.log(startDateParse);
-					// console.log(endDateParse);
+				var bodyElement = $('body');
+				   	 ajaxurl = $('ajaxurl').data('ajax'),
+					 errorElement = $('.nevent__error'),
+					 startDate = $('#start-date').val(),
+					 endDate = $('#end-date').val(),
+					 startDateParse = Date.parse(startDate),
+					 endDateParse = Date.parse(endDate);
+
+				if (bodyElement.hasClass('language-vi')) {
+					var formatStartDateVI = $.datepicker.parseDate("dd/mm/yy", startDate),
+						 formatEndDateVI = $.datepicker.parseDate("dd/mm/yy", endDate);
+						 startDateParse = Date.parse(formatStartDateVI),
+						 endDateParse = Date.parse(formatEndDateVI);
+				} 		
+
 				if (startDate == '' || endDate == '') {
 					checkDate(errorElement, '<?= translateText('event_session/error/error_field_01') ?>', event);
 					return;

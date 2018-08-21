@@ -98,6 +98,9 @@ $path_template_url = get_template_directory_uri();
 <?php wp_footer(); ?>
 <script>
     $(function () {
+	    $(window).on('beforeunload', function(){
+		$(window).scrollTop(0);
+		});
         $('.nlist-blog').slick({
             centerMode: true,
             centerPadding: '200px',
@@ -126,38 +129,21 @@ $path_template_url = get_template_directory_uri();
                 }
             }]
 	  });
-	//   $.datepicker.regional["vi-VN"] =
-	// 	{
-	// 		closeText: "Đóng",
-	// 		prevText: "Trước",
-	// 		nextText: "Sau",
-	// 		currentText: "Hôm nay",
-	// 		monthNames: ["Tháng một", "Tháng hai", "Tháng ba", "Tháng tư", "Tháng năm", "Tháng sáu", "Tháng bảy", "Tháng tám", "Tháng chín", "Tháng mười", "Tháng mười một", "Tháng mười hai"],
-	// 		monthNamesShort: ["Một", "Hai", "Ba", "Bốn", "Năm", "Sáu", "Bảy", "Tám", "Chín", "Mười", "Mười một", "Mười hai"],
-	// 		dayNames: ["Chủ nhật", "Thứ hai", "Thứ ba", "Thứ tư", "Thứ năm", "Thứ sáu", "Thứ bảy"],
-	// 		dayNamesShort: ["CN", "Hai", "Ba", "Tư", "Năm", "Sáu", "Bảy"],
-	// 		dayNamesMin: ["CN", "T2", "T3", "T4", "T5", "T6", "T7"],
-	// 		weekHeader: "Tuần",
-	// 		dateFormat: "dd/mm/yy",
-	// 		firstDay: 1,
-	// 		isRTL: false,
-	// 		showMonthAfterYear: false,
-	// 		yearSuffix: ""
-	// 	};
 
-	// $.datepicker.setDefaults($.datepicker.regional["vi-VN"]);
-        $("#start-date").datepicker();
-	  $("#end-date").datepicker();
-	  var heightWpAdminBar = $('#wpadminbar').height(),
-		    headerElement = $('.nheader'),
-		    windowWidth = $(window).width();
-	$(window).on('resize', function () {
-		if (windowWidth <= 782) {
-			headerElement.css({
-				'margin-top': heightWpAdminBar - 1  + 'px'
-			})
-		} 
-	})
+
+	  function loading() {
+		  var num = 0;
+		  for(i=0; i <= 100; i++) {
+			  setTimeout(() => {
+				$('.loading-percent span').html(num + '%');
+				if(num == 100) {
+					$('.nloading').fadeOut();
+				}
+				num++;
+			  }, i*40);
+		  }
+	  }
+	   loading();
     })
 </script>
 </body>

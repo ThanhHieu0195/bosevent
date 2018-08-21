@@ -36,12 +36,16 @@
 	"blogs": {
 		"title": {
 			"page-blogs": "TIN TỨC",
-			"page-cat": "Theo categories",
+			"page-cat": "Theo danh mục",
 			"popular": "Bài viết phổ biến",
 			"recent": "Bài viết gần đây"
 		},
 		"session": {
-			"cat": "Hiện thị với mục lục"
+			"cat": "Hiển Thị Mục Lục"
+		},
+		"breadcrumbs": {
+			"home": "trang chủ",
+			"blog": "Tin tức"
 		}
 	},
 	"article": {
@@ -98,5 +102,10 @@
 				"name_staff_02": "Vũ Nguyễn Minh Trí (Mr.)"
 			}
 		}
+	},
+	"error404": {
+		"title": "Rất tiếc! Đã xảy ra sự cố",
+		"description": "Dường như không tìm thấy điều gì tại đây <br />. Vui lòng nhấn nút bên dưới để quay lại Trang Chủ",
+		"button_description": "Về Ngay"
 	}
 }

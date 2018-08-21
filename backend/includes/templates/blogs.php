@@ -7,30 +7,34 @@ $list_posts = [];
 // get all cats
 $all_cats = get_categories();
 // get new posts
-$new_posts = get_posts();
 $page_title = translateText('blogs/title/page-blogs');
 $breadcrumbs = [
-        'blogs'
+    translate_i18n('blogs/breadcrumbs/home') => get_home_url(),
+    translate_i18n('blogs/breadcrumbs/blog') => \includes\Bootstrap::bootstrap()->helper->getLinkBlog()
 ];
-//
-if (isset($_GET['slug'])) {
-    $name = $_GET['slug'];
-    $post = get_page_by_path($name, OBJECT, 'post');
-    if (!empty($post)) {
-        $list_posts[] = $post;
-        $page_title = $post->post_title;
 
-        $cat_ids = wp_get_post_categories($post->ID);
-        if (count($cat_ids) > 0) {
-            $cat = get_category($cat_ids[0]);
-            if (!empty($cat)) {
-                $all_cats = [$cat];
-                $breadcrumbs[] = $cat->name;
-            }
-        }
-        $breadcrumbs[] = $post->post_name;
-    }
-} else if (isset($_GET['cat'])){
+$class = 'blog';
+$option_pagination = [];
+
+$page = isset($_GET['page']) ? intval($_GET['page']) : 1;
+$limit = 5;
+$offset = ($page - 1) * $limit;
+$count = wp_count_posts();
+$option_pagination = array(
+    'total' => $count->publish / $limit + ($count->publish % $limit > 0),
+    'current' => $page,
+    'base' => \includes\Bootstrap::bootstrap()->helper->getLinkBlog().'%_%',
+    'format' => '?page=%#%',
+    'prev_text'          => __( '←' ),
+    'next_text'          => __( '→' ),
+);
+$new_posts = get_posts(array(
+    'numberposts' => $limit,
+    'offset' => $offset
+));
+//
+if (isset($_GET['cat'])){
+    $class = 'blog-cat';
     $page_title = translateText('blogs/title/page-cat');
     $slug = $_GET['cat'];
     $cat = get_term_by('slug', $slug, 'category');
@@ -40,7 +44,8 @@ if (isset($_GET['slug'])) {
     $all_cats = [];
     if (!empty($cat)) {
         $all_cats = [$cat];
-        $breadcrumbs[] = $cat->name;
+        $breadcrumbs[$cat->name] = '';
+
     }
 } else {
     $list_posts = $new_posts;
@@ -62,17 +67,25 @@ if (count($cat_ids) > 0) {
     <div class="banner-title txt--c" style="background-image: url(<?= $path_template_url ?>/assets/images/blog/banner-blog.jpg)">
         <div class="banner-title__inner">
             <?= $page_title ?>
-        </div>
-        <div class="breadcrumbs">
-            <?php for ($i=0; $i<count($breadcrumbs); $i++): ?>
-                <span><?= $breadcrumbs[$i] ?></span>
-                <?php if ($i<count($breadcrumbs)-1): ?>
-                    >
-                <?php endif; ?>
-            <?php endfor; ?>
+			<div class="nbreadcrumbs">
+			<ul class="nbreadcrumbs-list">
+                <?php
+                $i = 0;
+                foreach($breadcrumbs as $key => $val) {
+                    if (!empty($val)) {
+                        echo '<li class="item inlineb-t"><a href="'.$val.'">' . $key . '</a></li>';
+
+                    } else {
+                        echo '<li class="item inlineb-t">'.$key.'</li>';
+                    }
+                    $i ++;
+                }
+                ?>
+			</ul>
+            </div>
         </div>
     </div>
-    <div class="npage-content">
+    <div class="npage-content <?= $class ?>">
         <div class="ncontainer">
             <div class="wp-inlineb sidebar">
                 <div class="sidebar__left item inlineb-t">
@@ -85,9 +98,20 @@ if (count($cat_ids) > 0) {
                 </div>
                 <div class="sidebar__right item inlineb-t">
                     <div class="inner  cus-bg">
-                        <?php foreach ($list_posts as $post): ?>
-                        <?=  \includes\Bootstrap::bootstrap()->helper->render($dir_path . '/blog/article.php', ['post_id' => $post->ID, 'path_template_url' => $path_template_url]); ?>
-                        <?php endforeach; ?>
+				
+				<?php foreach ($list_posts as $post): ?>
+				    <?=  \includes\Bootstrap::bootstrap()->helper->render($dir_path . '/blog/article.php', ['post_id' => $post->ID, 'path_template_url' => $path_template_url]); ?>
+				<?php endforeach; ?>
+				
+				<?php
+                        if (isset($option_pagination) && !empty($option_pagination) ){
+                            ?>
+                            <div class="npagination">
+                                <?= paginate_links($option_pagination) ?>
+                            </div>
+                            <?php
+                        }
+                        ?>
                     </div>
                 </div>
             </div>

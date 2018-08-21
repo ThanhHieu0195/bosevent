@@ -1,6 +1,4 @@
 <?php
-$page = get_page_by_title('home');
-
 /**
  * ABOUT
  */
