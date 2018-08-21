@@ -18,6 +18,12 @@ Class Constants {
         'wordpress/en/' => 'home',
         'wordpress/blogs' => 'blogs',
         'wordpress/en/blogs' => 'blogs',
+    	
+    	'~simplet1/wordpress/' => 'home',
+        '~simplet1/wordpress/vi/' => 'home',
+        '~simplet1/wordpress/en/' => 'home',
+        '~simplet1/wordpress/blogs' => 'blogs',
+        '~simplet1/wordpress/en/blogs' => 'blogs',
     ];
 
 	const SLUG_TO_KEY = [
