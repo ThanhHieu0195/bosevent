@@ -66,7 +66,7 @@ class Helper implements HelperInterface {
     }
 
     public function getSubUrl() {
-        $request_url = isset($_SERVER['REDIRECT_URL']) ? $_SERVER['REDIRECT_URL'] : '';
+        $request_url = isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : '';
         preg_match('/\/(.*)$/', $request_url, $matches);
         $slug = '';
         if (count($matches) > 0) {
