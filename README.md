@@ -1,2 +1,0 @@
-# bosevent
-bosevent web

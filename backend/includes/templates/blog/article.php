@@ -10,6 +10,9 @@ if (count($cat_ids) > 0) {
         $cats[] = $cat;
     }
 }
+if (!isset($type)) {
+    $type = 'content';
+}
 ?>
 <article class="postpopular detail">
     <div class="postpopular__img">
@@ -34,7 +37,14 @@ if (count($cat_ids) > 0) {
 		</ul>
 	</div>
 	<div class="postpopular__content">
+        <?php if ($type == 'content'):  ?>
 		<?= apply_filters('the_content', get_post_field('post_content', $post_id)) ?>
+        <?php else: ?>
+        <?= get_the_excerpt($post_id) ?> ...
+            <div class="postpopular__more">
+                <a href="<?= \includes\Bootstrap::bootstrap()->helper->getLinkBlogDetail($post_id) ?>" class="nbutton color--1 nsize--m f--500 txt--up" title="Read More">Read More</a>
+            </div>
+        <?php endif; ?>
 	</div>
     </div>
 </article>

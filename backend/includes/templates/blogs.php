@@ -100,7 +100,7 @@ if (count($cat_ids) > 0) {
                     <div class="inner  cus-bg">
 				
 				<?php foreach ($list_posts as $post): ?>
-				    <?=  \includes\Bootstrap::bootstrap()->helper->render($dir_path . '/blog/article.php', ['post_id' => $post->ID, 'path_template_url' => $path_template_url]); ?>
+				    <?=  \includes\Bootstrap::bootstrap()->helper->render($dir_path . '/blog/article.php', ['post_id' => $post->ID, 'type' => 'excerpt', 'path_template_url' => $path_template_url]); ?>
 				<?php endforeach; ?>
 				
 				<?php
