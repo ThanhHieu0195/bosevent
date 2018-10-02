@@ -23,7 +23,7 @@ $idx = 0;
                 </div>
                 <div class="nmorale__info txt--l">
                     <span class="nmorale__info-num cl--white"><?= ($idx+1) < 10 ?  ($idx+1) : $idx+1 ?></span>
-                    <h3 class="nmorale__info-title heading-h3 txt--up f--900 cl--white"><?= ${'name' . $idx} ?></h3>
+                    <h3 class="nmorale__info-title heading-h3 txt--cap f--900 cl--white"><?= ${'name' . $idx} ?></h3>
                     <p class="nmorale__info-des cl--white lh--13"><?= ${'description' . $idx} ?></p>
                 </div>
             </li>

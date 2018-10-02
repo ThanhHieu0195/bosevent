@@ -2793,8 +2793,8 @@ textarea {
       -moz-transition: 0.2s cubic-bezier(0.445, 0.05, 0.55, 0.95);
       -ms-transition: 0.2s cubic-bezier(0.445, 0.05, 0.55, 0.95);
       -o-transition: 0.2s cubic-bezier(0.445, 0.05, 0.55, 0.95);
-      -moz-transition-property: background-color, color;
-           transition-property: background-color, color; }
+      -moz-transition-property: background-color, color,padding;
+           transition-property: background-color, color,padding; }
       @media (max-width: 1024px) {
         .nheader__right-menu > .item > a {
           display: block;

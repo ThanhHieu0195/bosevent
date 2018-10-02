@@ -133,7 +133,7 @@
 				font-weight: 500;
 				font-size: $font-13;
 				@include prefix(transition, .2s cubic-bezier(0.445, 0.05, 0.55, 0.95));
-				transition-property: background-color, color;
+				transition-property: background-color, color,padding;
 				@media (max-width: 1024px) {
 					display: block;
 					padding: 14px 15px;

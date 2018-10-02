@@ -384,3 +384,17 @@
 		}
 	}
 }
+
+.single-post {
+	.postpopular__title {
+		a {
+			cursor: default;
+			pointer-events: none;
+		}
+		&:hover {
+			> a {
+				color:$color-black;
+			}
+		}
+	}
+}
