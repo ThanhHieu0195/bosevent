@@ -1,0 +1,112 @@
+{
+	"event_session": {
+		"title": {
+			"main": "",
+			"filter": "All Events On Dashboard"
+		},
+		"description": "EVENT CALENDAR",
+		"item": {
+			"by": "By",
+			"location": "Location",
+			"time_start": "Time start"
+		},
+		"button": "Find Event",
+		"error": {
+			"error_01": "Oops, we can't find other events !!! ",
+			"error_02": "Please check Start Date and End Date to find again.",
+			"error_field_01": "Please fill in all fields !",
+			"error_field_02": "Please ensure that the End Date is greater than or equal to the Start Date !"
+		},
+		"field": {
+			"start_date": "Start date",
+			"end_date": "End date"
+		}
+	},
+	"blog_session": {
+		"title": {
+			"main": "News"
+		},
+		"description": {
+			"main": "Top biggest news stories<br /> for your event solution"
+		},
+		"button": {
+			"more_button": "View More"
+		}
+	},
+	"blogs": {
+		"title": {
+			"page-blogs": "News",
+			"page-detail": "News Detail",
+			"page-cat": "Categories",
+			"popular": "Popular Posts",
+			"recent": "Recent Posts"
+		},
+		"session": {
+			"cat": "Show Categories"
+		},
+		"breadcrumbs": {
+			"home": "Home",
+			"blog": "News"
+		}
+	},
+	"article": {
+		"cat": {
+			"title": "Categories"
+		}
+	},
+	"service_session": {
+		"title": {
+			"main": "Our services"
+		},
+		"button": {
+			"view_more": "View more"
+		}
+	},
+	"menu": {
+		"about": {
+			"title": "About Us"
+		},
+		"service": {
+			"title": "Services"
+		},
+		"blog": {
+			"title": "News"
+		},
+		"event": {
+			"title": "Event Callendar"
+		},
+		"contact": {
+			"title": "Contact"
+		}
+	},
+	"banner": {
+		"button": {
+			"next_lesson": "Next lesson"
+		}
+	},
+	"footer": {
+		"description": {
+			"info": {
+				"title": "BOS Media And Events <br />Company Limited",
+				"description": " Beyond Your Best Imagination.<br />Business Registration Certificate No: <br />0315137128 issued by Department of Planning<br /> and Investment of HCMC<br /><br /> © BosEvents Team, 2018."
+			},
+			"address": {
+				"title": "Address",
+				"description": "62N HT5 St.,<br /> Hiep Thanh Ward,<br />District 12,  HCMC."
+			},
+			"contact": {
+				"title": "Contact"
+			},
+			"hotline": {
+				"title": "Hotline",
+				"name_staff_01": "Ruler Lee (Mr.).",
+				"name_staff_02": "Daniel Vu (Mr.)"
+			}
+		}
+	},
+	"error404": {
+		"title": "Oops! Something went wrong",
+		"description": "It looks like nothing was found at this location.<br /> Please click the button below to come back our HomePage",
+		"button_description": "Go Home"
+	}
+}

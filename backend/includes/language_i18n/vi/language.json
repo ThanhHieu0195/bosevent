@@ -1,0 +1,111 @@
+{
+	"event_session": {
+		"title": {
+			"main": "",
+			"filter": "Thông tin sự kiện"
+		},
+		"description": "LỊCH SỰ KIỆN",
+		"item": {
+			"by": "Bởi",
+			"location": "Vị trí",
+			"time_start": "Thời gian"
+		},
+		"button": "Tìm sự kiện",
+		"error": {
+			"error_01": "Rất tiếc,  Chúng tôi không thể tìm được những sự kiện khác !!! ",
+			"error_02": "Vui lòng điền lại ngày bắt đầu và ngày kết thúc để tìm kiếm sự kiện khác.",
+			"error_field_01": "Vui lòng không bỏ trống !",
+			"error_field_02": "Vui lòng đảm bảo rằng Ngày Kết Thúc lớn hơn hoặc bằng Ngày Bắt Đầu !"
+		},
+		"field": {
+			"start_date": "Ngày bắt đầu",
+			"end_date": "Ngày kết thúc"
+		}
+	},
+	"blog_session": {
+		"title": {
+			"main": "Tin Tức"
+		},
+		"description": {
+			"main": "Sự kiện bổ ích, <br />tuyệt vời và hấp dẫn nhất"
+		},
+		"button": {
+			"more_button": "Xem Thêm"
+		}
+	},
+	"blogs": {
+		"title": {
+			"page-blogs": "TIN TỨC",
+			"page-cat": "Theo danh mục",
+			"popular": "Bài viết phổ biến",
+			"recent": "Bài viết gần đây"
+		},
+		"session": {
+			"cat": "Hiển Thị Mục Lục"
+		},
+		"breadcrumbs": {
+			"home": "trang chủ",
+			"blog": "Tin tức"
+		}
+	},
+	"article": {
+		"cat": {
+			"title": "Mục lục"
+		}
+	},
+	"service_session": {
+		"title": {
+			"main": "Dịch vụ"
+		},
+		"button": {
+			"view_more": "Xem thêm"
+		}
+	},
+	"menu": {
+		"about": {
+			"title": "Về chúng tôi"
+		},
+		"service": {
+			"title": "Dịch vụ"
+		},
+		"blog": {
+			"title": "Tin tức"
+		},
+		"event": {
+			"title": "Lịch sự kiện"
+		},
+		"contact": {
+			"title": "Liên hệ"
+		}
+	},
+	"banner": {
+		"button": {
+			"next_lesson": "Bài kế tiếp"
+		}
+	},
+	"footer": {
+		"description": {
+			"info": {
+				"title": "CÔNG TY TNHH <br />TRUYỀN THÔNG VÀ SỰ KIỆN BOS",
+				"description": " Hơn cả trí tưởng tượng tuyệt vời nhất của bạn <br />Số GPKD: 0315137128 <br /> do Sở Kế Hoạch và Đầu Tư Thành Phố Hồ Chí Minh cấp <br /> © BosEvents Team, 2018."
+			},
+			"address": {
+				"title": "ĐỊA CHỈ",
+				"description": "62N Đường HT5.,<br /> Phường Hiệp Thành,<br />Quận 12, TP.HCM."
+			},
+			"contact": {
+				"title": "LIÊN HỆ"
+			},
+			"hotline": {
+				"title": "ĐIỆN THOẠI",
+				"name_staff_01": "Lê Hoàng Phúc (Mr.).",
+				"name_staff_02": "Vũ Nguyễn Minh Trí (Mr.)"
+			}
+		}
+	},
+	"error404": {
+		"title": "Rất tiếc! Đã xảy ra sự cố",
+		"description": "Dường như không tìm thấy điều gì tại đây <br />. Vui lòng nhấn nút bên dưới để quay lại Trang Chủ",
+		"button_description": "Về Ngay"
+	}
+}
